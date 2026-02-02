@@ -137,6 +137,31 @@ print(f'   Total: {len(examples)} memories')
         shift
         python src/links.py suggest "$@"
         ;;
+    # === Multi-Perspective Frames ===
+    perspectives|persp|p)
+        shift
+        if [ -z "$1" ]; then
+            python src/perspectives.py show
+        else
+            python src/perspectives.py show "$1"
+        fi
+        ;;
+    perspective-add|pa)
+        shift
+        python src/perspectives.py add "$@"
+        ;;
+    perspective-gen|pg)
+        shift
+        python src/perspectives.py generate "$@"
+        ;;
+    perspective-batch|pb)
+        shift
+        python src/perspectives.py batch "$@"
+        ;;
+    perspective-context|pc)
+        shift
+        python src/perspectives.py context "$@"
+        ;;
     bootstrap|boot)
         python src/session.py bootstrap
         ;;
@@ -195,7 +220,14 @@ print(f'   Total: {len(examples)} memories')
         echo "  suggest <id>       Suggest potential links"
         echo "  Link types: elaborates, contradicts, supersedes, relates_to, caused_by, leads_to"
         echo ""
-        echo "Session Integration:"
+        echo "Multi-Perspective Frames (🎭 Thousand Brains-inspired):"
+        echo "  perspectives [id]  Show all perspectives (or for specific memory)"
+        echo "  perspective-add <id> -f <frame> -g <gist> [-s <salience>]"
+        echo "  perspective-gen <id>  Generate perspectives via LLM"
+        echo "  perspective-batch     Generate for all memories without perspectives"
+        echo "  perspective-context <id> -c <frame1> <frame2>  Get best for context"
+        echo ""
+        echo "Session Integration:
         echo "  bootstrap          Load identity + context for session start"
         echo "  identity           List core identity memories"
         echo "  session-start      Log session start, get context"

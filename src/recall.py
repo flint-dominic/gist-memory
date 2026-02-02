@@ -18,6 +18,13 @@ from chromadb.config import Settings
 # Import reinforcement tracking
 from reinforcement import record_access, calculate_salience
 
+# Import perspectives
+try:
+    from perspectives import get_manager as get_perspective_manager
+    PERSPECTIVES_AVAILABLE = True
+except ImportError:
+    PERSPECTIVES_AVAILABLE = False
+
 # Project paths
 PROJECT_ROOT = Path(__file__).parent.parent
 EXAMPLES_DIR = PROJECT_ROOT / "examples"
@@ -115,7 +122,8 @@ def recall(
             'salience': dynamic_salience,  # Use dynamic salience
             'initial_salience': initial_salience,
             'summary': '',
-            'key_details': {}
+            'key_details': {},
+            'perspective': None  # Best perspective for context
         }
         
         # Extract summary and key details from full memory if available
@@ -127,6 +135,19 @@ def recall(
                         memory['key_details'][key] = val['value']
                     else:
                         memory['key_details'][key] = str(val)
+        
+        # Get best perspective for this memory based on its frames
+        if PERSPECTIVES_AVAILABLE:
+            try:
+                persp_manager = get_perspective_manager()
+                mem_persp = persp_manager.get(memory_id)
+                if mem_persp.perspectives:
+                    # Get perspective matching the memory's own frames (context)
+                    best_persp = persp_manager.get_for_context(memory_id, memory['frames'])
+                    if best_persp:
+                        memory['perspective'] = best_persp
+            except Exception:
+                pass  # Perspectives optional
         
         memories.append(memory)
         
@@ -155,8 +176,15 @@ def format_for_context(memories: List[Dict], verbose: bool = False) -> str:
         if mem['frames']:
             lines.append(f"*Frames: {', '.join(mem['frames'][:5])}*")
         
-        if mem['summary']:
-            # Truncate long summaries
+        # Show perspective-specific gist if available (more targeted than summary)
+        if mem.get('perspective'):
+            persp = mem['perspective']
+            frame = persp.get('frame', '')
+            gist = persp.get('gist', '')
+            if gist:
+                lines.append(f"\n**[{frame}]** {gist}")
+        elif mem['summary']:
+            # Fall back to summary if no perspective
             summary = mem['summary'][:500] + "..." if len(mem['summary']) > 500 else mem['summary']
             lines.append(f"\n{summary}")
         

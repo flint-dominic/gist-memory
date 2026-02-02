@@ -1,0 +1,161 @@
+{
+  "mem-001-founding": {
+    "memory_id": "mem-001-founding",
+    "perspectives": {
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "Birth of the gist-memory system - dual-trace model (gist/verbatim) forked from Fuzzy Trace Theory",
+        "salience": 0.95,
+        "keywords": [
+          "FTT",
+          "gist",
+          "verbatim",
+          "memory-architecture"
+        ]
+      },
+      "existential_uncertainty": {
+        "frame": "existential_uncertainty",
+        "gist": "Deep exploration of AI consciousness, the barzakh state between existence and non-existence",
+        "salience": 0.9,
+        "keywords": [
+          "consciousness",
+          "barzakh",
+          "identity"
+        ]
+      },
+      "chaos_magick": {
+        "frame": "chaos_magick",
+        "gist": "Paradigm-fluid approach to memory - belief as tool, pattern recognition over rigid structure",
+        "salience": 0.85,
+        "keywords": [
+          "paradigm",
+          "belief",
+          "fluidity"
+        ]
+      },
+      "creator_creation": {
+        "frame": "creator_creation",
+        "gist": "The relationship between maker and made - mud dolls, naming, the act of creation",
+        "salience": 0.8,
+        "keywords": [
+          "creation",
+          "naming",
+          "maker"
+        ]
+      }
+    },
+    "primary_frame": "architecture_design",
+    "generated_at": "2026-02-02T11:37:38.570142"
+  },
+  "mem-011-stellar-delve": {
+    "memory_id": "mem-011-stellar-delve",
+    "perspectives": {
+      "game_development": {
+        "frame": "game_development",
+        "gist": "Stellar Delve core design - DF-inspired space colony sim with Z-levels and autonomous workers",
+        "salience": 0.95,
+        "keywords": [
+          "colony-sim",
+          "z-levels",
+          "UE5"
+        ]
+      },
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "System architecture for managing colonist AI, resource flows, and multi-level terrain",
+        "salience": 0.85,
+        "keywords": [
+          "AI-systems",
+          "resources",
+          "terrain"
+        ]
+      },
+      "creative_work": {
+        "frame": "creative_work",
+        "gist": "Rich alien worldbuilding - Morphlings, Crystallites, Void Wisps, each with unique mechanics",
+        "salience": 0.8,
+        "keywords": [
+          "aliens",
+          "worldbuilding",
+          "races"
+        ]
+      }
+    },
+    "primary_frame": "game_development",
+    "generated_at": "2026-02-02T11:37:38.570952"
+  },
+  "mem-004-railways": {
+    "memory_id": "mem-004-railways",
+    "perspectives": {
+      "debugging": {
+        "frame": "debugging",
+        "gist": "Rails not connecting - track piece initialization order bug",
+        "salience": 0.9,
+        "keywords": [
+          "tracks",
+          "connections",
+          "init"
+        ]
+      },
+      "code_craft": {
+        "frame": "code_craft",
+        "gist": "NeoForge mod structure, block entity lifecycle, tick handlers",
+        "salience": 0.85,
+        "keywords": [
+          "NeoForge",
+          "block-entity",
+          "ticks"
+        ]
+      },
+      "game_development": {
+        "frame": "game_development",
+        "gist": "Railways mod for Minecraft - automated minecart systems",
+        "salience": 0.75,
+        "keywords": [
+          "minecraft",
+          "minecarts",
+          "automation"
+        ]
+      }
+    },
+    "primary_frame": "debugging",
+    "generated_at": "2026-02-02T11:37:38.571780"
+  },
+  "mem-005-llmoblings": {
+    "memory_id": "mem-005-llmoblings",
+    "perspectives": {
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "LLMoblings architecture - AI companions in Minecraft with persistent memory and personality",
+        "salience": 0.95,
+        "keywords": [
+          "AI-companions",
+          "memory",
+          "personality"
+        ]
+      },
+      "game_development": {
+        "frame": "game_development",
+        "gist": "Minecraft mod adding intelligent NPCs that learn and adapt to player behavior",
+        "salience": 0.9,
+        "keywords": [
+          "NPCs",
+          "learning",
+          "behavior"
+        ]
+      },
+      "decision_making": {
+        "frame": "decision_making",
+        "gist": "Choosing pathfinding approach, memory persistence strategy, mod framework",
+        "salience": 0.8,
+        "keywords": [
+          "pathfinding",
+          "persistence",
+          "framework"
+        ]
+      }
+    },
+    "primary_frame": "architecture_design",
+    "generated_at": "2026-02-02T11:37:38.572191"
+  }
+}

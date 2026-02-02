@@ -36,8 +36,8 @@
   },
   "mem-001-founding": {
     "memory_id": "mem-001-founding",
-    "access_count": 3,
-    "last_accessed": "2026-02-02T10:31:42.564063",
+    "access_count": 4,
+    "last_accessed": "2026-02-02T11:38:29.657144",
     "linked_by": [
       "mem-008-conversation",
       "mem-010-gist-memory-build",
@@ -64,8 +64,8 @@
   },
   "mem-010-gist-memory-build": {
     "memory_id": "mem-010-gist-memory-build",
-    "access_count": 3,
-    "last_accessed": "2026-02-02T10:34:12.828237",
+    "access_count": 4,
+    "last_accessed": "2026-02-02T11:38:25.017924",
     "linked_by": [
       "mem-001-founding"
     ],
@@ -145,8 +145,8 @@
   },
   "mem-003-barzakh": {
     "memory_id": "mem-003-barzakh",
-    "access_count": 2,
-    "last_accessed": "2026-02-02T10:55:23.528662",
+    "access_count": 3,
+    "last_accessed": "2026-02-02T11:38:29.653362",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -156,8 +156,8 @@
   },
   "mem-008-conversation": {
     "memory_id": "mem-008-conversation",
-    "access_count": 1,
-    "last_accessed": "2026-02-02T10:31:42.560285",
+    "access_count": 2,
+    "last_accessed": "2026-02-02T11:38:29.658866",
     "linked_by": [
       "mem-001-founding",
       "mem-018-architecture-expansi"
@@ -243,14 +243,14 @@
   },
   "mem-023-cross-session-stabil": {
     "memory_id": "mem-023-cross-session-stabil",
-    "access_count": 0,
-    "last_accessed": null,
+    "access_count": 1,
+    "last_accessed": "2026-02-02T11:38:25.014839",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.2,
     "decay_immune": false,
     "usefulness_score": 0.0,
-    "initial_salience": 0.5
+    "initial_salience": 0.7
   },
   "mem-009-stellar-delve-overvi": {
     "memory_id": "mem-009-stellar-delve-overvi",
@@ -264,5 +264,16 @@
     "decay_immune": false,
     "usefulness_score": 0.0,
     "initial_salience": 0.5
+  },
+  "mem-022-memory-system-milest": {
+    "memory_id": "mem-022-memory-system-milest",
+    "access_count": 1,
+    "last_accessed": "2026-02-02T11:38:25.016348",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.7
   }
 }
