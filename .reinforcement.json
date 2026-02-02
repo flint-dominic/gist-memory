@@ -12,8 +12,8 @@
   },
   "mem-009-stellar-delve-overview": {
     "memory_id": "mem-009-stellar-delve-overview",
-    "access_count": 2,
-    "last_accessed": "2026-02-02T10:31:42.409534",
+    "access_count": 3,
+    "last_accessed": "2026-02-02T10:33:54.027405",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -56,8 +56,8 @@
   },
   "mem-010-gist-memory-build": {
     "memory_id": "mem-010-gist-memory-build",
-    "access_count": 2,
-    "last_accessed": "2026-02-02T10:31:42.269259",
+    "access_count": 3,
+    "last_accessed": "2026-02-02T10:34:12.828237",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -177,25 +177,25 @@
   },
   "mem-004-railways": {
     "memory_id": "mem-004-railways",
-    "access_count": 0,
-    "last_accessed": null,
+    "access_count": 1,
+    "last_accessed": "2026-02-02T10:33:54.022503",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
-    "initial_salience": 0.5
+    "initial_salience": 0.75
   },
   "mem-013-mtg-trading": {
     "memory_id": "mem-013-mtg-trading",
-    "access_count": 0,
-    "last_accessed": null,
+    "access_count": 1,
+    "last_accessed": "2026-02-02T10:33:54.025710",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
-    "initial_salience": 0.5
+    "initial_salience": 0.75
   },
   "mem-012-asset-lab": {
     "memory_id": "mem-012-asset-lab",
@@ -207,5 +207,16 @@
     "decay_immune": false,
     "usefulness_score": 0.0,
     "initial_salience": 0.5
+  },
+  "mem-021-railways-preview-fix": {
+    "memory_id": "mem-021-railways-preview-fix",
+    "access_count": 1,
+    "last_accessed": "2026-02-02T10:34:12.826567",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.7
   }
 }

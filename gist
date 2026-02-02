@@ -103,6 +103,10 @@ print(f'   Total: {len(examples)} memories')
         shift
         python src/session.py end "$@"
         ;;
+    unified|u)
+        shift
+        python ~/clawd/memory/unified_recall.py "$@"
+        ;;
     help|--help|-h)
         echo "Gist Memory CLI"
         echo ""
@@ -128,6 +132,7 @@ print(f'   Total: {len(examples)} memories')
         echo "  identity           List core identity memories"
         echo "  session-start      Log session start, get context"
         echo "  session-end        Get encoding prompt for session end"
+        echo "  unified <query>    Search BOTH gist + markdown memories"
         echo ""
         echo "Examples:"
         echo "  gist recall 'what is fuzzy trace theory'"

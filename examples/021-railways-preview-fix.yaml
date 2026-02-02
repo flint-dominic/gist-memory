@@ -1,0 +1,41 @@
+id: mem-021-railways-preview-fix
+timestamp: 2026-02-02 10:33:41.880571
+type: conversation
+gist:
+  frames:
+  - code_craft
+  - debugging
+  - problem_solving
+  emotional_tone:
+  - satisfaction
+  - relief
+  - accomplishment
+  salience: 0.7
+  confidence: 0.8
+  source: encoded
+verbatim:
+  stored:
+    root_cause: Flywheel PartialModel doesn't handle OBJ loader inherited through
+      parent chain
+    fix: specify OBJ loader directly in each model JSON file
+    models_updated: acacia_narrow, phantom_narrow, phantom_wide
+    test_server: yogsothoth:25566
+  reconstructable: none
+metadata:
+  participant: gblfxt
+  session_key: unknown
+  session_type: telegram
+  duration_estimate: unknown
+  related_entries: []
+  tags: null
+summary: 'Debugging session for railways mod, fixed narrow/wide gauge track preview
+  rendering issue. Identified root cause and implemented fix by specifying OBJ loader
+  in each model JSON file.
+
+  '
+retrieval_hints:
+- railways mod debugging
+- narrow/wide gauge track preview
+- OBJ loader inheritance
+- model JSON files
+- test server yogsothoth
