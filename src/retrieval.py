@@ -74,8 +74,10 @@ def build_embedding_text(entry: dict) -> str:
             parts.append(f"Details: {'; '.join(verbatim_parts)}")
     
     # Tags
-    if 'metadata' in entry and 'tags' in entry['metadata']:
-        parts.append(f"Tags: {', '.join(entry['metadata']['tags'])}")
+    if 'metadata' in entry and entry['metadata'].get('tags'):
+        tags = entry['metadata']['tags']
+        if isinstance(tags, list):
+            parts.append(f"Tags: {', '.join(tags)}")
     
     return "\n".join(parts)
 
