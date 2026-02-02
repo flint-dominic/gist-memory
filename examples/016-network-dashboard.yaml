@@ -1,0 +1,107 @@
+# Memory Entry: Network Dashboard
+# Flask-based network monitoring on Gertrude (Kali)
+# Home network visibility tool
+
+id: mem-016-network-dashboard
+timestamp: 2026-02-02T09:28:00-08:00
+type: project
+
+gist:
+  frames:
+    - system_administration     # Network monitoring
+    - code_craft                # Flask app
+    - architecture_design       # Device mapping
+  
+  emotional_tone:
+    - practical
+    - organized
+    - security-minded
+  
+  salience: 0.7                 # Useful infrastructure tool
+  confidence: 0.9
+  source: encoded
+
+verbatim:
+  stored:
+    core_concept:
+      value: "Flask web dashboard for home network monitoring"
+      context: "Ping sweep scanning, device tracking, WiFi analysis"
+      confidence: 0.95
+    
+    host:
+      value: "gertrude (Kali Linux) at 192.168.70.26"
+      context: "Runs on port 8081"
+      confidence: 0.95
+    
+    device_count:
+      value: "40+ known devices mapped with names, types, icons"
+      context: "Tracks smart home, gaming, computers, audio, mobile devices"
+      confidence: 0.9
+    
+    device_categories:
+      value: "Smart Home (Ring, Trane, Govee, Roborock), Audio (Sonos, Denon), Gaming (PS5, Switch, Steam Deck, Shield), TVs (Samsung, LG), Computers, Mobile"
+      context: "Comprehensive home network inventory"
+      confidence: 0.9
+    
+    features:
+      value: "Ping sweep scanning, device history tracking, alerts, WiFi network scanning (nmcli)"
+      context: "SQLite database for persistence"
+      confidence: 0.9
+    
+    network_range:
+      value: "192.168.70.0/24"
+      context: "Infrastructure .20-.39, Smart home .40-.59, DHCP .100-.199"
+      confidence: 0.85
+    
+    tech_stack:
+      value: "Flask, Flask-CORS, SQLite, subprocess for scanning"
+      context: "Python web dashboard"
+      confidence: 0.9
+    
+    key_devices:
+      value: "OPNsense .30 (remus), ASUS BE6500 WiFi AP .20, yogsothoth .21"
+      context: "Infrastructure backbone"
+      confidence: 0.85
+
+  reconstructable:
+    all_device_ips:
+      hint: "Full mapping in KNOWN_DEVICES dict"
+      reconstruction_confidence: 0.5
+      FLAGGED: true
+
+metadata:
+  participant: gblfxt
+  session_key: project
+  session_type: project
+  duration_estimate: "ongoing maintenance"
+  
+  related_entries:
+    - mem-007-remus-hardening
+    - mem-002-deep-dive
+  
+  tags:
+    - network
+    - monitoring
+    - flask
+    - dashboard
+    - gertrude
+    - smart-home
+    - security
+
+summary: |
+  Network Dashboard is a Flask-based web app running on gertrude (Kali Linux) 
+  that monitors the home network. Uses ping sweep to discover devices on 
+  192.168.70.0/24, maintains known device mappings with names/types/icons 
+  for 40+ devices. Tracks device history, generates alerts, scans WiFi 
+  networks via nmcli. Devices include smart home (Ring, Govee, Sonos, 
+  Roborock), gaming (PS5, Switch, Steam Deck, Shield), computers, TVs, 
+  and mobile devices. SQLite for persistence. Accessible at port 8081.
+
+retrieval_hints:
+  - "network dashboard"
+  - "gertrude monitoring"
+  - "home network"
+  - "device tracking"
+  - "smart home devices"
+  - "flask dashboard"
+  - "network scanning"
