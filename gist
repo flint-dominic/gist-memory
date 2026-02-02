@@ -89,6 +89,54 @@ print(f'   Total: {len(examples)} memories')
     sleep|sl)
         python src/consolidate.py
         ;;
+    # === Storage Tiers ===
+    tiers|t)
+        python src/storage.py report
+        ;;
+    tier)
+        shift
+        python src/storage.py tier "$@"
+        ;;
+    tier-update|tu)
+        python src/storage.py update
+        ;;
+    lock)
+        shift
+        python src/storage.py lock "$@"
+        ;;
+    unlock)
+        shift
+        python src/storage.py unlock "$@"
+        ;;
+    archive)
+        shift
+        python src/storage.py archive "$@"
+        ;;
+    # === Memory Links ===
+    links)
+        shift
+        if [ -z "$1" ]; then
+            python src/links.py graph
+        else
+            python src/links.py show "$@"
+        fi
+        ;;
+    link)
+        shift
+        python src/links.py link "$@"
+        ;;
+    unlink)
+        shift
+        python src/links.py unlink "$@"
+        ;;
+    path)
+        shift
+        python src/links.py path "$@"
+        ;;
+    suggest)
+        shift
+        python src/links.py suggest "$@"
+        ;;
     bootstrap|boot)
         python src/session.py bootstrap
         ;;
@@ -131,6 +179,22 @@ print(f'   Total: {len(examples)} memories')
         echo "  reinforce-stats    Show reinforcement statistics"
         echo "  sleep              Consolidation analysis (what could be merged)"
         echo ""
+        echo "Storage Tiers (🔥 hot → ☀️ warm → ❄️ cold):"
+        echo "  tiers              Show memory tier report"
+        echo "  tier <id>          Show tier status for a memory"
+        echo "  tier-update        Update all memory tiers based on activity"
+        echo "  lock <id>          Lock memory (won't decay below warm)"
+        echo "  unlock <id>        Unlock memory"
+        echo "  archive <id>       Archive cold memory's verbatim"
+        echo ""
+        echo "Memory Links (🔗 Zettelkasten-style):"
+        echo "  links [id]         Show link graph (or links for specific memory)"
+        echo "  link <src> <tgt> <type> [note]  Create link between memories"
+        echo "  unlink <src> <tgt> Remove link"
+        echo "  path <from> <to>   Find path between memories"
+        echo "  suggest <id>       Suggest potential links"
+        echo "  Link types: elaborates, contradicts, supersedes, relates_to, caused_by, leads_to"
+        echo ""
         echo "Session Integration:"
         echo "  bootstrap          Load identity + context for session start"
         echo "  identity           List core identity memories"
@@ -140,9 +204,9 @@ print(f'   Total: {len(examples)} memories')
         echo ""
         echo "Examples:"
         echo "  gist recall 'what is fuzzy trace theory'"
-        echo "  gist context 'what was the memory architecture based on'"
         echo "  gist remember 'content' -t 'title'"
-        echo "  gist inspect mem-001-founding"
+        echo "  gist tiers                           # See storage tiers"
+        echo "  gist link mem-001 mem-003 elaborates 'More detail on this'"
         echo "  gist boost mem-005-llmoblings --lock"
         ;;
     *)

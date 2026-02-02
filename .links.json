@@ -1,0 +1,254 @@
+{
+  "mem-001-founding": {
+    "memory_id": "mem-001-founding",
+    "outbound": [
+      {
+        "source_id": "mem-001-founding",
+        "target_id": "mem-008-conversation",
+        "link_type": "elaborates",
+        "note": "Founding conversation -> deeper philosophical exploration",
+        "created": "2026-02-02T11:27:18.383266"
+      },
+      {
+        "source_id": "mem-001-founding",
+        "target_id": "mem-010-gist-memory-build",
+        "link_type": "leads_to",
+        "note": "Founding -> first build session",
+        "created": "2026-02-02T11:27:18.491441"
+      },
+      {
+        "source_id": "mem-001-founding",
+        "target_id": "mem-002-deep-dive",
+        "link_type": "relates_to",
+        "note": "[inverse] Deep dive elaborates on the founding",
+        "created": "2026-02-02T11:27:18.658826"
+      }
+    ],
+    "inbound": [
+      {
+        "source_id": "mem-008-conversation",
+        "link_type": "relates_to",
+        "note": "[inverse] Founding conversation -> deeper philosophical exploration",
+        "created": "2026-02-02T11:27:18.383570"
+      },
+      {
+        "source_id": "mem-010-gist-memory-build",
+        "link_type": "caused_by",
+        "note": "[inverse] Founding -> first build session",
+        "created": "2026-02-02T11:27:18.491699"
+      },
+      {
+        "source_id": "mem-002-deep-dive",
+        "link_type": "elaborates",
+        "note": "Deep dive elaborates on the founding",
+        "created": "2026-02-02T11:27:18.658543"
+      }
+    ]
+  },
+  "mem-008-conversation": {
+    "memory_id": "mem-008-conversation",
+    "outbound": [
+      {
+        "source_id": "mem-008-conversation",
+        "target_id": "mem-001-founding",
+        "link_type": "relates_to",
+        "note": "[inverse] Founding conversation -> deeper philosophical exploration",
+        "created": "2026-02-02T11:27:18.383570"
+      },
+      {
+        "source_id": "mem-008-conversation",
+        "target_id": "mem-018-architecture-expansi",
+        "link_type": "leads_to",
+        "note": "Philosophy -> architecture expansion",
+        "created": "2026-02-02T11:27:18.447751"
+      }
+    ],
+    "inbound": [
+      {
+        "source_id": "mem-001-founding",
+        "link_type": "elaborates",
+        "note": "Founding conversation -> deeper philosophical exploration",
+        "created": "2026-02-02T11:27:18.383266"
+      },
+      {
+        "source_id": "mem-018-architecture-expansi",
+        "link_type": "caused_by",
+        "note": "[inverse] Philosophy -> architecture expansion",
+        "created": "2026-02-02T11:27:18.448022"
+      }
+    ]
+  },
+  "mem-018-architecture-expansi": {
+    "memory_id": "mem-018-architecture-expansi",
+    "outbound": [
+      {
+        "source_id": "mem-018-architecture-expansi",
+        "target_id": "mem-008-conversation",
+        "link_type": "caused_by",
+        "note": "[inverse] Philosophy -> architecture expansion",
+        "created": "2026-02-02T11:27:18.448022"
+      }
+    ],
+    "inbound": [
+      {
+        "source_id": "mem-008-conversation",
+        "link_type": "leads_to",
+        "note": "Philosophy -> architecture expansion",
+        "created": "2026-02-02T11:27:18.447751"
+      }
+    ]
+  },
+  "mem-010-gist-memory-build": {
+    "memory_id": "mem-010-gist-memory-build",
+    "outbound": [
+      {
+        "source_id": "mem-010-gist-memory-build",
+        "target_id": "mem-001-founding",
+        "link_type": "caused_by",
+        "note": "[inverse] Founding -> first build session",
+        "created": "2026-02-02T11:27:18.491699"
+      }
+    ],
+    "inbound": [
+      {
+        "source_id": "mem-001-founding",
+        "link_type": "leads_to",
+        "note": "Founding -> first build session",
+        "created": "2026-02-02T11:27:18.491441"
+      }
+    ]
+  },
+  "mem-011-stellar-delve": {
+    "memory_id": "mem-011-stellar-delve",
+    "outbound": [
+      {
+        "source_id": "mem-011-stellar-delve",
+        "target_id": "mem-009-stellar-delve-overvi",
+        "link_type": "relates_to",
+        "note": "Both about Stellar Delve project",
+        "created": "2026-02-02T11:27:18.532626"
+      }
+    ],
+    "inbound": [
+      {
+        "source_id": "mem-009-stellar-delve-overvi",
+        "link_type": "relates_to",
+        "note": "[inverse] Both about Stellar Delve project",
+        "created": "2026-02-02T11:27:18.532891"
+      }
+    ]
+  },
+  "mem-009-stellar-delve-overvi": {
+    "memory_id": "mem-009-stellar-delve-overvi",
+    "outbound": [
+      {
+        "source_id": "mem-009-stellar-delve-overvi",
+        "target_id": "mem-011-stellar-delve",
+        "link_type": "relates_to",
+        "note": "[inverse] Both about Stellar Delve project",
+        "created": "2026-02-02T11:27:18.532891"
+      }
+    ],
+    "inbound": [
+      {
+        "source_id": "mem-011-stellar-delve",
+        "link_type": "relates_to",
+        "note": "Both about Stellar Delve project",
+        "created": "2026-02-02T11:27:18.532626"
+      }
+    ]
+  },
+  "mem-004-railways": {
+    "memory_id": "mem-004-railways",
+    "outbound": [
+      {
+        "source_id": "mem-004-railways",
+        "target_id": "mem-021-railways-preview-fix",
+        "link_type": "relates_to",
+        "note": "Both about Railways mod",
+        "created": "2026-02-02T11:27:18.575188"
+      },
+      {
+        "source_id": "mem-004-railways",
+        "target_id": "mem-005-llmoblings",
+        "link_type": "relates_to",
+        "note": "[inverse] Both Minecraft mods",
+        "created": "2026-02-02T11:27:18.618883"
+      }
+    ],
+    "inbound": [
+      {
+        "source_id": "mem-021-railways-preview-fix",
+        "link_type": "relates_to",
+        "note": "[inverse] Both about Railways mod",
+        "created": "2026-02-02T11:27:18.575475"
+      },
+      {
+        "source_id": "mem-005-llmoblings",
+        "link_type": "relates_to",
+        "note": "Both Minecraft mods",
+        "created": "2026-02-02T11:27:18.618610"
+      }
+    ]
+  },
+  "mem-021-railways-preview-fix": {
+    "memory_id": "mem-021-railways-preview-fix",
+    "outbound": [
+      {
+        "source_id": "mem-021-railways-preview-fix",
+        "target_id": "mem-004-railways",
+        "link_type": "relates_to",
+        "note": "[inverse] Both about Railways mod",
+        "created": "2026-02-02T11:27:18.575475"
+      }
+    ],
+    "inbound": [
+      {
+        "source_id": "mem-004-railways",
+        "link_type": "relates_to",
+        "note": "Both about Railways mod",
+        "created": "2026-02-02T11:27:18.575188"
+      }
+    ]
+  },
+  "mem-005-llmoblings": {
+    "memory_id": "mem-005-llmoblings",
+    "outbound": [
+      {
+        "source_id": "mem-005-llmoblings",
+        "target_id": "mem-004-railways",
+        "link_type": "relates_to",
+        "note": "Both Minecraft mods",
+        "created": "2026-02-02T11:27:18.618610"
+      }
+    ],
+    "inbound": [
+      {
+        "source_id": "mem-004-railways",
+        "link_type": "relates_to",
+        "note": "[inverse] Both Minecraft mods",
+        "created": "2026-02-02T11:27:18.618883"
+      }
+    ]
+  },
+  "mem-002-deep-dive": {
+    "memory_id": "mem-002-deep-dive",
+    "outbound": [
+      {
+        "source_id": "mem-002-deep-dive",
+        "target_id": "mem-001-founding",
+        "link_type": "elaborates",
+        "note": "Deep dive elaborates on the founding",
+        "created": "2026-02-02T11:27:18.658543"
+      }
+    ],
+    "inbound": [
+      {
+        "source_id": "mem-001-founding",
+        "link_type": "relates_to",
+        "note": "[inverse] Deep dive elaborates on the founding",
+        "created": "2026-02-02T11:27:18.658826"
+      }
+    ]
+  }
+}

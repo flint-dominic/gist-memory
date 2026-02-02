@@ -1,0 +1,170 @@
+{
+  "mem-019-encoder-frame-test": {
+    "memory_id": "mem-019-encoder-frame-test",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-009-stellar-delve-overview": {
+    "memory_id": "mem-009-stellar-delve-overview",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-002-deep-dive": {
+    "memory_id": "mem-002-deep-dive",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-001-founding": {
+    "memory_id": "mem-001-founding",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-018-architecture-expansi": {
+    "memory_id": "mem-018-architecture-expansi",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-010-gist-memory-build": {
+    "memory_id": "mem-010-gist-memory-build",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-007-remus-hardening": {
+    "memory_id": "mem-007-remus-hardening",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-015-sidegigs": {
+    "memory_id": "mem-015-sidegigs",
+    "tier": "cold",
+    "tier_changed": "2026-02-02T11:27:07.860352",
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-017-psu-automation": {
+    "memory_id": "mem-017-psu-automation",
+    "tier": "cold",
+    "tier_changed": "2026-02-02T11:27:07.874602",
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-016-network-dashboard": {
+    "memory_id": "mem-016-network-dashboard",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-005-llmoblings": {
+    "memory_id": "mem-005-llmoblings",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-006-telegram": {
+    "memory_id": "mem-006-telegram",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-003-barzakh": {
+    "memory_id": "mem-003-barzakh",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-008-conversation": {
+    "memory_id": "mem-008-conversation",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-011-stellar-delve": {
+    "memory_id": "mem-011-stellar-delve",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-014-optig": {
+    "memory_id": "mem-014-optig",
+    "tier": "cold",
+    "tier_changed": "2026-02-02T11:27:07.912528",
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-004-railways": {
+    "memory_id": "mem-004-railways",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-013-mtg-trading": {
+    "memory_id": "mem-013-mtg-trading",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-012-asset-lab": {
+    "memory_id": "mem-012-asset-lab",
+    "tier": "cold",
+    "tier_changed": "2026-02-02T11:27:07.959496",
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-021-railways-preview-fix": {
+    "memory_id": "mem-021-railways-preview-fix",
+    "tier": "hot",
+    "tier_changed": null,
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  },
+  "mem-023-cross-session-stabil": {
+    "memory_id": "mem-023-cross-session-stabil",
+    "tier": "cold",
+    "tier_changed": "2026-02-02T11:27:07.970273",
+    "verbatim_archived": false,
+    "archive_path": null,
+    "locked": false
+  }
+}

@@ -25,7 +25,9 @@
     "memory_id": "mem-002-deep-dive",
     "access_count": 4,
     "last_accessed": "2026-02-02T10:35:31.839663",
-    "linked_by": [],
+    "linked_by": [
+      "mem-001-founding"
+    ],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
@@ -36,7 +38,11 @@
     "memory_id": "mem-001-founding",
     "access_count": 3,
     "last_accessed": "2026-02-02T10:31:42.564063",
-    "linked_by": [],
+    "linked_by": [
+      "mem-008-conversation",
+      "mem-010-gist-memory-build",
+      "mem-002-deep-dive"
+    ],
     "repetition_count": 0,
     "explicit_boost": 0.2,
     "decay_immune": true,
@@ -47,7 +53,9 @@
     "memory_id": "mem-018-architecture-expansi",
     "access_count": 3,
     "last_accessed": "2026-02-02T10:43:21.915085",
-    "linked_by": [],
+    "linked_by": [
+      "mem-008-conversation"
+    ],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
@@ -58,7 +66,9 @@
     "memory_id": "mem-010-gist-memory-build",
     "access_count": 3,
     "last_accessed": "2026-02-02T10:34:12.828237",
-    "linked_by": [],
+    "linked_by": [
+      "mem-001-founding"
+    ],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
@@ -113,7 +123,9 @@
     "memory_id": "mem-005-llmoblings",
     "access_count": 1,
     "last_accessed": "2026-02-02T10:43:21.920097",
-    "linked_by": [],
+    "linked_by": [
+      "mem-004-railways"
+    ],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
@@ -146,7 +158,10 @@
     "memory_id": "mem-008-conversation",
     "access_count": 1,
     "last_accessed": "2026-02-02T10:31:42.560285",
-    "linked_by": [],
+    "linked_by": [
+      "mem-001-founding",
+      "mem-018-architecture-expansi"
+    ],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
@@ -157,7 +172,9 @@
     "memory_id": "mem-011-stellar-delve",
     "access_count": 1,
     "last_accessed": "2026-02-02T10:35:31.834722",
-    "linked_by": [],
+    "linked_by": [
+      "mem-009-stellar-delve-overvi"
+    ],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
@@ -179,7 +196,10 @@
     "memory_id": "mem-004-railways",
     "access_count": 2,
     "last_accessed": "2026-02-02T10:55:23.526101",
-    "linked_by": [],
+    "linked_by": [
+      "mem-021-railways-preview-fix",
+      "mem-005-llmoblings"
+    ],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
@@ -212,7 +232,9 @@
     "memory_id": "mem-021-railways-preview-fix",
     "access_count": 2,
     "last_accessed": "2026-02-02T10:55:23.523158",
-    "linked_by": [],
+    "linked_by": [
+      "mem-004-railways"
+    ],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
@@ -226,6 +248,19 @@
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.2,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.5
+  },
+  "mem-009-stellar-delve-overvi": {
+    "memory_id": "mem-009-stellar-delve-overvi",
+    "access_count": 0,
+    "last_accessed": null,
+    "linked_by": [
+      "mem-011-stellar-delve"
+    ],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
     "initial_salience": 0.5
