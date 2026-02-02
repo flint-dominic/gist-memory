@@ -22,6 +22,69 @@ from reinforcement import get_tracker
 # Paths
 WORKSPACE = Path.home() / "clawd"
 CONTEXT_FILE = WORKSPACE / "GIST_CONTEXT.md"
+MEMORY_FILE = WORKSPACE / "MEMORY.md"
+GIST_MARKER_START = "\n<!-- GIST_CONTEXT_START -->\n"
+GIST_MARKER_END = "\n<!-- GIST_CONTEXT_END -->\n"
+
+
+def generate_gist_section() -> str:
+    """Generate the gist memory section content."""
+    identity = get_identity_memories()
+    tracker = get_tracker()
+    stats = tracker.all_stats()
+    
+    lines = [
+        "## Gist Memory (Auto-Injected)",
+        "",
+        f"*Updated: {datetime.now().strftime('%Y-%m-%d %H:%M')} | {stats.get('total_memories', 0)} memories, {stats.get('decay_immune_count', 0)} locked*",
+        "",
+        "### Identity Memories",
+        "",
+    ]
+    
+    # Add identity memories
+    for m in identity[:5]:
+        immune = "🔒" if m['decay_immune'] else ""
+        lines.append(f"**{m['id']}** {immune} (sal: {m['salience']:.2f})")
+        summary = m['summary'].strip()[:150]
+        if len(m['summary']) > 150:
+            summary += "..."
+        lines.append(f"> {summary}")
+        lines.append("")
+    
+    # Add recovery instructions
+    lines.extend([
+        "### Context Recovery",
+        "If context was lost, run: `gist recall 'your topic'`",
+        "",
+    ])
+    
+    return "\n".join(lines)
+
+
+def inject_into_memory_md():
+    """Inject gist context into MEMORY.md."""
+    if not MEMORY_FILE.exists():
+        return False
+    
+    content = MEMORY_FILE.read_text()
+    gist_section = generate_gist_section()
+    
+    # Remove old gist section if present
+    if GIST_MARKER_START in content:
+        before = content.split(GIST_MARKER_START)[0]
+        after_marker = content.split(GIST_MARKER_START)[1]
+        if GIST_MARKER_END in after_marker:
+            after = after_marker.split(GIST_MARKER_END)[1]
+        else:
+            after = ""
+        content = before + after
+    
+    # Add new gist section at the end
+    new_content = content.rstrip() + "\n\n" + GIST_MARKER_START + gist_section + GIST_MARKER_END
+    
+    MEMORY_FILE.write_text(new_content)
+    return True
 
 
 def generate_context_file():
@@ -99,12 +162,20 @@ def main():
     parser.add_argument('--watch', action='store_true', help='Watch mode (regenerate every 5 min)')
     parser.add_argument('--cron', action='store_true', help='Generate once and exit')
     parser.add_argument('--interval', type=int, default=300, help='Watch interval in seconds')
+    parser.add_argument('--memory-md', action='store_true', help='Inject into MEMORY.md instead')
     args = parser.parse_args()
     
     if args.watch:
         watch_mode(args.interval)
+    elif args.memory_md:
+        if inject_into_memory_md():
+            print(f"Injected gist context into {MEMORY_FILE}")
+        else:
+            print(f"Could not inject (MEMORY.md not found)")
     else:
         content = generate_context_file()
+        if inject_into_memory_md():
+            pass  # Also inject into MEMORY.md
         if not args.cron:
             print(content)
         else:
