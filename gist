@@ -89,6 +89,20 @@ print(f'   Total: {len(examples)} memories')
     sleep|sl)
         python src/consolidate.py
         ;;
+    bootstrap|boot)
+        python src/session.py bootstrap
+        ;;
+    identity|id)
+        python src/session.py identity
+        ;;
+    session-start)
+        shift
+        python src/session.py start "$@"
+        ;;
+    session-end)
+        shift
+        python src/session.py end "$@"
+        ;;
     help|--help|-h)
         echo "Gist Memory CLI"
         echo ""
@@ -108,6 +122,12 @@ print(f'   Total: {len(examples)} memories')
         echo "  decay [threshold]  Show memories fading below threshold (default 0.3)"
         echo "  reinforce-stats    Show reinforcement statistics"
         echo "  sleep              Consolidation analysis (what could be merged)"
+        echo ""
+        echo "Session Integration:"
+        echo "  bootstrap          Load identity + context for session start"
+        echo "  identity           List core identity memories"
+        echo "  session-start      Log session start, get context"
+        echo "  session-end        Get encoding prompt for session end"
         echo ""
         echo "Examples:"
         echo "  gist recall 'what is fuzzy trace theory'"
