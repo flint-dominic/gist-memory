@@ -1,0 +1,103 @@
+# Memory Entry: Steam 'n' Rails Debugging
+# Fixing grey phantom curved rails in Minecraft mod
+# 2025-01-29
+
+id: mem-004-railways
+timestamp: 2025-01-29T12:00:00-08:00
+type: debugging
+
+gist:
+  frames:
+    - debugging                  # Finding what's wrong
+    - code_craft                 # Gradle, build config
+    - game_development           # Minecraft modding
+    - problem_solving            # Concrete issue to fix
+    - collaborative_exploration  # Working through it together
+  
+  emotional_tone:
+    - focused
+    - methodical
+    - triumphant         # When we found it
+    - industrious
+  
+  salience: 0.75                 # Technical but valuable pattern
+  confidence: 0.9
+  source: encoded
+
+verbatim:
+  stored:
+    symptom:
+      value: "Narrow and wide gauge phantom curved tracks rendered solid grey"
+      context: "Straight tracks fine, regular phantom fine, only curved bezier affected"
+      confidence: 0.95
+    
+    root_cause:
+      value: "src/resources/ not included in Gradle build"
+      context: "JAR contained auto-generated models, not hand-crafted ones with texture refs"
+      confidence: 0.95
+    
+    fix_pattern:
+      value: "Add resources.srcDir('src/resources') with duplicatesStrategy EXCLUDE"
+      context: "First source wins when duplicates exist"
+      confidence: 0.95
+    
+    jar_inspection:
+      value: "unzip -p mod.jar 'assets/path/to/model.json'"
+      context: "Key debugging technique - check what's IN the JAR, not source"
+      confidence: 0.9
+    
+    two_machine_workflow:
+      value: "cthonian (edit) → rsync → yogsothoth (build/test)"
+      context: "IntelliJ on cthonian, Java 21 on yogsothoth, tmux for test server"
+      confidence: 0.9
+    
+    red_herrings:
+      value: "PhantomSpriteManager, MixinTrackBlockClient, mcmeta files"
+      context: "Investigated but weren't the issue - visibility logic was fine"
+      confidence: 0.85
+
+  reconstructable:
+    exact_file_paths:
+      hint: "Various .json and .java files in Railway-1.21.1"
+      reconstruction_confidence: 0.4
+      FLAGGED: true
+    
+    full_gradle_config:
+      hint: "build.gradle.kts with sourceSets configuration"
+      reconstruction_confidence: 0.5
+      FLAGGED: true
+
+metadata:
+  participant: gblfxt
+  session_key: agent:main:minecraft
+  session_type: webchat
+  duration_estimate: "2-3 hours"
+  
+  related_entries: []
+  
+  tags:
+    - minecraft
+    - modding
+    - debugging
+    - gradle
+    - steam-n-rails
+    - neoforge
+
+summary: |
+  Debugging phantom curved rail rendering in Steam 'n' Rails Minecraft mod. 
+  Tracks showed solid grey instead of phantom texture. Chased several red 
+  herrings (visibility logic, sprite managers). Key breakthrough: inspected 
+  actual JAR contents vs source files - they differed. Root cause was Gradle 
+  not including src/resources/ directory. Fix: add sourceSets.resources.srcDir 
+  with duplicatesStrategy EXCLUDE so hand-crafted models override generated ones.
+  Lesson: always check what's IN the artifact, not just the source.
+
+retrieval_hints:
+  - "grey texture minecraft"
+  - "phantom track rendering"
+  - "gradle resources not included"
+  - "steam n rails debugging"
+  - "jar contents different from source"
+  - "minecraft mod build issue"
+  - "neoforge modding"
+  - "railways mod"

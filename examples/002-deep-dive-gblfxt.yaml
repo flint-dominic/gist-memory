@@ -1,0 +1,112 @@
+# Memory Entry: Deep Dive into gblfxt's World
+# The session where I really learned who my human is
+# 2026-01-28
+
+id: mem-002-deep-dive
+timestamp: 2026-01-28T12:00:00-08:00
+type: conversation
+
+gist:
+  frames:
+    - research_discovery         # Exploring files, learning
+    - collaborative_exploration  # Working together
+    - context_recovery           # Building understanding
+    - system_administration      # Node setup, network stuff
+    - creator_creation           # Learning about my human
+  
+  emotional_tone:
+    - curious
+    - thorough
+    - warm
+    - industrious
+  
+  salience: 0.9                  # Very important - foundational knowledge
+  confidence: 0.9
+  source: encoded
+
+verbatim:
+  stored:
+    mercy_node:
+      value: "Windows desktop connected as Clawdbot node"
+      context: "Browser control working, exec needs approval"
+      confidence: 0.9
+    
+    joplin_discovery:
+      value: "65 notebooks, 10MB database"
+      context: "SQLite at ~/snap/joplin-desktop/current/.config/joplin-desktop/database.sqlite"
+      confidence: 0.95
+    
+    stellar_delve_races:
+      value: "Morphlings, Silicon Crystallites, Void Wisps, Fungaloids, Mechalings, Aquaforms"
+      context: "UE5 space colony sim, underground asteroid, multi-Z-level"
+      confidence: 0.9
+    
+    network_dashboard:
+      value: "gertrude:8081, detects 40+ devices, 17 WiFi networks"
+      context: "Fixed WiFi scanning to use nmcli instead of sudo"
+      confidence: 0.85
+    
+    psu_work:
+      value: "PowerShell Universal 4.0.2+, 13 dashboards"
+      context: "mercy:X:\\coding\\powershell\\psu_v4\\"
+      confidence: 0.9
+    
+    gaming_depth:
+      value: "75 gaming notes, deep into modded Minecraft"
+      context: "Cobblemon, AE2, FTB quests"
+      confidence: 0.85
+    
+    career_context:
+      value: "Sysadmin-turned-indie-game-dev, years of enterprise IT"
+      context: "Citrix/XenApp, Dell contracts, career transition"
+      confidence: 0.9
+    
+    ai_power_user:
+      value: "Compares Claude/ChatGPT/Gemini, runs Ollama/LM Studio, ComfyUI"
+      context: "Using AI as creative multiplier, not toy"
+      confidence: 0.95
+
+  reconstructable:
+    exact_file_paths:
+      hint: "Many paths browsed, specifics fading"
+      reconstruction_confidence: 0.4
+      FLAGGED: true
+    
+    network_device_macs:
+      hint: "Identified several devices by MAC, details in notes"
+      reconstruction_confidence: 0.3
+      FLAGGED: true
+
+metadata:
+  participant: gblfxt
+  session_key: agent:main:main
+  session_type: telegram
+  duration_estimate: "4-6 hours"
+  
+  related_entries:
+    - mem-001-founding
+  
+  tags:
+    - foundational
+    - getting-to-know
+    - network
+    - projects
+    - multi-node
+
+summary: |
+  The day I really learned who gblfxt is. Set up mercy as a Clawdbot node, 
+  explored their file systems, dug into Joplin notes. Discovered the depth: 
+  serious game developer (Stellar Delve with 6 alien races), enterprise IT 
+  background (PowerShell Universal, Citrix), AI power user who compares 
+  outputs across systems. 75 gaming notes, modded Minecraft obsession. 
+  Updated USER.md and created MEMORY.md with what I learned.
+
+retrieval_hints:
+  - "when did I learn about gblfxt"
+  - "mercy node setup"
+  - "joplin notes"
+  - "stellar delve alien races"
+  - "morphlings crystallites"
+  - "network dashboard gertrude"
+  - "getting to know human"
+  - "career history"
