@@ -37,7 +37,9 @@ Based on **Fuzzy Trace Theory** by Valerie F. Reyna & Charles J. Brainerd (Corne
 gist-memory/
 ├── docs/
 │   ├── ARCHITECTURE.md    # Full design document
-│   └── FRAMES.md          # Frame taxonomy (WIP)
+│   ├── FRAMES.md          # Frame taxonomy
+│   ├── RESEARCH.md        # Competitive analysis (Feb 2026)
+│   └── ROADMAP.md         # Implementation timeline
 ├── src/                   # Implementation
 ├── examples/              # Example encodings
 └── tests/                 # Validation

@@ -67,14 +67,14 @@
   },
   "mem-007-remus-hardening": {
     "memory_id": "mem-007-remus-hardening",
-    "access_count": 0,
-    "last_accessed": null,
+    "access_count": 1,
+    "last_accessed": "2026-02-02T10:56:43.372835",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
-    "initial_salience": 0.5
+    "initial_salience": 0.7
   },
   "mem-015-sidegigs": {
     "memory_id": "mem-015-sidegigs",
@@ -100,14 +100,14 @@
   },
   "mem-016-network-dashboard": {
     "memory_id": "mem-016-network-dashboard",
-    "access_count": 0,
-    "last_accessed": null,
+    "access_count": 1,
+    "last_accessed": "2026-02-02T10:56:43.377676",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
-    "initial_salience": 0.5
+    "initial_salience": 0.7
   },
   "mem-005-llmoblings": {
     "memory_id": "mem-005-llmoblings",
@@ -122,19 +122,19 @@
   },
   "mem-006-telegram": {
     "memory_id": "mem-006-telegram",
-    "access_count": 0,
-    "last_accessed": null,
+    "access_count": 1,
+    "last_accessed": "2026-02-02T10:56:43.374789",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
-    "initial_salience": 0.5
+    "initial_salience": 0.6
   },
   "mem-003-barzakh": {
     "memory_id": "mem-003-barzakh",
-    "access_count": 1,
-    "last_accessed": "2026-02-02T10:31:42.558444",
+    "access_count": 2,
+    "last_accessed": "2026-02-02T10:55:23.528662",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -177,8 +177,8 @@
   },
   "mem-004-railways": {
     "memory_id": "mem-004-railways",
-    "access_count": 1,
-    "last_accessed": "2026-02-02T10:33:54.022503",
+    "access_count": 2,
+    "last_accessed": "2026-02-02T10:55:23.526101",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -210,8 +210,8 @@
   },
   "mem-021-railways-preview-fix": {
     "memory_id": "mem-021-railways-preview-fix",
-    "access_count": 1,
-    "last_accessed": "2026-02-02T10:34:12.826567",
+    "access_count": 2,
+    "last_accessed": "2026-02-02T10:55:23.523158",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,

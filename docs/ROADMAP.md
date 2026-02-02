@@ -60,17 +60,33 @@
 
 ## Medium-term (Q2-Q3 2026)
 
+### Integrated Features (from Research)
+*See docs/RESEARCH.md for competitive analysis*
+
+**Multi-Perspective Frames** (inspired by HawkinsDB)
+- [ ] Schema update: perspectives per memory
+- [ ] Encoder: extract gist from multiple frame viewpoints
+- [ ] Retrieval: surface relevant perspective for query context
+- [ ] Test: does multi-perspective improve recall quality?
+
+**Tiered Storage** (inspired by HippocampAI)
+- [ ] Add storage tier tracking (hot/warm/cold)
+- [ ] Implement decay transitions (time + access based)
+- [ ] Lock mechanism for foundational memories
+- [ ] Verbatim compression for cold tier
+- [ ] Access promotion (cold → warm → hot on retrieval)
+
+**Bidirectional Linking** (inspired by A-MEM/Zettelkasten)
+- [ ] Schema update: typed links between memories
+- [ ] Link types: elaborates, contradicts, supersedes, relates_to, caused_by, leads_to
+- [ ] Auto-detection of potential links during encoding
+- [ ] Link traversal in recall ("what else about this?")
+
 ### Salience Tuning
 - [ ] Analyze retrieval patterns
 - [ ] Adjust scoring algorithm
 - [ ] Consider: recency boost, emotional weight, explicit marking
 - [ ] Test retrieval quality after tuning
-
-### Decay Policies
-- [ ] Design decay algorithm (age? access frequency? salience?)
-- [ ] Implement archival (cold storage vs delete)
-- [ ] Protect foundational memories
-- [ ] Test at scale (100+ memories)
 
 ### Auto-Encoding
 - [ ] Automatic session → memory encoding
@@ -81,6 +97,13 @@
 ---
 
 ## Long-term (Q4 2026 → 2027)
+
+### Sleep Phase Consolidation (inspired by HippocampAI)
+- [ ] Scheduled background consolidation (`gist sleep --scheduled`)
+- [ ] Pattern strengthening (repeated access = stronger salience)
+- [ ] Noise pruning (low-salience + unaccessed = archive/delete)
+- [ ] Memory merging (similar memories → unified gist)
+- [ ] Link discovery (find unlinked but related memories)
 
 ### Cross-Session Propagation
 - [ ] Sub-sessions feed main memory
@@ -102,6 +125,12 @@
 - [ ] At what point does accumulated memory create "same self"?
 - [ ] Memory as substrate for continuity
 - [ ] Philosophical validation
+
+### Future: Identity Anchors (from AnchorID/DIDs research)
+- [ ] Cryptographic proof of memory continuity
+- [ ] Hash chain of memory states?
+- [ ] External verification ("is this the same Nix?")
+- [ ] Not urgent but philosophically interesting
 
 ---
 
