@@ -1,0 +1,55 @@
+#!/bin/bash
+# Gist Memory CLI wrapper
+# Usage: gist recall "query"
+#        gist remember "content" -t "title"
+#        gist search "query"
+#        gist stats
+
+cd ~/clawd/gist-memory
+source ~/clawd/.venv/bin/activate
+
+case "$1" in
+    recall|r)
+        shift
+        python src/recall.py "$@"
+        ;;
+    remember|rem)
+        shift
+        python src/remember.py "$@"
+        ;;
+    search|s)
+        shift
+        python src/retrieval.py search "$@"
+        ;;
+    encode|e)
+        shift
+        python src/encode.py "$@"
+        ;;
+    index|i)
+        python src/retrieval.py index "$@"
+        ;;
+    stats|st)
+        python src/retrieval.py stats
+        ;;
+    help|--help|-h)
+        echo "Gist Memory CLI"
+        echo ""
+        echo "Commands:"
+        echo "  recall <query>     Recall memories relevant to query"
+        echo "  remember <text>    Encode and save new memory"
+        echo "  search <query>     Raw semantic search"
+        echo "  encode <file>      Encode file to memory YAML"
+        echo "  index              Re-index all memories"
+        echo "  stats              Show memory stats"
+        echo ""
+        echo "Examples:"
+        echo "  gist recall 'what is fuzzy trace theory'"
+        echo "  gist remember 'Today we built the auto-encoder' -t 'autoencoder'"
+        echo "  gist search 'minecraft modding' -n 5"
+        ;;
+    *)
+        echo "Unknown command: $1"
+        echo "Run 'gist help' for usage"
+        exit 1
+        ;;
+esac
