@@ -107,6 +107,10 @@ print(f'   Total: {len(examples)} memories')
         shift
         python ~/clawd/memory/unified_recall.py "$@"
         ;;
+    inject)
+        shift
+        python src/inject.py "$@"
+        ;;
     help|--help|-h)
         echo "Gist Memory CLI"
         echo ""

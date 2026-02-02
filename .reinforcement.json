@@ -12,8 +12,8 @@
   },
   "mem-009-stellar-delve-overview": {
     "memory_id": "mem-009-stellar-delve-overview",
-    "access_count": 3,
-    "last_accessed": "2026-02-02T10:33:54.027405",
+    "access_count": 4,
+    "last_accessed": "2026-02-02T10:35:31.836575",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -23,8 +23,8 @@
   },
   "mem-002-deep-dive": {
     "memory_id": "mem-002-deep-dive",
-    "access_count": 3,
-    "last_accessed": "2026-02-02T10:31:42.415527",
+    "access_count": 4,
+    "last_accessed": "2026-02-02T10:35:31.839663",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -155,14 +155,14 @@
   },
   "mem-011-stellar-delve": {
     "memory_id": "mem-011-stellar-delve",
-    "access_count": 0,
-    "last_accessed": null,
+    "access_count": 1,
+    "last_accessed": "2026-02-02T10:35:31.834722",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
-    "initial_salience": 0.5
+    "initial_salience": 0.95
   },
   "mem-014-optig": {
     "memory_id": "mem-014-optig",
