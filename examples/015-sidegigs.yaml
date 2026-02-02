@@ -1,0 +1,118 @@
+# Memory Entry: Side Gigs / Career Planning
+# Job hunting automation + Native Federal Solutions roadmap
+# Personal career development
+
+id: mem-015-sidegigs
+timestamp: 2026-02-02T09:25:00-08:00
+type: planning
+
+gist:
+  frames:
+    - decision_making           # Career planning
+    - code_craft                # Automation tools
+    - problem_solving           # Income generation
+    - architecture_design       # Business building
+  
+  emotional_tone:
+    - pragmatic
+    - hopeful
+    - strategic
+    - resilient
+  
+  salience: 0.85                # Important life/career planning
+  confidence: 0.9
+  source: encoded
+
+verbatim:
+  stored:
+    job_hunter_tool:
+      value: "Python automation searching Indeed, ZipRecruiter, Upwork, SAM.gov"
+      context: "SQLite tracking, skill matching, HTML reports"
+      confidence: 0.9
+    
+    target_skills:
+      value: "AWS, Azure, GCP, Azure Stack HCI, Kubernetes, Docker, Terraform, Ansible, Python, PowerShell"
+      context: "Cloud/DevOps contract opportunities"
+      confidence: 0.95
+    
+    federal_creds:
+      value: "CAGE Code 14KA2, UEI R75TGJ48AMZ1, Small Disadvantaged Business"
+      context: "Native American-owned status for federal contracting"
+      confidence: 0.95
+    
+    native_federal_solutions:
+      value: "Federal contracting consulting agency leveraging Native American preference"
+      context: "Goal: $200K+ annual revenue by January 2027"
+      confidence: 0.9
+    
+    business_model:
+      value: "15% success fees on contracts, $5K 8(a) certification help, $2K proposal writing"
+      context: "Revenue from helping Native businesses win federal contracts"
+      confidence: 0.9
+    
+    competitive_edge:
+      value: "Native status + enterprise tech experience (Google, BofA, Wells Fargo)"
+      context: "Unique positioning in federal contracting space"
+      confidence: 0.9
+    
+    target_rate:
+      value: "$85-100/hour starting rate for contract work"
+      context: "Cloud/DevOps consulting rates"
+      confidence: 0.85
+    
+    project_location:
+      value: "yogsothoth:/home/critic/projects/sidegigs/"
+      context: "Job hunting tools and planning docs"
+      confidence: 0.95
+
+  reconstructable:
+    specific_applications:
+      hint: "Job search results in JSON files from Aug 2025"
+      reconstruction_confidence: 0.4
+      FLAGGED: true
+    
+    full_roadmap_tasks:
+      hint: "Detailed monthly tasks in ROADMAP_2027.md"
+      reconstruction_confidence: 0.5
+      FLAGGED: true
+
+metadata:
+  participant: gblfxt
+  session_key: personal
+  session_type: planning
+  duration_estimate: "ongoing - August 2025 major work"
+  
+  related_entries:
+    - mem-002-deep-dive
+  
+  tags:
+    - career
+    - job-hunting
+    - federal-contracting
+    - native-american
+    - devops
+    - cloud
+    - consulting
+    - automation
+
+summary: |
+  Side Gigs project combines job hunting automation and career planning. 
+  The job hunter tool automates searching Indeed, ZipRecruiter, Upwork, 
+  and SAM.gov for cloud/DevOps contracts with skill matching and tracking. 
+  Longer-term plan: Native Federal Solutions - a consulting agency helping 
+  Native American businesses win federal contracts, leveraging gblfxt's 
+  Native status (CAGE Code 14KA2), enterprise experience (Google, BofA, 
+  Wells Fargo), and technical expertise. Business model: 15% success fees 
+  on contracts plus flat fees for certification help. Goal: $200K+ annual 
+  revenue by January 2027 to achieve self-sufficiency.
+
+retrieval_hints:
+  - "job hunting"
+  - "side gigs"
+  - "federal contracting"
+  - "native american business"
+  - "career planning"
+  - "cage code"
+  - "consulting business"
+  - "devops contracts"
+  - "upwork"
