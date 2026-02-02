@@ -1,0 +1,130 @@
+# Memory Entry: Stellar Delve Project
+# Dwarf Fortress-inspired space colony sim in UE5.7
+# Major game development project
+
+id: mem-011-stellar-delve
+timestamp: 2026-02-02T09:15:00-08:00
+type: project
+
+gist:
+  frames:
+    - game_development          # Core domain
+    - architecture_design       # Complex systems
+    - creative_work             # Worldbuilding
+    - collaborative_exploration # Building together
+  
+  emotional_tone:
+    - ambitious
+    - creative
+    - systematic
+    - passionate
+  
+  salience: 0.95                # Major project - very high importance
+  confidence: 0.95
+  source: encoded
+
+verbatim:
+  stored:
+    core_concept:
+      value: "Dwarf Fortress-inspired space colony sim, underground asteroid bases, Z-levels"
+      context: "UE5.7, C++ with Blueprint support, 4-player co-op"
+      confidence: 0.95
+    
+    autonomous_workers:
+      value: "Workers are autonomous agents with utility-based AI, LLM director optional, player optional"
+      context: "Fun comes from watching AI handle procedural chaos and emergent stories"
+      confidence: 0.95
+    
+    core_loop:
+      value: "Mine → Craft → Build → Expand → Scout new planets → Find void materials → Escape/Conquer"
+      context: "Colony survival with exploration progression"
+      confidence: 0.95
+    
+    planet_types:
+      value: "Barren (starter), Frozen (crystals), Volcanic (energy), Temperate (farming), Toxic (exotic), Void (endgame)"
+      context: "6 planet types with unique resources and challenges"
+      confidence: 0.95
+    
+    utility_ai:
+      value: "Utility = BaseValue × NeedMultiplier × SkillBonus × DistancePenalty × PriorityWeight"
+      context: "Workers evaluate all actions, highest score wins"
+      confidence: 0.9
+    
+    completed_systems:
+      value: "Crafting (30 recipes), Power grid, Food/survival, Research tree (15+ techs), Stockpiles"
+      context: "Most core systems implemented per TODO.md"
+      confidence: 0.9
+    
+    tech_stack:
+      value: "UE5.7, C++, Iris replication for networking, instanced static meshes for voxel terrain"
+      context: "Dedicated server with headless mode"
+      confidence: 0.95
+    
+    alien_races:
+      value: "Morphlings, Silicon Crystallites, Void Wisps, Fungaloids, Mechalings, Aquaforms"
+      context: "Multiple colonist races with unique traits (from earlier Joplin notes)"
+      confidence: 0.85
+    
+    build_workflow:
+      value: "make build && make test-quick — uses StellarDelveEditor target due to NullRHI bug"
+      context: "Makefile-based workflow, xvfb-run for headless testing"
+      confidence: 0.9
+    
+    project_location:
+      value: "/mnt/ai/projects/stellar_delve/"
+      context: "Also on Gitea at yogsothoth"
+      confidence: 0.95
+
+  reconstructable:
+    all_30_recipes:
+      hint: "Full recipe list in ProductionManagerSubsystem"
+      reconstruction_confidence: 0.4
+      FLAGGED: true
+    
+    full_tech_tree:
+      hint: "15+ techs in Research/ResearchTypes.h, needs expansion"
+      reconstruction_confidence: 0.4
+      FLAGGED: true
+
+metadata:
+  participant: gblfxt
+  session_key: multiple
+  session_type: project
+  duration_estimate: "ongoing - months of work"
+  
+  related_entries:
+    - mem-002-deep-dive
+    - mem-009-stellar-delve-overview
+  
+  tags:
+    - stellar-delve
+    - game-dev
+    - unreal-engine
+    - colony-sim
+    - dwarf-fortress
+    - ai-npcs
+    - ue5
+
+summary: |
+  Stellar Delve is gblfxt's major game project — a Dwarf Fortress-inspired 
+  space colony sim in Unreal Engine 5.7. Core vision: workers are autonomous 
+  agents using utility-based AI, with optional LLM director and player. 
+  Features 100x100 tiles with Z-levels, 4-player co-op, 6 planet types 
+  (Barren→Void progression), and deep systems (crafting, power, research, 
+  survival). Most core systems complete. Uses C++ with Blueprints, Iris 
+  networking, instanced meshes for voxel terrain. Multiple alien races 
+  (Morphlings, Crystallites, Void Wisps, etc.). Active development with 
+  Makefile workflow and headless testing.
+
+retrieval_hints:
+  - "stellar delve"
+  - "colony sim"
+  - "dwarf fortress inspired"
+  - "unreal engine game"
+  - "autonomous workers"
+  - "utility ai"
+  - "space colony"
+  - "z-levels mining"
+  - "void materials"
+  - "planet types"
+  - "gblfxt main game"
