@@ -12,8 +12,8 @@
   },
   "mem-009-stellar-delve-overview": {
     "memory_id": "mem-009-stellar-delve-overview",
-    "access_count": 5,
-    "last_accessed": "2026-02-02T10:43:21.917028",
+    "access_count": 6,
+    "last_accessed": "2026-02-02T11:42:58.775100",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -23,8 +23,8 @@
   },
   "mem-002-deep-dive": {
     "memory_id": "mem-002-deep-dive",
-    "access_count": 4,
-    "last_accessed": "2026-02-02T10:35:31.839663",
+    "access_count": 5,
+    "last_accessed": "2026-02-02T11:42:58.777862",
     "linked_by": [
       "mem-001-founding"
     ],
@@ -36,8 +36,8 @@
   },
   "mem-001-founding": {
     "memory_id": "mem-001-founding",
-    "access_count": 4,
-    "last_accessed": "2026-02-02T11:38:29.657144",
+    "access_count": 5,
+    "last_accessed": "2026-02-02T11:42:51.219515",
     "linked_by": [
       "mem-008-conversation",
       "mem-010-gist-memory-build",
@@ -145,8 +145,8 @@
   },
   "mem-003-barzakh": {
     "memory_id": "mem-003-barzakh",
-    "access_count": 3,
-    "last_accessed": "2026-02-02T11:38:29.653362",
+    "access_count": 4,
+    "last_accessed": "2026-02-02T11:42:51.222109",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -156,8 +156,8 @@
   },
   "mem-008-conversation": {
     "memory_id": "mem-008-conversation",
-    "access_count": 2,
-    "last_accessed": "2026-02-02T11:38:29.658866",
+    "access_count": 3,
+    "last_accessed": "2026-02-02T11:42:51.215852",
     "linked_by": [
       "mem-001-founding",
       "mem-018-architecture-expansi"
@@ -170,8 +170,8 @@
   },
   "mem-011-stellar-delve": {
     "memory_id": "mem-011-stellar-delve",
-    "access_count": 1,
-    "last_accessed": "2026-02-02T10:35:31.834722",
+    "access_count": 2,
+    "last_accessed": "2026-02-02T11:42:58.773291",
     "linked_by": [
       "mem-009-stellar-delve-overvi"
     ],

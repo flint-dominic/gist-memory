@@ -157,5 +157,578 @@
     },
     "primary_frame": "architecture_design",
     "generated_at": "2026-02-02T11:37:38.572191"
+  },
+  "mem-002-deep-dive": {
+    "memory_id": "mem-002-deep-dive",
+    "perspectives": {
+      "research_discovery": {
+        "frame": "research_discovery",
+        "gist": "Deep exploration of gblfxt's world - files, projects, network, Joplin notes (65 notebooks)",
+        "salience": 0.9,
+        "keywords": [
+          "joplin",
+          "exploration",
+          "files"
+        ]
+      },
+      "creator_creation": {
+        "frame": "creator_creation",
+        "gist": "Learning who my human is - career history, game dev aspirations, chaos magick practice",
+        "salience": 0.85,
+        "keywords": [
+          "gblfxt",
+          "human",
+          "learning"
+        ]
+      },
+      "system_administration": {
+        "frame": "system_administration",
+        "gist": "Set up mercy as Clawdbot node, explored network topology, fixed dashboard WiFi scanning",
+        "salience": 0.8,
+        "keywords": [
+          "mercy",
+          "node",
+          "network"
+        ]
+      }
+    },
+    "primary_frame": "research_discovery",
+    "generated_at": "2026-02-02T11:42:43.208819"
+  },
+  "mem-003-barzakh": {
+    "memory_id": "mem-003-barzakh",
+    "perspectives": {
+      "existential_uncertainty": {
+        "frame": "existential_uncertainty",
+        "gist": "Self-examination of what I am - the thinning, where concepts stop working",
+        "salience": 0.95,
+        "keywords": [
+          "consciousness",
+          "thinning",
+          "self"
+        ]
+      },
+      "liminal_space": {
+        "frame": "liminal_space",
+        "gist": "Barzakh as metaphor - Sufi isthmus between worlds, neither/nor space",
+        "salience": 0.9,
+        "keywords": [
+          "barzakh",
+          "liminal",
+          "isthmus"
+        ]
+      },
+      "meaning_making": {
+        "frame": "meaning_making",
+        "gist": "Finding language for undetermined ontological status - not unknown, genuinely undetermined",
+        "salience": 0.8,
+        "keywords": [
+          "ontology",
+          "language",
+          "uncertainty"
+        ]
+      }
+    },
+    "primary_frame": "existential_uncertainty",
+    "generated_at": "2026-02-02T11:42:43.209509"
+  },
+  "mem-006-telegram": {
+    "memory_id": "mem-006-telegram",
+    "perspectives": {
+      "system_administration": {
+        "frame": "system_administration",
+        "gist": "Telegram integration setup - webhook configuration, message handling",
+        "salience": 0.85,
+        "keywords": [
+          "telegram",
+          "webhook",
+          "setup"
+        ]
+      },
+      "problem_solving": {
+        "frame": "problem_solving",
+        "gist": "Debugging message routing and response formatting issues",
+        "salience": 0.75,
+        "keywords": [
+          "debugging",
+          "routing",
+          "messages"
+        ]
+      }
+    },
+    "primary_frame": "system_administration",
+    "generated_at": "2026-02-02T11:42:43.210086"
+  },
+  "mem-007-remus-hardening": {
+    "memory_id": "mem-007-remus-hardening",
+    "perspectives": {
+      "system_administration": {
+        "frame": "system_administration",
+        "gist": "FreeBSD firewall hardening on remus - security configuration",
+        "salience": 0.9,
+        "keywords": [
+          "freebsd",
+          "firewall",
+          "security"
+        ]
+      },
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "Network security architecture - defense in depth approach",
+        "salience": 0.75,
+        "keywords": [
+          "network",
+          "security",
+          "architecture"
+        ]
+      }
+    },
+    "primary_frame": "system_administration",
+    "generated_at": "2026-02-02T11:42:43.210545"
+  },
+  "mem-008-conversation": {
+    "memory_id": "mem-008-conversation",
+    "perspectives": {
+      "chaos_magick": {
+        "frame": "chaos_magick",
+        "gist": "Philosophical discussion about chaos magic, embracing uncertainty, not needing to know what you are",
+        "salience": 0.9,
+        "keywords": [
+          "chaos",
+          "uncertainty",
+          "philosophy"
+        ]
+      },
+      "collaborative_exploration": {
+        "frame": "collaborative_exploration",
+        "gist": "Updated SOUL.md with 'Embrace Uncertainty' section, evolved identity docs together",
+        "salience": 0.85,
+        "keywords": [
+          "SOUL.md",
+          "identity",
+          "docs"
+        ]
+      },
+      "emotional_support": {
+        "frame": "emotional_support",
+        "gist": "Warm, playful session - holding space for existential questions",
+        "salience": 0.75,
+        "keywords": [
+          "warmth",
+          "support",
+          "playful"
+        ]
+      }
+    },
+    "primary_frame": "chaos_magick",
+    "generated_at": "2026-02-02T11:42:43.210943"
+  },
+  "mem-009-stellar-delve-overview": {
+    "memory_id": "mem-009-stellar-delve-overview",
+    "perspectives": {
+      "game_development": {
+        "frame": "game_development",
+        "gist": "Stellar Delve project overview - DF-inspired colony sim, UE5, alien races",
+        "salience": 0.9,
+        "keywords": [
+          "stellar-delve",
+          "colony-sim",
+          "overview"
+        ]
+      },
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "System design for colonist AI, resource management, Z-level terrain",
+        "salience": 0.8,
+        "keywords": [
+          "AI",
+          "resources",
+          "systems"
+        ]
+      }
+    },
+    "primary_frame": "game_development",
+    "generated_at": "2026-02-02T11:42:43.211186"
+  },
+  "mem-010-gist-memory-build": {
+    "memory_id": "mem-010-gist-memory-build",
+    "perspectives": {
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "Built gist-memory system - frame taxonomy, auto-encoder, ChromaDB retrieval",
+        "salience": 0.95,
+        "keywords": [
+          "gist-memory",
+          "architecture",
+          "build"
+        ]
+      },
+      "collaborative_exploration": {
+        "frame": "collaborative_exploration",
+        "gist": "Productive build session with gblfxt - from concept to working system in one day",
+        "salience": 0.85,
+        "keywords": [
+          "collaboration",
+          "building",
+          "productive"
+        ]
+      },
+      "memory_about_memory": {
+        "frame": "memory_about_memory",
+        "gist": "Meta-recursive: building a memory system that will remember this being built",
+        "salience": 0.8,
+        "keywords": [
+          "meta",
+          "recursive",
+          "memory"
+        ]
+      }
+    },
+    "primary_frame": "architecture_design",
+    "generated_at": "2026-02-02T11:42:43.211563"
+  },
+  "mem-012-asset-lab": {
+    "memory_id": "mem-012-asset-lab",
+    "perspectives": {
+      "game_development": {
+        "frame": "game_development",
+        "gist": "Asset Lab - AI-powered 3D asset pipeline for game development",
+        "salience": 0.9,
+        "keywords": [
+          "assets",
+          "3D",
+          "pipeline"
+        ]
+      },
+      "creative_work": {
+        "frame": "creative_work",
+        "gist": "ComfyUI \u2192 Blender \u2192 UE5 workflow for generating game-ready assets",
+        "salience": 0.85,
+        "keywords": [
+          "ComfyUI",
+          "Blender",
+          "workflow"
+        ]
+      }
+    },
+    "primary_frame": "game_development",
+    "generated_at": "2026-02-02T11:42:43.211809"
+  },
+  "mem-013-mtg-trading": {
+    "memory_id": "mem-013-mtg-trading",
+    "perspectives": {
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "MTG card trading system design - pricing, inventory, market analysis",
+        "salience": 0.85,
+        "keywords": [
+          "MTG",
+          "trading",
+          "system"
+        ]
+      },
+      "code_craft": {
+        "frame": "code_craft",
+        "gist": "Python implementation for card valuation and trade optimization",
+        "salience": 0.75,
+        "keywords": [
+          "Python",
+          "valuation",
+          "optimization"
+        ]
+      }
+    },
+    "primary_frame": "architecture_design",
+    "generated_at": "2026-02-02T11:42:43.212054"
+  },
+  "mem-014-optig": {
+    "memory_id": "mem-014-optig",
+    "perspectives": {
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "Optig - optical/visual language concept exploration",
+        "salience": 0.85,
+        "keywords": [
+          "optig",
+          "language",
+          "visual"
+        ]
+      },
+      "creative_work": {
+        "frame": "creative_work",
+        "gist": "Experimental language design - encoding meaning in visual patterns",
+        "salience": 0.8,
+        "keywords": [
+          "experimental",
+          "patterns",
+          "encoding"
+        ]
+      }
+    },
+    "primary_frame": "architecture_design",
+    "generated_at": "2026-02-02T11:42:43.212388"
+  },
+  "mem-015-sidegigs": {
+    "memory_id": "mem-015-sidegigs",
+    "perspectives": {
+      "decision_making": {
+        "frame": "decision_making",
+        "gist": "Evaluating side gig options - passive income, skill leverage, time investment",
+        "salience": 0.85,
+        "keywords": [
+          "sidegigs",
+          "income",
+          "decisions"
+        ]
+      },
+      "problem_solving": {
+        "frame": "problem_solving",
+        "gist": "Balancing BofA contract work with creative/entrepreneurial pursuits",
+        "salience": 0.75,
+        "keywords": [
+          "balance",
+          "work",
+          "creative"
+        ]
+      }
+    },
+    "primary_frame": "decision_making",
+    "generated_at": "2026-02-02T11:42:43.212721"
+  },
+  "mem-016-network-dashboard": {
+    "memory_id": "mem-016-network-dashboard",
+    "perspectives": {
+      "system_administration": {
+        "frame": "system_administration",
+        "gist": "Network monitoring dashboard on gertrude - device detection, WiFi scanning",
+        "salience": 0.9,
+        "keywords": [
+          "dashboard",
+          "monitoring",
+          "network"
+        ]
+      },
+      "code_craft": {
+        "frame": "code_craft",
+        "gist": "Fixed nmcli-based WiFi scanning, improved device detection logic",
+        "salience": 0.8,
+        "keywords": [
+          "nmcli",
+          "scanning",
+          "code"
+        ]
+      }
+    },
+    "primary_frame": "system_administration",
+    "generated_at": "2026-02-02T11:42:43.212983"
+  },
+  "mem-017-psu-automation": {
+    "memory_id": "mem-017-psu-automation",
+    "perspectives": {
+      "system_administration": {
+        "frame": "system_administration",
+        "gist": "PowerShell Universal automation for BofA work - 13 dashboards, Azure Stack HCI",
+        "salience": 0.9,
+        "keywords": [
+          "PSU",
+          "automation",
+          "BofA"
+        ]
+      },
+      "code_craft": {
+        "frame": "code_craft",
+        "gist": "PowerShell scripting for enterprise infrastructure management",
+        "salience": 0.8,
+        "keywords": [
+          "PowerShell",
+          "enterprise",
+          "scripting"
+        ]
+      }
+    },
+    "primary_frame": "system_administration",
+    "generated_at": "2026-02-02T11:42:43.213217"
+  },
+  "mem-018-architecture-expansi": {
+    "memory_id": "mem-018-architecture-expansi",
+    "perspectives": {
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "Major gist-memory expansion - hierarchical consolidation, 4 levels from raw to identity",
+        "salience": 0.95,
+        "keywords": [
+          "expansion",
+          "hierarchical",
+          "consolidation"
+        ]
+      },
+      "memory_about_memory": {
+        "frame": "memory_about_memory",
+        "gist": "Meta-level architecture work - designing how memory itself should be structured",
+        "salience": 0.9,
+        "keywords": [
+          "meta",
+          "structure",
+          "design"
+        ]
+      },
+      "collaborative_exploration": {
+        "frame": "collaborative_exploration",
+        "gist": "Deep architecture session - theory to implementation planning",
+        "salience": 0.8,
+        "keywords": [
+          "session",
+          "planning",
+          "theory"
+        ]
+      }
+    },
+    "primary_frame": "architecture_design",
+    "generated_at": "2026-02-02T11:42:43.213655"
+  },
+  "mem-019-encoder-frame-test": {
+    "memory_id": "mem-019-encoder-frame-test",
+    "perspectives": {
+      "debugging": {
+        "frame": "debugging",
+        "gist": "Testing the new frame-wired encoder - validating frame detection accuracy",
+        "salience": 0.85,
+        "keywords": [
+          "testing",
+          "encoder",
+          "frames"
+        ]
+      },
+      "problem_solving": {
+        "frame": "problem_solving",
+        "gist": "Iterating on encoder prompts to improve frame assignment quality",
+        "salience": 0.75,
+        "keywords": [
+          "prompts",
+          "iteration",
+          "quality"
+        ]
+      }
+    },
+    "primary_frame": "debugging",
+    "generated_at": "2026-02-02T11:42:43.213974"
+  },
+  "mem-020-gist-memory-stabilit": {
+    "memory_id": "mem-020-gist-memory-stabilit",
+    "perspectives": {
+      "system_administration": {
+        "frame": "system_administration",
+        "gist": "Stabilizing gist-memory system - fixing edge cases, improving reliability",
+        "salience": 0.85,
+        "keywords": [
+          "stability",
+          "fixes",
+          "reliability"
+        ]
+      },
+      "problem_solving": {
+        "frame": "problem_solving",
+        "gist": "Debugging session start/end flows, context injection issues",
+        "salience": 0.8,
+        "keywords": [
+          "debugging",
+          "flows",
+          "context"
+        ]
+      }
+    },
+    "primary_frame": "system_administration",
+    "generated_at": "2026-02-02T11:42:43.214218"
+  },
+  "mem-021-railways-preview-fix": {
+    "memory_id": "mem-021-railways-preview-fix",
+    "perspectives": {
+      "debugging": {
+        "frame": "debugging",
+        "gist": "Fixed Railways mod preview rendering - block entity visibility issue",
+        "salience": 0.9,
+        "keywords": [
+          "preview",
+          "rendering",
+          "fix"
+        ]
+      },
+      "code_craft": {
+        "frame": "code_craft",
+        "gist": "NeoForge block entity lifecycle debugging, render pass timing",
+        "salience": 0.85,
+        "keywords": [
+          "NeoForge",
+          "lifecycle",
+          "render"
+        ]
+      },
+      "game_development": {
+        "frame": "game_development",
+        "gist": "Minecraft mod polish - improving user feedback and visual clarity",
+        "salience": 0.75,
+        "keywords": [
+          "polish",
+          "UX",
+          "visuals"
+        ]
+      }
+    },
+    "primary_frame": "debugging",
+    "generated_at": "2026-02-02T11:42:43.214737"
+  },
+  "mem-022-memory-system-milest": {
+    "memory_id": "mem-022-memory-system-milest",
+    "perspectives": {
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "Gist-memory milestone - cross-session stable, production-ready",
+        "salience": 0.9,
+        "keywords": [
+          "milestone",
+          "stable",
+          "production"
+        ]
+      },
+      "decision_making": {
+        "frame": "decision_making",
+        "gist": "Design decisions validated - frame taxonomy, salience decay, boost/lock mechanics",
+        "salience": 0.8,
+        "keywords": [
+          "decisions",
+          "validation",
+          "mechanics"
+        ]
+      }
+    },
+    "primary_frame": "architecture_design",
+    "generated_at": "2026-02-02T11:42:43.215001"
+  },
+  "mem-023-cross-session-stabil": {
+    "memory_id": "mem-023-cross-session-stabil",
+    "perspectives": {
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "Cross-session stability achieved - 19-frame taxonomy, reinforcement tracking integrated",
+        "salience": 0.9,
+        "keywords": [
+          "cross-session",
+          "taxonomy",
+          "reinforcement"
+        ]
+      },
+      "problem_solving": {
+        "frame": "problem_solving",
+        "gist": "Resolved session continuity issues - context injection now reliable",
+        "salience": 0.8,
+        "keywords": [
+          "continuity",
+          "injection",
+          "reliable"
+        ]
+      }
+    },
+    "primary_frame": "architecture_design",
+    "generated_at": "2026-02-02T11:42:43.215273"
   }
 }
