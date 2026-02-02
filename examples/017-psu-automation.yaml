@@ -1,0 +1,110 @@
+# Memory Entry: PSU Infrastructure Automation
+# PowerShell Universal enterprise automation for BofA work
+# Located on mercy (Windows)
+
+id: mem-017-psu-automation
+timestamp: 2026-02-02T09:30:00-08:00
+type: project
+
+gist:
+  frames:
+    - system_administration     # Enterprise infrastructure
+    - code_craft                # PowerShell scripting
+    - architecture_design       # Cluster management
+  
+  emotional_tone:
+    - professional
+    - systematic
+    - enterprise-grade
+  
+  salience: 0.8                 # Active work project
+  confidence: 0.85
+  source: encoded
+
+verbatim:
+  stored:
+    core_concept:
+      value: "PowerShell Universal 4.0.2+ enterprise infrastructure automation"
+      context: "Bank of America contract work, Azure Stack HCI, System Center"
+      confidence: 0.9
+    
+    location:
+      value: "mercy:X:\\coding\\powershell\\psu_v4\\UniversalAutomation\\Repository\\"
+      context: "Windows development on mercy desktop"
+      confidence: 0.95
+    
+    dashboards:
+      value: "13+ dashboards including Restore-Bedrock-Cluster, Deploy-Cluster-Agents, Host Patch Report, Hypervisor Compliance, Cluster-Capacity"
+      context: "Web-based automation interfaces"
+      confidence: 0.9
+    
+    key_scripts:
+      value: "Restore-Bedrock-Cluster.ps1 (4-node S2D deployment), HV_WinPatchLogging.ps1 (largest), Deploy-Cluster-Agents-VMM.ps1"
+      context: "Production infrastructure automation"
+      confidence: 0.85
+    
+    technologies:
+      value: "Azure Stack HCI, Storage Spaces Direct (S2D), System Center VMM, Hyper-V"
+      context: "Microsoft enterprise stack"
+      confidence: 0.9
+    
+    focus_areas:
+      value: "Cluster deployment, agent deployment with VM migration, patch reporting, compliance"
+      context: "Enterprise datacenter automation"
+      confidence: 0.85
+    
+    work_context:
+      value: "Sr. Cloud Engineer at Bank of America, contract through end of 2025"
+      context: "4am-1pm PST schedule (east coast sync)"
+      confidence: 0.9
+
+  reconstructable:
+    all_dashboard_names:
+      hint: "13+ dashboards, only 6 documented"
+      reconstruction_confidence: 0.4
+      FLAGGED: true
+    
+    full_script_list:
+      hint: "Many PS1 files in Repository folder"
+      reconstruction_confidence: 0.3
+      FLAGGED: true
+
+metadata:
+  participant: gblfxt
+  session_key: work
+  session_type: project
+  duration_estimate: "ongoing - active work project"
+  
+  related_entries:
+    - mem-002-deep-dive
+    - mem-015-sidegigs
+  
+  tags:
+    - psu
+    - powershell
+    - azure-stack
+    - bofa
+    - enterprise
+    - automation
+    - infrastructure
+    - work
+
+summary: |
+  PSU Infrastructure Automation is gblfxt's enterprise automation project 
+  for Bank of America contract work. Uses PowerShell Universal 4.0.2+ to 
+  provide 13+ web dashboards for infrastructure management. Key capabilities: 
+  Azure Stack HCI cluster deployment (Restore-Bedrock-Cluster), agent 
+  deployment with live VM migration, Windows patch reporting, hypervisor 
+  compliance. Technologies: Azure Stack HCI, Storage Spaces Direct, System 
+  Center VMM, Hyper-V. Located on mercy Windows desktop. Active work 
+  project with 4am-1pm PST schedule synced to east coast team.
+
+retrieval_hints:
+  - "psu automation"
+  - "powershell universal"
+  - "bank of america work"
+  - "azure stack hci"
+  - "cluster deployment"
+  - "enterprise automation"
+  - "bofa contract"
+  - "mercy powershell"
