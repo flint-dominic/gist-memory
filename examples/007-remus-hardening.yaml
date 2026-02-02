@@ -1,0 +1,99 @@
+# Memory Entry: OPNsense Hardening Proposals
+# Security review of remus firewall
+# 2025-01-28
+
+id: mem-007-remus-hardening
+timestamp: 2025-01-28T16:00:00-08:00
+type: planning
+
+gist:
+  frames:
+    - system_administration      # Firewall config
+    - architecture_design        # Network segmentation
+    - problem_solving            # Security improvements
+    - research_discovery         # Best practices
+  
+  emotional_tone:
+    - methodical
+    - security-minded
+    - thorough
+  
+  salience: 0.7                  # Important but reference material
+  confidence: 0.9
+  source: encoded
+
+verbatim:
+  stored:
+    firewall_details:
+      value: "remus, OPNsense 25.7.11_2, Tailscale at 100.123.138.20"
+      context: "FreeBSD firewall appliance"
+      confidence: 0.95
+    
+    quick_wins:
+      value: "Change SNMP from 'public', enable DNSSEC"
+      context: "5 minutes each, high impact"
+      confidence: 0.9
+    
+    ssh_hardening:
+      value: "Rely on Tailscale SSH only, or key-auth if keeping traditional"
+      context: "Current allows password auth and root login"
+      confidence: 0.9
+    
+    dns_over_tls:
+      value: "1.1.1.1@853, 9.9.9.9@853, 8.8.8.8@853"
+      context: "Unbound DNS forwarding with DoT"
+      confidence: 0.9
+    
+    iot_vlan_proposal:
+      value: "VLAN 20 for IoT - isolate 20+ devices"
+      context: "Airfryer, AV, vacuum, Shield, Google Home, Sonos, Govee, Ring, thermostat, humidifier"
+      confidence: 0.85
+    
+    iot_device_range:
+      value: ".42-.59 on current network"
+      context: "Candidates for IoT VLAN segregation"
+      confidence: 0.85
+
+  reconstructable:
+    full_device_list:
+      hint: "Many IoT devices listed with IPs"
+      reconstruction_confidence: 0.5
+      FLAGGED: true
+    
+    exact_opnsense_paths:
+      hint: "Services → Unbound DNS → etc"
+      reconstruction_confidence: 0.6
+      FLAGGED: true
+
+metadata:
+  participant: gblfxt
+  session_key: agent:main:main
+  session_type: webchat
+  duration_estimate: "1 hour"
+  
+  related_entries:
+    - mem-002-deep-dive
+  
+  tags:
+    - security
+    - opnsense
+    - firewall
+    - network
+    - hardening
+    - iot
+
+summary: |
+  Security hardening review for remus (OPNsense firewall). Quick wins: 
+  change default SNMP community string, enable DNSSEC. Medium-term: SSH 
+  hardening (prefer Tailscale SSH), DNS over TLS to encrypt upstream 
+  queries. Longer-term: IoT VLAN segmentation to isolate 20+ smart home 
+  devices (.42-.59 range) from servers and workstations.
+
+retrieval_hints:
+  - "remus firewall"
+  - "opnsense hardening"
+  - "iot vlan"
+  - "network security"
+  - "dns over tls"
+  - "firewall config"
+  - "smart home isolation"

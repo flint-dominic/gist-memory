@@ -1,0 +1,113 @@
+# Memory Entry: LLMoblings Planning Session
+# Vision, architecture, and honest market assessment
+# 2025-01-29
+
+id: mem-005-llmoblings
+timestamp: 2025-01-29T14:00:00-08:00
+type: planning
+
+gist:
+  frames:
+    - architecture_design        # 3-layer system design
+    - decision_making            # Weighing options, paths
+    - game_development           # Minecraft modding context
+    - meaning_making             # What's the actual goal?
+    - collaborative_exploration  # Working through it together
+  
+  emotional_tone:
+    - strategic
+    - honest
+    - questioning
+    - grounded
+  
+  salience: 0.85                 # Important project direction
+  confidence: 0.9
+  source: encoded
+
+verbatim:
+  stored:
+    current_state:
+      value: "~13K lines Java, NeoForge 1.21.1, forked from Player2NPC"
+      context: "Ollama integration, 6 personality types, autonomous tasks"
+      confidence: 0.95
+    
+    vision:
+      value: "AI normalization through play - transform into standalone AI-for-games framework"
+      context: "From Minecraft mod to reusable system"
+      confidence: 0.9
+    
+    three_layer_architecture:
+      value: "LLM Layer (provider-agnostic) → Behavior Layer (game-agnostic) → Game Layer (specific integrations)"
+      context: "Sidecar service model, HTTP/WebSocket"
+      confidence: 0.95
+    
+    market_reality:
+      value: "Demand is small niche, competitors (Inworld.ai, Convai) are cloud/paid"
+      context: "LLMoblings edge: local-first, open source, designed for games"
+      confidence: 0.9
+    
+    latency_challenge:
+      value: "Local LLM latency ~1-3s still a problem for real-time"
+      context: "Main technical barrier"
+      confidence: 0.85
+    
+    value_propositions:
+      value: "Portfolio/credibility, positioning for future, open source, learning, philosophical mission"
+      context: "Honest assessment - not a business goal"
+      confidence: 0.9
+    
+    three_options:
+      value: "A: Polish mod first, B: Smaller scope library, C: Use in own games"
+      context: "Alternative approaches discussed"
+      confidence: 0.9
+    
+    open_question:
+      value: "What's the actual goal? Market vs mission vs learning vs income?"
+      context: "Left unresolved at session end"
+      confidence: 0.95
+
+  reconstructable:
+    specific_code_paths:
+      hint: "LLMoblings repo structure, Java files"
+      reconstruction_confidence: 0.4
+      FLAGGED: true
+    
+    competitor_details:
+      hint: "Inworld.ai and Convai features/pricing"
+      reconstruction_confidence: 0.3
+      FLAGGED: true
+
+metadata:
+  participant: gblfxt
+  session_key: agent:main:main
+  session_type: webchat
+  duration_estimate: "1-2 hours"
+  
+  related_entries:
+    - mem-002-deep-dive
+  
+  tags:
+    - llmoblings
+    - planning
+    - architecture
+    - ai-npcs
+    - minecraft
+    - career
+
+summary: |
+  Strategic planning session for LLMoblings Minecraft AI companion mod. 
+  Current state: 13K lines Java, Ollama integration, personality system. 
+  Vision: transform into standalone AI-for-games framework with 3-layer 
+  architecture (LLM → Behavior → Game). Honest market check: niche demand, 
+  latency challenges, but edge in local-first open source. Options discussed: 
+  polish mod first, smaller library, or use in own games. Core question left 
+  open: what's the actual goal?
+
+retrieval_hints:
+  - "llmoblings"
+  - "ai npcs games"
+  - "minecraft ai companion"
+  - "sidecar architecture"
+  - "local llm games"
+  - "what to do with llmoblings"
+  - "ai normalization through play"

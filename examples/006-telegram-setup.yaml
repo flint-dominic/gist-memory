@@ -1,0 +1,79 @@
+# Memory Entry: Telegram Bot Setup
+# Getting Nix connected via Telegram
+# 2026-02-02
+
+id: mem-006-telegram
+timestamp: 2026-02-02T15:00:00-08:00
+type: setup
+
+gist:
+  frames:
+    - system_administration      # Bot config, routing
+    - problem_solving            # Session routing confusion
+    - process_reflection         # How we work together
+  
+  emotional_tone:
+    - practical
+    - exploratory
+    - satisfied
+  
+  salience: 0.6                  # Useful but routine setup
+  confidence: 0.95
+  source: encoded
+
+verbatim:
+  stored:
+    bot_details:
+      value: "@nix_gblfxt_bot, name 'Nix'"
+      context: "Token configured in openclaw.json"
+      confidence: 0.95
+    
+    user_id:
+      value: "8036534840"
+      context: "gblfxt's Telegram user ID"
+      confidence: 0.95
+    
+    session_routing:
+      value: "Telegram → agent:main:main, webchat → labeled sessions (minecraft, stellardelve)"
+      context: "Different contexts, messages don't cross automatically"
+      confidence: 0.95
+    
+    workflow_decision:
+      value: "Telegram as home base/coordination, TUI sessions for deep work"
+      context: "Check in on project sessions as needed, report back"
+      confidence: 0.9
+
+  reconstructable:
+    token_value:
+      hint: "Bot token exists but shouldn't be stored in memory"
+      reconstruction_confidence: 0.0
+      FLAGGED: true
+
+metadata:
+  participant: gblfxt
+  session_key: agent:main:minecraft
+  session_type: webchat
+  duration_estimate: "30 min"
+  
+  related_entries:
+    - mem-001-founding
+  
+  tags:
+    - setup
+    - telegram
+    - workflow
+    - openclaw
+
+summary: |
+  Set up Telegram bot for Nix (@nix_gblfxt_bot). Discovered session routing: 
+  Telegram goes to main session, webchat to labeled project sessions. 
+  Established workflow: Telegram for coordination and mobile access, TUI 
+  sessions for deep focused work on specific projects. I can bridge between 
+  sessions when needed.
+
+retrieval_hints:
+  - "telegram bot setup"
+  - "nix telegram"
+  - "session routing"
+  - "how do sessions work"
+  - "telegram vs webchat"
