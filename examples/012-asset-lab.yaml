@@ -1,0 +1,123 @@
+# Memory Entry: Asset Lab Project
+# AI-powered 3D asset generation pipeline for game dev
+# Supporting tool for Stellar Delve and other projects
+
+id: mem-012-asset-lab
+timestamp: 2026-02-02T09:20:00-08:00
+type: project
+
+gist:
+  frames:
+    - game_development          # Game asset creation
+    - architecture_design       # Pipeline design
+    - code_craft                # Python CLI tool
+    - creative_work             # Art generation
+  
+  emotional_tone:
+    - practical
+    - systematic
+    - productive
+  
+  salience: 0.8                 # Important tool project
+  confidence: 0.95
+  source: encoded
+
+verbatim:
+  stored:
+    core_concept:
+      value: "AI-powered 3D asset pipeline: text/image → 3D mesh → textures → rigging → LODs → UE5"
+      context: "CLI tool for game-ready assets"
+      confidence: 0.95
+    
+    two_pipelines:
+      value: "Local (ComfyUI + Blender) or Cloud (Meshy API)"
+      context: "Local for control, Cloud for speed/prototyping"
+      confidence: 0.95
+    
+    local_models:
+      value: "TripoSR (fast), Hunyuan3D (quality), StableFast3D (rapid), InstantMesh (complex geometry)"
+      context: "ComfyUI with 3D-Pack for local generation"
+      confidence: 0.9
+    
+    reference_poses:
+      value: "apose/tpose (humanoids), spread (multi-legged), side (serpentine), front/iso (props)"
+      context: "FLUX/SDXL generates optimized reference images for 3D conversion"
+      confidence: 0.9
+    
+    rigging_options:
+      value: "Meshy (cloud auto-rig), Mixamo (online), AccuRIG 2.0 (desktop), Blender Rigify (manual)"
+      context: "Playwright automates Mixamo browser interaction"
+      confidence: 0.9
+    
+    cli_commands:
+      value: "assetlab full, generate, ref, texture, process, rig, animate, batch, meshy, export"
+      context: "Typer-based CLI with comprehensive commands"
+      confidence: 0.9
+    
+    batch_processing:
+      value: "YAML preset files define multiple assets, run with assetlab batch"
+      context: "Bulk generation for game projects"
+      confidence: 0.9
+    
+    output_structure:
+      value: "outputs/{name}/ with reference.png, .glb, .fbx, textures/, lods/"
+      context: "Organized game-ready output"
+      confidence: 0.9
+    
+    project_location:
+      value: "/mnt/ai/projects/asset_lab/"
+      context: "Python package with .venv"
+      confidence: 0.95
+
+  reconstructable:
+    all_cli_options:
+      hint: "Many flags and options per command"
+      reconstruction_confidence: 0.5
+      FLAGGED: true
+    
+    meshy_credit_costs:
+      hint: "~35 credits for full rigged, ~5 for preview"
+      reconstruction_confidence: 0.6
+      FLAGGED: true
+
+metadata:
+  participant: gblfxt
+  session_key: project
+  session_type: project
+  duration_estimate: "ongoing development"
+  
+  related_entries:
+    - mem-011-stellar-delve
+    - mem-002-deep-dive
+  
+  tags:
+    - asset-lab
+    - 3d-generation
+    - ai-art
+    - comfyui
+    - blender
+    - meshy
+    - mixamo
+    - game-dev
+    - pipeline
+
+summary: |
+  Asset Lab is gblfxt's AI-powered 3D asset generation pipeline for game 
+  development. Two paths: Local (ComfyUI + Blender) for control, or Cloud 
+  (Meshy API) for rapid prototyping. Generates text/image → 3D mesh → 
+  textures → rigging → LODs → UE5-ready assets. Supports multiple models 
+  (TripoSR, Hunyuan3D, InstantMesh), reference image poses for different 
+  asset types, auto-rigging via Mixamo/Playwright, and batch processing 
+  from YAML presets. Python CLI tool with comprehensive commands. Built 
+  to support Stellar Delve and other game projects.
+
+retrieval_hints:
+  - "asset lab"
+  - "3d generation pipeline"
+  - "text to 3d"
+  - "comfyui blender"
+  - "meshy api"
+  - "auto rigging mixamo"
+  - "game asset pipeline"
+  - "triposr hunyuan"
+  - "ai 3d models"
