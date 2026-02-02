@@ -1,0 +1,112 @@
+# Memory Entry: MTG Trading Analysis System
+# Magic: The Gathering card price analysis with AI/ML
+# Located on yogsothoth
+
+id: mem-013-mtg-trading
+timestamp: 2026-02-02T09:20:00-08:00
+type: project
+
+gist:
+  frames:
+    - architecture_design       # Data pipeline design
+    - code_craft                # Python system
+    - research_discovery        # Market analysis
+    - problem_solving           # Trading insights
+  
+  emotional_tone:
+    - analytical
+    - systematic
+    - practical
+  
+  salience: 0.75                # Side project, interesting
+  confidence: 0.9
+  source: encoded
+
+verbatim:
+  stored:
+    core_concept:
+      value: "MTG card price collection, AI predictions, trading alerts"
+      context: "Automated system tracking 917 cards from 17 sets"
+      confidence: 0.95
+    
+    data_sources:
+      value: "Scryfall (primary), Card Kingdom, TCGPlayer, MTGGoldfish, eBay (limited)"
+      context: "Multi-source price aggregation every 6 hours"
+      confidence: 0.95
+    
+    ml_models:
+      value: "Random Forest + Gradient Boosting, MAE = $0.53, 68% bullish signals"
+      context: "Price prediction with training on 917+ cards"
+      confidence: 0.9
+    
+    database:
+      value: "PostgreSQL with 917 cards, 4333+ price records"
+      context: "17 sets including Darksteel, Shadowmoor, Odyssey"
+      confidence: 0.9
+    
+    reddit_sentiment:
+      value: "Monitors r/magicTCG, r/mtgfinance, r/EDH"
+      context: "Sentiment analysis for market trends"
+      confidence: 0.85
+    
+    features:
+      value: "Trading alerts, arbitrage detection, TUI dashboard, systemd service, automated backups"
+      context: "Service health score 100/100"
+      confidence: 0.9
+    
+    project_location:
+      value: "yogsothoth:/home/critic/projects/mtg-trading-analysis/"
+      context: "Also on Gitea at 192.168.70.104:3000"
+      confidence: 0.95
+    
+    db_creds:
+      value: "PostgreSQL user mtg_admin, db mtg_trading"
+      context: "Config in mtg_config.json"
+      confidence: 0.9
+
+  reconstructable:
+    all_card_sets:
+      hint: "17 sets, specifics in database"
+      reconstruction_confidence: 0.4
+      FLAGGED: true
+    
+    api_rate_limits:
+      hint: "eBay 5000/day, Scryfall 0.1s delay"
+      reconstruction_confidence: 0.5
+      FLAGGED: true
+
+metadata:
+  participant: gblfxt
+  session_key: project
+  session_type: project
+  duration_estimate: "ongoing - September 2025 major update"
+  
+  related_entries: []
+  
+  tags:
+    - mtg
+    - trading
+    - ai-ml
+    - postgresql
+    - price-analysis
+    - reddit
+    - yogsothoth
+
+summary: |
+  MTG Trading Analysis System on yogsothoth — automated Magic: The Gathering 
+  card price tracking and AI prediction system. Collects from 5 sources 
+  (Scryfall, Card Kingdom, TCGPlayer, MTGGoldfish, eBay) every 6 hours. 
+  Uses Random Forest + Gradient Boosting ML with $0.53 MAE. PostgreSQL 
+  database tracks 917 cards from 17 sets with 4333+ price records. Features 
+  Reddit sentiment analysis, trading alerts, arbitrage detection, TUI 
+  dashboard, and systemd service with 100/100 health score. September 2025 
+  update added major improvements.
+
+retrieval_hints:
+  - "mtg trading"
+  - "magic the gathering prices"
+  - "card price analysis"
+  - "mtg ml predictions"
+  - "trading analysis system"
+  - "yogsothoth mtg"
+  - "card market data"
