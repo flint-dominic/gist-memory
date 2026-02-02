@@ -427,6 +427,52 @@ def list_frames(category: Optional[str] = None) -> List[Frame]:
     return frames
 
 
+def detect_frames_from_text(text: str, max_frames: int = 5) -> List[str]:
+    """
+    Quickly detect likely frames from text using indicator matching.
+    
+    This is a fast heuristic for query-aware perspective selection,
+    not a replacement for LLM-based encoding.
+    
+    Returns list of frame IDs sorted by match strength.
+    """
+    text_lower = text.lower()
+    words = set(text_lower.split())
+    
+    scores = {}
+    
+    for frame_id, frame in FRAMES.items():
+        score = 0
+        
+        # Check indicators
+        for indicator in frame.indicators:
+            indicator_lower = indicator.lower()
+            # Exact word match
+            if indicator_lower in words:
+                score += 2
+            # Substring match
+            elif indicator_lower in text_lower:
+                score += 1
+        
+        # Check frame name/description for keyword overlap
+        name_words = set(frame.name.lower().split())
+        desc_words = set(frame.description.lower().split())
+        
+        name_overlap = len(words & name_words)
+        desc_overlap = len(words & desc_words)
+        
+        score += name_overlap * 1.5
+        score += desc_overlap * 0.5
+        
+        if score > 0:
+            scores[frame_id] = score
+    
+    # Sort by score descending
+    sorted_frames = sorted(scores.items(), key=lambda x: -x[1])
+    
+    return [f[0] for f in sorted_frames[:max_frames]]
+
+
 def frame_prompt() -> str:
     """Generate a prompt listing all frames for LLM encoding."""
     lines = ["Available frames:\n"]

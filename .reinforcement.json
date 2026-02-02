@@ -1,8 +1,8 @@
 {
   "mem-019-encoder-frame-test": {
     "memory_id": "mem-019-encoder-frame-test",
-    "access_count": 1,
-    "last_accessed": "2026-02-02T10:21:27.088082",
+    "access_count": 2,
+    "last_accessed": "2026-02-02T11:48:46.783191",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -36,8 +36,8 @@
   },
   "mem-001-founding": {
     "memory_id": "mem-001-founding",
-    "access_count": 5,
-    "last_accessed": "2026-02-02T11:42:51.219515",
+    "access_count": 6,
+    "last_accessed": "2026-02-02T11:48:40.057613",
     "linked_by": [
       "mem-008-conversation",
       "mem-010-gist-memory-build",
@@ -121,8 +121,8 @@
   },
   "mem-005-llmoblings": {
     "memory_id": "mem-005-llmoblings",
-    "access_count": 1,
-    "last_accessed": "2026-02-02T10:43:21.920097",
+    "access_count": 2,
+    "last_accessed": "2026-02-02T11:48:52.121707",
     "linked_by": [
       "mem-004-railways"
     ],
@@ -145,8 +145,8 @@
   },
   "mem-003-barzakh": {
     "memory_id": "mem-003-barzakh",
-    "access_count": 4,
-    "last_accessed": "2026-02-02T11:42:51.222109",
+    "access_count": 5,
+    "last_accessed": "2026-02-02T11:48:40.060403",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -156,8 +156,8 @@
   },
   "mem-008-conversation": {
     "memory_id": "mem-008-conversation",
-    "access_count": 3,
-    "last_accessed": "2026-02-02T11:42:51.215852",
+    "access_count": 4,
+    "last_accessed": "2026-02-02T11:48:40.053656",
     "linked_by": [
       "mem-001-founding",
       "mem-018-architecture-expansi"
@@ -170,8 +170,8 @@
   },
   "mem-011-stellar-delve": {
     "memory_id": "mem-011-stellar-delve",
-    "access_count": 2,
-    "last_accessed": "2026-02-02T11:42:58.773291",
+    "access_count": 3,
+    "last_accessed": "2026-02-02T11:48:52.125806",
     "linked_by": [
       "mem-009-stellar-delve-overvi"
     ],
@@ -194,8 +194,8 @@
   },
   "mem-004-railways": {
     "memory_id": "mem-004-railways",
-    "access_count": 2,
-    "last_accessed": "2026-02-02T10:55:23.526101",
+    "access_count": 3,
+    "last_accessed": "2026-02-02T11:48:46.787463",
     "linked_by": [
       "mem-021-railways-preview-fix",
       "mem-005-llmoblings"
@@ -219,19 +219,19 @@
   },
   "mem-012-asset-lab": {
     "memory_id": "mem-012-asset-lab",
-    "access_count": 0,
-    "last_accessed": null,
+    "access_count": 1,
+    "last_accessed": "2026-02-02T11:48:52.129239",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
-    "initial_salience": 0.5
+    "initial_salience": 0.8
   },
   "mem-021-railways-preview-fix": {
     "memory_id": "mem-021-railways-preview-fix",
-    "access_count": 2,
-    "last_accessed": "2026-02-02T10:55:23.523158",
+    "access_count": 3,
+    "last_accessed": "2026-02-02T11:48:46.784636",
     "linked_by": [
       "mem-004-railways"
     ],

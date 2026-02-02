@@ -25,6 +25,13 @@ try:
 except ImportError:
     PERSPECTIVES_AVAILABLE = False
 
+# Import frame detection for query-aware perspectives
+try:
+    from frames import detect_frames_from_text
+    FRAME_DETECTION_AVAILABLE = True
+except ImportError:
+    FRAME_DETECTION_AVAILABLE = False
+
 # Project paths
 PROJECT_ROOT = Path(__file__).parent.parent
 EXAMPLES_DIR = PROJECT_ROOT / "examples"
@@ -68,13 +75,21 @@ def recall(
     query: str,
     min_similarity: float = DEFAULT_MIN_SIMILARITY,
     max_results: int = DEFAULT_MAX_RESULTS,
-    include_low_confidence: bool = False
+    include_low_confidence: bool = False,
+    query_frames: List[str] = None
 ) -> List[Dict]:
     """
     Recall relevant memories based on a query.
     
     Returns list of memories with similarity scores, filtered by threshold.
+    
+    If query_frames is not provided, attempts to detect frames from the query
+    text for query-aware perspective selection.
     """
+    # Detect frames from query for perspective selection
+    if query_frames is None and FRAME_DETECTION_AVAILABLE:
+        query_frames = detect_frames_from_text(query, max_frames=5)
+    
     client = get_client()
     collection = get_collection(client)
     
@@ -136,14 +151,16 @@ def recall(
                     else:
                         memory['key_details'][key] = str(val)
         
-        # Get best perspective for this memory based on its frames
+        # Get best perspective for this memory based on QUERY frames (not memory's own)
         if PERSPECTIVES_AVAILABLE:
             try:
                 persp_manager = get_perspective_manager()
                 mem_persp = persp_manager.get(memory_id)
                 if mem_persp.perspectives:
-                    # Get perspective matching the memory's own frames (context)
-                    best_persp = persp_manager.get_for_context(memory_id, memory['frames'])
+                    # Use query_frames for context-aware selection
+                    # Falls back to memory's frames if no query frames detected
+                    context_frames = query_frames if query_frames else memory['frames']
+                    best_persp = persp_manager.get_for_context(memory_id, context_frames)
                     if best_persp:
                         memory['perspective'] = best_persp
             except Exception:
