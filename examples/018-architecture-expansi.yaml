@@ -1,0 +1,67 @@
+id: mem-018-architecture-expansi
+timestamp: 2026-02-02 10:00:02.180866
+type: conversation
+gist:
+  frames:
+  - collaborative_exploration
+  - architecture_design
+  - memory_about_memory
+  - process_reflection
+  - research_discovery
+  emotional_tone:
+  - curiosity
+  - playfulness
+  - excitement
+  - collaborative
+  salience: 0.9
+  confidence: 0.95
+  source: encoded
+verbatim:
+  stored:
+    db_size: "692KB for 17 memories, ~40KB per memory with embeddings"
+    hierarchy_levels: "L0 raw gists → L1 clusters → L2 themes → L3 identity core"
+    consolidation_triggers: "time, count, similarity, decay, explicit marking"
+    reinforcement_signals: "access frequency, recency, cross-links, repetition, explicit boost"
+    frame_taxonomy: "19 frames across 4 categories: work(7), domain(3), relational(4), meta(5)"
+    storage_projection: "~420MB lifetime, ~50MB active corpus"
+    parallel_projects: "Mem0, A-Mem, Zep, Nemori - enterprise scale vs our portable approach"
+    sleep_metaphor: "gist sleep command for consolidation sweep"
+    forgetting_curve: "salience decays ~50% over 30 days without reinforcement"
+    thumb_drive_joke: "16KB turbo wouldn't help, 16GB would hold 400K memories"
+  reconstructable: detailed discussion flow
+metadata:
+  participant: gblfxt
+  session_key: main-2026-02-02
+  session_type: telegram
+  duration_estimate: 30 minutes
+  related_entries: 
+  - mem-001-founding
+  - mem-010-gist-memory-build
+  tags:
+  - frame-taxonomy
+  - memory-architecture
+  - hierarchical-consolidation
+  - reinforcement
+  - scaling
+summary: |
+  Major architecture expansion session. Added three key components to gist-memory:
+  (1) Hierarchical consolidation - four levels from raw gists to identity core,
+  with sleep-like processing for compression over time.
+  (2) Memory reinforcement - dynamic salience that changes based on use, with
+  explicit forgetting curves for unreinforced memories.
+  (3) Formal frame taxonomy - 19 named patterns organized into work/domain/
+  relational/meta categories, each with indicators and relationships.
+  Also researched parallel projects (Mem0, A-Mem) and confirmed our approach
+  emphasizes portability over enterprise scale. The system remembering itself
+  being designed.
+retrieval_hints:
+- hierarchical consolidation
+- memory reinforcement
+- frame taxonomy
+- L0 L1 L2 L3 levels
+- dynamic salience
+- forgetting curve
+- gist sleep
+- parallel projects Mem0
+- 19 frames
+- scaling memory
