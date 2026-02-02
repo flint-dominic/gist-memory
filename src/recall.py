@@ -15,6 +15,9 @@ from typing import Optional, List, Dict
 import chromadb
 from chromadb.config import Settings
 
+# Import reinforcement tracking
+from reinforcement import record_access, calculate_salience
+
 # Project paths
 PROJECT_ROOT = Path(__file__).parent.parent
 EXAMPLES_DIR = PROJECT_ROOT / "examples"
@@ -96,11 +99,21 @@ def recall(
         if meta.get('filepath'):
             full_memory = load_memory_file(meta['filepath'])
         
+        memory_id = results['ids'][0][i]
+        initial_salience = meta.get('salience', 0.5)
+        
+        # Record access for reinforcement tracking
+        record_access(memory_id, initial_salience)
+        
+        # Get dynamic salience (may differ from initial)
+        dynamic_salience = calculate_salience(memory_id)
+        
         memory = {
-            'id': results['ids'][0][i],
+            'id': memory_id,
             'similarity': round(similarity, 3),
             'frames': meta.get('frames', '').split(',') if meta.get('frames') else [],
-            'salience': meta.get('salience', 0.5),
+            'salience': dynamic_salience,  # Use dynamic salience
+            'initial_salience': initial_salience,
             'summary': '',
             'key_details': {}
         }

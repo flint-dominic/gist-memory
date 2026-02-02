@@ -35,6 +35,21 @@ case "$1" in
         shift
         python src/context.py "$@"
         ;;
+    inspect|in)
+        shift
+        python src/reinforcement.py inspect "$@"
+        ;;
+    boost|b)
+        shift
+        python src/reinforcement.py boost "$@"
+        ;;
+    decay|d)
+        shift
+        python src/reinforcement.py decay "$@"
+        ;;
+    reinforce-stats|rs)
+        python src/reinforcement.py stats
+        ;;
     help|--help|-h)
         echo "Gist Memory CLI"
         echo ""
@@ -47,10 +62,18 @@ case "$1" in
         echo "  index              Re-index all memories"
         echo "  stats              Show memory stats"
         echo ""
+        echo "Reinforcement:"
+        echo "  inspect <id>       Show full memory stats + reinforcement"
+        echo "  boost <id> [--lock]  Boost memory salience (--lock = decay immune)"
+        echo "  decay [threshold]  Show memories fading below threshold (default 0.3)"
+        echo "  reinforce-stats    Show reinforcement statistics"
+        echo ""
         echo "Examples:"
         echo "  gist recall 'what is fuzzy trace theory'"
         echo "  gist context 'what was the memory architecture based on'"
         echo "  gist remember 'content' -t 'title'"
+        echo "  gist inspect mem-001-founding"
+        echo "  gist boost mem-005-llmoblings --lock"
         ;;
     *)
         echo "Unknown command: $1"
