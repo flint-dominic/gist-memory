@@ -1,0 +1,116 @@
+# Memory Entry: OptiG Programming Language
+# Domain-specific language for AI/ML with LLM-native design
+# gblfxt's programming language project
+
+id: mem-014-optig
+timestamp: 2026-02-02T09:25:00-08:00
+type: project
+
+gist:
+  frames:
+    - architecture_design       # Language design
+    - code_craft                # Rust implementation
+    - creative_work             # Novel design
+    - research_discovery        # PL theory exploration
+  
+  emotional_tone:
+    - ambitious
+    - creative
+    - systematic
+    - exploratory
+  
+  salience: 0.8                 # Interesting creative project
+  confidence: 0.9
+  source: encoded
+
+verbatim:
+  stored:
+    core_concept:
+      value: "Domain-specific language for AI/ML with native tensor support and automatic differentiation"
+      context: "LLM-native design philosophy - minimal tokens, maximum clarity"
+      confidence: 0.95
+    
+    design_principles:
+      value: "One way to do things, no imports ever, tensors are primitive, control flow as expressions, errors as values"
+      context: "let (not var/const), fn (not def/func), no return keyword needed"
+      confidence: 0.95
+    
+    syntax_highlights:
+      value: "Indent-based (no braces), fn add(a, b) = a + b, if/match are expressions, for loops return arrays"
+      context: "Clean Python-like syntax with ML focus"
+      confidence: 0.9
+    
+    namespaces:
+      value: "io, nn, math, http, json, tensor, grad, os, str, arr"
+      context: "Everything available without imports"
+      confidence: 0.9
+    
+    tensor_literals:
+      value: "[1, 2, 3] is Tensor, [[1,2],[3,4]] is 2D, @ for matmul"
+      context: "Tensors as first-class primitives, not library calls"
+      confidence: 0.9
+    
+    tech_stack:
+      value: "Rust implementation, logos lexer, LLVM codegen (optional), LSP server, REPL"
+      context: "tower-lsp, inkwell for LLVM, rustyline for REPL"
+      confidence: 0.9
+    
+    components:
+      value: "lexer, parser, ast, types, interpreter, autograd, codegen, lsp, repl"
+      context: "Full language implementation in src/"
+      confidence: 0.9
+    
+    project_location:
+      value: "yogsothoth:/home/critic/projects/optig/"
+      context: "Rust project with Cargo"
+      confidence: 0.95
+
+  reconstructable:
+    full_grammar:
+      hint: "Complete syntax in parser and examples"
+      reconstruction_confidence: 0.5
+      FLAGGED: true
+    
+    all_builtins:
+      hint: "Namespace functions listed in source"
+      reconstruction_confidence: 0.4
+      FLAGGED: true
+
+metadata:
+  participant: gblfxt
+  session_key: project
+  session_type: project
+  duration_estimate: "November 2024 work"
+  
+  related_entries:
+    - mem-011-stellar-delve
+  
+  tags:
+    - optig
+    - programming-language
+    - rust
+    - ai-ml
+    - tensor
+    - autograd
+    - llvm
+    - language-design
+
+summary: |
+  OptiG is gblfxt's domain-specific programming language for AI/ML, 
+  implemented in Rust. Design philosophy: LLM-native with minimal tokens 
+  and maximum clarity. Key features: native tensor literals ([1,2,3] is 
+  a tensor), automatic differentiation, no imports ever (namespaced 
+  builtins: io, nn, math, grad, etc.), indent-based syntax, control flow 
+  as expressions (if/match return values, for loops return arrays), 
+  errors as values (Result type). Components include lexer, parser, 
+  interpreter, autograd, optional LLVM codegen, LSP server, and REPL.
+
+retrieval_hints:
+  - "optig"
+  - "programming language"
+  - "ai ml language"
+  - "tensor language"
+  - "autograd"
+  - "rust language implementation"
+  - "domain specific language"
+  - "llm native"
