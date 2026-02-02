@@ -12,8 +12,8 @@
   },
   "mem-009-stellar-delve-overview": {
     "memory_id": "mem-009-stellar-delve-overview",
-    "access_count": 4,
-    "last_accessed": "2026-02-02T10:35:31.836575",
+    "access_count": 5,
+    "last_accessed": "2026-02-02T10:43:21.917028",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -45,8 +45,8 @@
   },
   "mem-018-architecture-expansi": {
     "memory_id": "mem-018-architecture-expansi",
-    "access_count": 2,
-    "last_accessed": "2026-02-02T10:31:42.411935",
+    "access_count": 3,
+    "last_accessed": "2026-02-02T10:43:21.915085",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -111,14 +111,14 @@
   },
   "mem-005-llmoblings": {
     "memory_id": "mem-005-llmoblings",
-    "access_count": 0,
-    "last_accessed": null,
+    "access_count": 1,
+    "last_accessed": "2026-02-02T10:43:21.920097",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
-    "initial_salience": 0.5
+    "initial_salience": 0.85
   },
   "mem-006-telegram": {
     "memory_id": "mem-006-telegram",
@@ -218,5 +218,16 @@
     "decay_immune": false,
     "usefulness_score": 0.0,
     "initial_salience": 0.7
+  },
+  "mem-023-cross-session-stabil": {
+    "memory_id": "mem-023-cross-session-stabil",
+    "access_count": 0,
+    "last_accessed": null,
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.2,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.5
   }
 }
