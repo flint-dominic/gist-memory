@@ -176,6 +176,10 @@ print(f'   Total: {len(examples)} memories')
         shift
         python src/session.py end "$@"
         ;;
+    auto-encode|ae)
+        shift
+        python src/session.py auto-encode "$@"
+        ;;
     unified|u)
         shift
         python ~/clawd/memory/unified_recall.py "$@"
@@ -227,11 +231,15 @@ print(f'   Total: {len(examples)} memories')
         echo "  perspective-batch     Generate for all memories without perspectives"
         echo "  perspective-context <id> -c <frame1> <frame2>  Get best for context"
         echo ""
-        echo "Session Integration:
+        echo "Session Integration:"
         echo "  bootstrap          Load identity + context for session start"
         echo "  identity           List core identity memories"
         echo "  session-start      Log session start, get context"
         echo "  session-end        Get encoding prompt for session end"
+        echo "  auto-encode        Fully automatic memory encoding"
+        echo "                     gist auto-encode 'content' -t 'title'"
+        echo "                     gist auto-encode -f session.txt"
+        echo "                     cat transcript | gist auto-encode"
         echo "  unified <query>    Search BOTH gist + markdown memories"
         echo ""
         echo "Examples:"

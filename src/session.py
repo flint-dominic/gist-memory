@@ -14,6 +14,10 @@ from typing import Optional, List, Dict
 sys.path.insert(0, str(Path(__file__).parent))
 from reinforcement import get_tracker
 from recall import recall, format_for_context
+from encode import encode_text
+from retrieval import get_client, get_collection, index_memories
+from perspectives import get_manager as get_perspective_manager
+from frames import detect_frames_from_text
 
 PROJECT_ROOT = Path(__file__).parent.parent
 EXAMPLES_DIR = PROJECT_ROOT / "examples"
@@ -165,6 +169,188 @@ def quick_remember(
     }
 
 
+def get_next_memory_number() -> str:
+    """Get next memory number based on existing files."""
+    existing = list(EXAMPLES_DIR.glob("*.yaml"))
+    numbers = []
+    for f in existing:
+        try:
+            num = int(f.stem.split('-')[0])
+            numbers.append(num)
+        except (ValueError, IndexError):
+            pass
+    
+    next_num = max(numbers) + 1 if numbers else 1
+    return f"{next_num:03d}"
+
+
+def auto_encode(
+    content: str,
+    title: Optional[str] = None,
+    session_type: str = "conversation",
+    participant: str = "gblfxt",
+    model: str = "llama3:8b",
+    generate_perspectives: bool = True,
+    min_length: int = 100
+) -> Dict:
+    """
+    Fully automatic memory encoding from session content.
+    
+    1. Validates content is worth encoding
+    2. Encodes via LLM to extract frames, gist, verbatim
+    3. Saves memory file
+    4. Indexes in vector store
+    5. Generates perspectives
+    
+    Args:
+        content: Session transcript or summary to encode
+        title: Optional title (auto-generated if not provided)
+        session_type: Type of session (conversation, debugging, planning, etc)
+        participant: Who was involved
+        model: Ollama model to use
+        generate_perspectives: Whether to auto-generate perspectives
+        min_length: Minimum content length to encode
+    
+    Returns:
+        Dict with success status, memory_id, and details
+    """
+    result = {
+        "success": False,
+        "memory_id": None,
+        "filepath": None,
+        "perspectives": 0,
+        "message": ""
+    }
+    
+    # Validate content
+    if len(content.strip()) < min_length:
+        result["message"] = f"Content too short ({len(content)} chars, min {min_length})"
+        return result
+    
+    # Generate title if needed
+    if not title:
+        # Try to extract title from content
+        lines = content.strip().split('\n')
+        first_line = lines[0][:50].strip()
+        # Clean up for filename
+        title = "-".join(first_line.lower().split()[:4])
+        title = "".join(c for c in title if c.isalnum() or c == '-')[:30]
+        if not title:
+            title = f"session-{datetime.now().strftime('%H%M')}"
+    
+    number = get_next_memory_number()
+    memory_id = f"mem-{number}-{title}"
+    filename = f"{number}-{title}.yaml"
+    filepath = EXAMPLES_DIR / filename
+    
+    print(f"🧠 Auto-encoding as {memory_id}...", file=sys.stderr)
+    
+    # Encode via LLM
+    try:
+        entry = encode_text(
+            content,
+            model=model,
+            entry_type=session_type,
+            session_type="telegram",  # Default
+            number=number
+        )
+        
+        if not entry:
+            result["message"] = "Encoding failed - no entry returned"
+            return result
+        
+        # Fix ID to use our generated one
+        entry['id'] = memory_id
+        
+        # Add metadata
+        if 'metadata' not in entry:
+            entry['metadata'] = {}
+        entry['metadata']['participant'] = participant
+        entry['metadata']['auto_encoded'] = True
+        entry['metadata']['encoded_at'] = datetime.now().isoformat()
+        
+    except Exception as e:
+        result["message"] = f"Encoding error: {e}"
+        return result
+    
+    # Save to file
+    try:
+        yaml_output = yaml.dump(entry, default_flow_style=False, sort_keys=False, allow_unicode=True)
+        filepath.write_text(yaml_output)
+        print(f"  ✓ Saved to {filepath.name}", file=sys.stderr)
+    except Exception as e:
+        result["message"] = f"Save error: {e}"
+        return result
+    
+    # Index in vector store
+    try:
+        client = get_client()
+        collection = get_collection(client)
+        index_memories(collection, force=False)
+        print(f"  ✓ Indexed", file=sys.stderr)
+    except Exception as e:
+        print(f"  ⚠ Index warning: {e}", file=sys.stderr)
+    
+    # Generate perspectives
+    if generate_perspectives:
+        try:
+            # Quick perspective generation from detected frames
+            frames = entry.get('gist', {}).get('frames', [])
+            summary = entry.get('summary', '')
+            
+            if frames and summary:
+                persp_manager = get_perspective_manager()
+                
+                # Add perspective for top 2-3 frames
+                for i, frame in enumerate(frames[:3]):
+                    salience = 0.9 - (i * 0.1)  # Decreasing salience
+                    
+                    # Generate frame-specific gist
+                    # For now, use summary with frame context
+                    # Could enhance with LLM later
+                    persp_manager.add_perspective(
+                        memory_id,
+                        frame,
+                        summary[:150] + "...",
+                        salience,
+                        []
+                    )
+                
+                result["perspectives"] = min(3, len(frames))
+                print(f"  ✓ Generated {result['perspectives']} perspectives", file=sys.stderr)
+        except Exception as e:
+            print(f"  ⚠ Perspective warning: {e}", file=sys.stderr)
+    
+    result["success"] = True
+    result["memory_id"] = memory_id
+    result["filepath"] = str(filepath)
+    result["message"] = f"Successfully encoded {memory_id}"
+    
+    return result
+
+
+def encode_session_transcript(
+    transcript_path: Optional[str] = None,
+    content: Optional[str] = None,
+    **kwargs
+) -> Dict:
+    """
+    Encode a session transcript from file or string.
+    
+    Wrapper around auto_encode for convenience.
+    """
+    if transcript_path:
+        path = Path(transcript_path)
+        if not path.exists():
+            return {"success": False, "message": f"File not found: {transcript_path}"}
+        content = path.read_text()
+    
+    if not content:
+        return {"success": False, "message": "No content provided"}
+    
+    return auto_encode(content, **kwargs)
+
+
 def get_identity_memories() -> List[Dict]:
     """
     Get core identity memories (L3 equivalent - highest salience, decay-immune).
@@ -230,7 +416,7 @@ def bootstrap() -> str:
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print("Usage: session.py [start|end|bootstrap|identity]")
+        print("Usage: session.py [start|end|bootstrap|identity|auto-encode]")
         sys.exit(1)
     
     cmd = sys.argv[1]
@@ -255,6 +441,47 @@ if __name__ == '__main__':
             immune = "🔒" if m['decay_immune'] else "  "
             print(f"{immune} {m['salience']:.2f}  {m['id']}")
             print(f"      Frames: {', '.join(m['frames'][:3])}")
+    
+    elif cmd == 'auto-encode':
+        import argparse
+        parser = argparse.ArgumentParser(description='Auto-encode session content')
+        parser.add_argument('content', nargs='?', help='Content to encode (or - for stdin)')
+        parser.add_argument('-t', '--title', help='Memory title')
+        parser.add_argument('-f', '--file', help='Read content from file')
+        parser.add_argument('--type', default='conversation', help='Session type')
+        parser.add_argument('-m', '--model', default='llama3:8b', help='Ollama model')
+        parser.add_argument('--no-perspectives', action='store_true', help='Skip perspective generation')
+        
+        # Parse remaining args
+        args = parser.parse_args(sys.argv[2:])
+        
+        # Get content
+        if args.file:
+            content = Path(args.file).read_text()
+        elif args.content == '-' or (args.content is None and not sys.stdin.isatty()):
+            content = sys.stdin.read()
+        elif args.content:
+            content = args.content
+        else:
+            print("Error: No content provided. Use -f <file>, provide text, or pipe via stdin.")
+            sys.exit(1)
+        
+        # Run auto-encode
+        result = auto_encode(
+            content,
+            title=args.title,
+            session_type=args.type,
+            model=args.model,
+            generate_perspectives=not args.no_perspectives
+        )
+        
+        if result['success']:
+            print(f"\n✅ {result['message']}")
+            print(f"   Memory: {result['memory_id']}")
+            print(f"   Perspectives: {result['perspectives']}")
+        else:
+            print(f"\n❌ {result['message']}")
+            sys.exit(1)
     
     else:
         print(f"Unknown command: {cmd}")

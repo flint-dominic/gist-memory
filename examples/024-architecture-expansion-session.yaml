@@ -1,0 +1,47 @@
+id: mem-024-architecture-expansion-session
+timestamp: 2026-02-02 11:51:54.911012
+type: conversation
+gist:
+  frames:
+  - creative_work
+  - architecture_design
+  - problem_solving
+  emotional_tone:
+  - excitement
+  - accomplishment
+  - curiosity
+  salience: 0.7
+  confidence: 0.8
+  source: encoded
+verbatim:
+  stored:
+    tiered_storage: implemented tiered storage with hot/warm/cold tiers based on access
+      patterns
+    zettelkasten_links: added bidirectional Zettelkasten-style links between memories
+    multi_perspective_frames: built multi-perspective frames where the same memory
+      can be viewed through different frame viewpoints
+    query_aware_selection: Query-aware perspective selection was added to pick the
+      right perspective based on what you're asking about
+metadata:
+  participant: gblfxt
+  session_key: unknown
+  session_type: telegram
+  duration_estimate: unknown
+  related_entries: []
+  tags:
+  - architecture
+  auto_encoded: true
+  encoded_at: '2026-02-02T11:51:59.182978'
+summary: 'Today, we implemented tiered storage with hot/warm/cold tiers based on access
+  patterns. We also added bidirectional Zettelkasten-style links between memories
+  and built multi-perspective frames where the same memory can be viewed through different
+  frame viewpoints.
+
+  '
+retrieval_hints:
+- tiered storage
+- Zettelkasten links
+- multi-perspective frames
+- query-aware perspective selection
+- architecture design
+- problem-solving
