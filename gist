@@ -31,6 +31,10 @@ case "$1" in
     stats|st)
         python src/retrieval.py stats
         ;;
+    context|c)
+        shift
+        python src/context.py "$@"
+        ;;
     help|--help|-h)
         echo "Gist Memory CLI"
         echo ""
@@ -38,14 +42,15 @@ case "$1" in
         echo "  recall <query>     Recall memories relevant to query"
         echo "  remember <text>    Encode and save new memory"
         echo "  search <query>     Raw semantic search"
+        echo "  context <msg>      Auto-inject relevant context"
         echo "  encode <file>      Encode file to memory YAML"
         echo "  index              Re-index all memories"
         echo "  stats              Show memory stats"
         echo ""
         echo "Examples:"
         echo "  gist recall 'what is fuzzy trace theory'"
-        echo "  gist remember 'Today we built the auto-encoder' -t 'autoencoder'"
-        echo "  gist search 'minecraft modding' -n 5"
+        echo "  gist context 'what was the memory architecture based on'"
+        echo "  gist remember 'content' -t 'title'"
         ;;
     *)
         echo "Unknown command: $1"
