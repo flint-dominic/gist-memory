@@ -2,6 +2,8 @@
 """
 Gist Memory Auto-Encoder
 Converts conversations/text into memory entries using LLM analysis.
+
+Uses the formal frame taxonomy from frames.py for consistent encoding.
 """
 
 import os
@@ -12,7 +14,7 @@ import argparse
 import hashlib
 from pathlib import Path
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 
 # Try to import ollama, fall back gracefully
 try:
@@ -24,32 +26,60 @@ except ImportError:
 # Project paths
 PROJECT_ROOT = Path(__file__).parent.parent
 EXAMPLES_DIR = PROJECT_ROOT / "examples"
-FRAMES_DOC = PROJECT_ROOT / "docs" / "FRAMES.md"
+
+# Import frame taxonomy
+sys.path.insert(0, str(PROJECT_ROOT / "src"))
+from frames import FRAMES, frame_prompt, get_frame
 
 # Default model
 DEFAULT_MODEL = "llama3:8b"
 
-# Load frame taxonomy for the prompt
+
 def load_frames() -> str:
-    """Load the frame taxonomy for context."""
-    if FRAMES_DOC.exists():
-        return FRAMES_DOC.read_text()
-    return ""
+    """Load the formal frame taxonomy for the encoding prompt."""
+    return frame_prompt()
+
+
+def get_valid_frame_ids() -> List[str]:
+    """Get list of valid frame IDs."""
+    return list(FRAMES.keys())
+
+
+def validate_frames(frame_list: List[str]) -> List[str]:
+    """Validate and filter frame list to only valid frames."""
+    valid = get_valid_frame_ids()
+    validated = []
+    for f in frame_list:
+        f_clean = f.strip().lower().replace(' ', '_').replace('-', '_')
+        if f_clean in valid:
+            validated.append(f_clean)
+        else:
+            # Try fuzzy match
+            for v in valid:
+                if f_clean in v or v in f_clean:
+                    validated.append(v)
+                    break
+    return list(set(validated)) or ['collaborative_exploration']  # Default fallback
 
 ENCODE_PROMPT = """You are encoding a conversation into a gist memory entry.
 
-## Frame Taxonomy (choose from these)
+## Frame Taxonomy (YOU MUST CHOOSE ONLY FROM THESE)
 {frames}
+
+IMPORTANT: Only use frame IDs exactly as listed above. Do not invent new frames.
+
+## Valid Frame IDs (copy exactly):
+{frame_ids}
 
 ## Task
 Analyze the following content and produce a memory entry in YAML format.
 
 Guidelines:
-- frames: Pick 3-7 relevant frames from the taxonomy
+- frames: Pick 3-7 relevant frames ONLY from the list above (use exact IDs)
 - emotional_tone: List 3-6 emotional qualities present
 - salience: 0.0-1.0, how important/memorable is this? (0.9+ for foundational, 0.5 for routine)
-- verbatim.stored: Key specific facts/quotes/details worth preserving (5-10 items)
-- verbatim.reconstructable: Things that could be inferred but weren't explicitly stored
+- verbatim.stored: Key specific facts/quotes/details worth preserving (5-10 items as key:value pairs)
+- verbatim.reconstructable: "none" if nothing, else what could be inferred
 - summary: 3-5 sentence summary capturing the gist
 - retrieval_hints: 5-10 search queries that should find this memory
 
@@ -57,47 +87,38 @@ Guidelines:
 {content}
 
 ## Output Format
-Produce ONLY valid YAML, no markdown code blocks, starting with `id:`. Use this structure:
+Produce ONLY valid YAML, no markdown code blocks, starting with `id:`. Use SIMPLE key-value pairs.
 
 id: mem-{number}-shortslug
 timestamp: {timestamp}
 type: {type}
-
 gist:
   frames:
-    - frame_name
+  - frame_name_here
   emotional_tone:
-    - tone
-  salience: 0.X
-  confidence: 0.X
+  - tone_here
+  salience: 0.7
+  confidence: 0.8
   source: encoded
-
 verbatim:
   stored:
-    key_name:
-      value: "the specific detail"
-      context: "why it matters"
-      confidence: 0.X
-  reconstructable:
-    item_name:
-      hint: "what could be inferred"
-      reconstruction_confidence: 0.X
-      FLAGGED: true
-
+    detail_one: "specific fact or quote"
+    detail_two: "another important detail"
+    detail_three: "yet another detail"
+  reconstructable: none
 metadata:
-  participant: name
+  participant: gblfxt
   session_key: unknown
   session_type: {session_type}
-  duration_estimate: "X hours"
+  duration_estimate: unknown
   related_entries: []
   tags:
-    - tag
-
+  - tag_here
 summary: |
-  Multi-line summary here.
-
+  Summary of what happened in 2-3 sentences.
 retrieval_hints:
-  - "search query"
+- search term one
+- search term two
 """
 
 
@@ -120,9 +141,11 @@ def encode_with_ollama(
         return None
     
     frames = load_frames()
+    frame_ids = ", ".join(get_valid_frame_ids())
     timestamp = datetime.now().isoformat()
     
     prompt = ENCODE_PROMPT.replace('{frames}', frames)
+    prompt = prompt.replace('{frame_ids}', frame_ids)
     prompt = prompt.replace('{content}', content[:8000])
     prompt = prompt.replace('{timestamp}', timestamp)
     prompt = prompt.replace('{type}', entry_type)
@@ -164,7 +187,7 @@ def clean_yaml_output(raw: str) -> str:
 
 
 def validate_and_fix(yaml_str: str, content: str) -> dict:
-    """Validate YAML and fix common issues."""
+    """Validate YAML and fix common issues, including frame validation."""
     try:
         entry = yaml.safe_load(yaml_str)
     except yaml.YAMLError as e:
@@ -178,7 +201,14 @@ def validate_and_fix(yaml_str: str, content: str) -> dict:
     if 'gist' not in entry:
         entry['gist'] = {}
     
-    if 'frames' not in entry.get('gist', {}):
+    # Validate frames against taxonomy
+    raw_frames = entry.get('gist', {}).get('frames', [])
+    if raw_frames:
+        validated_frames = validate_frames(raw_frames)
+        entry['gist']['frames'] = validated_frames
+        if set(raw_frames) != set(validated_frames):
+            print(f"  Frames validated: {raw_frames} → {validated_frames}", file=sys.stderr)
+    else:
         entry['gist']['frames'] = ['collaborative_exploration']
     
     if 'salience' not in entry.get('gist', {}):
