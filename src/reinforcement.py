@@ -7,7 +7,7 @@ Tracks access patterns and calculates dynamic salience.
 import json
 from pathlib import Path
 from datetime import datetime
-from typing import Optional, Dict, List
+from typing import Optional, Dict, List, Any
 from dataclasses import dataclass, asdict
 import math
 
@@ -108,6 +108,14 @@ class ReinforcementTracker:
     def calculate_salience(self, memory_id: str) -> float:
         """Calculate dynamic salience based on reinforcement."""
         entry = self.get(memory_id)
+        
+        # If never accessed, try to get initial salience from YAML
+        if entry.access_count == 0:
+            yaml_mem = load_memory_yaml(memory_id)
+            if yaml_mem:
+                return yaml_mem.get('gist', {}).get('salience', 0.5)
+            return entry.initial_salience  # Fallback
+        
         base = entry.initial_salience
         
         # Access reinforcement (diminishing returns, caps at +0.15)
@@ -119,7 +127,7 @@ class ReinforcementTracker:
             days_since = (datetime.now() - last).days
             recency_factor = 1.0 / (1 + days_since * 0.1)
         else:
-            recency_factor = 0.5  # Never accessed = medium decay
+            recency_factor = 1.0  # No decay if never accessed
         
         # Network importance (inbound links, caps at +0.2)
         link_boost = min(0.2, len(entry.linked_by) * 0.05)
@@ -221,6 +229,46 @@ def decay_report(threshold: float = 0.3) -> List[Dict]:
     return get_tracker().get_decay_report(threshold)
 
 
+def load_memory_yaml(memory_id: str) -> Optional[Dict]:
+    """Load the full memory YAML file."""
+    import yaml
+    examples_dir = PROJECT_ROOT / "examples"
+    for f in examples_dir.glob("*.yaml"):
+        try:
+            content = yaml.safe_load(f.read_text())
+            if content and content.get('id') == memory_id:
+                return content
+        except:
+            continue
+    return None
+
+
+def full_inspect(memory_id: str) -> Dict:
+    """Get full memory details + reinforcement combined."""
+    tracker = get_tracker()
+    reinforce = tracker.inspect(memory_id)
+    memory = load_memory_yaml(memory_id)
+    
+    result = {
+        'id': memory_id,
+        'reinforcement': reinforce,
+        'memory': None
+    }
+    
+    if memory:
+        result['memory'] = {
+            'frames': memory.get('gist', {}).get('frames', []),
+            'emotional_tone': memory.get('gist', {}).get('emotional_tone', []),
+            'summary': memory.get('summary', ''),
+            'verbatim': memory.get('verbatim', {}).get('stored', {}),
+            'tags': memory.get('metadata', {}).get('tags', []),
+            'timestamp': memory.get('timestamp', ''),
+            'retrieval_hints': memory.get('retrieval_hints', [])
+        }
+    
+    return result
+
+
 if __name__ == '__main__':
     import sys
     
@@ -243,13 +291,43 @@ if __name__ == '__main__':
     
     elif cmd == 'inspect' and len(sys.argv) > 2:
         mem_id = sys.argv[2]
-        info = tracker.inspect(mem_id)
-        print(f"=== {mem_id} ===")
-        for k, v in info.items():
-            if isinstance(v, float):
-                print(f"  {k}: {v:.3f}")
-            else:
-                print(f"  {k}: {v}")
+        full = full_inspect(mem_id)
+        reinforce = full['reinforcement']
+        memory = full['memory']
+        
+        print(f"╔══════════════════════════════════════════════════════════════╗")
+        print(f"║  {mem_id}")
+        print(f"╠══════════════════════════════════════════════════════════════╣")
+        
+        if memory:
+            print(f"║  FRAMES: {', '.join(memory['frames'][:5])}")
+            print(f"║  TONE: {', '.join(memory['emotional_tone'][:4])}")
+            print(f"║  TAGS: {', '.join(memory['tags'][:5])}")
+            print(f"╟──────────────────────────────────────────────────────────────╢")
+            
+            # Summary (wrapped)
+            summary = memory['summary'].strip()[:200]
+            if len(memory['summary']) > 200:
+                summary += "..."
+            print(f"║  SUMMARY:")
+            for line in summary.split('\n')[:3]:
+                print(f"║    {line[:58]}")
+            
+            print(f"╟──────────────────────────────────────────────────────────────╢")
+            
+            # Verbatim highlights
+            print(f"║  VERBATIM:")
+            for k, v in list(memory['verbatim'].items())[:4]:
+                v_str = str(v)[:45]
+                print(f"║    {k}: {v_str}")
+        
+        print(f"╟──────────────────────────────────────────────────────────────╢")
+        print(f"║  REINFORCEMENT:")
+        print(f"║    Salience: {reinforce['initial_salience']:.2f} → {reinforce['current_salience']:.2f} (dynamic)")
+        print(f"║    Accesses: {reinforce['access_count']}  |  Last: {reinforce['last_accessed'] or 'never'}")
+        print(f"║    Boost: +{reinforce['explicit_boost']:.2f}  |  Decay immune: {reinforce['decay_immune']}")
+        print(f"║    Links: {len(reinforce['linked_by'])}  |  Usefulness: {reinforce['usefulness_score']:.2f}")
+        print(f"╚══════════════════════════════════════════════════════════════╝")
     
     elif cmd == 'decay':
         threshold = float(sys.argv[2]) if len(sys.argv) > 2 else 0.3

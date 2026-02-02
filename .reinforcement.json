@@ -1,0 +1,68 @@
+{
+  "mem-019-encoder-frame-test": {
+    "memory_id": "mem-019-encoder-frame-test",
+    "access_count": 1,
+    "last_accessed": "2026-02-02T10:21:27.088082",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.7
+  },
+  "mem-009-stellar-delve-overview": {
+    "memory_id": "mem-009-stellar-delve-overview",
+    "access_count": 1,
+    "last_accessed": "2026-02-02T10:21:27.089588",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.5
+  },
+  "mem-002-deep-dive": {
+    "memory_id": "mem-002-deep-dive",
+    "access_count": 1,
+    "last_accessed": "2026-02-02T10:21:27.092652",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.9
+  },
+  "mem-001-founding": {
+    "memory_id": "mem-001-founding",
+    "access_count": 1,
+    "last_accessed": "2026-02-02T10:21:35.368302",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.2,
+    "decay_immune": true,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.95
+  },
+  "mem-018-architecture-expansi": {
+    "memory_id": "mem-018-architecture-expansi",
+    "access_count": 1,
+    "last_accessed": "2026-02-02T10:21:35.370170",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.9
+  },
+  "mem-010-gist-memory-build": {
+    "memory_id": "mem-010-gist-memory-build",
+    "access_count": 1,
+    "last_accessed": "2026-02-02T10:21:35.371477",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.5
+  }
+}

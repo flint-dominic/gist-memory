@@ -31,6 +31,42 @@ case "$1" in
     stats|st)
         python src/retrieval.py stats
         ;;
+    list|ls)
+        shift
+        python -c "
+import sys
+sys.path.insert(0, 'src')
+from reinforcement import get_tracker, load_memory_yaml
+import yaml
+from pathlib import Path
+
+tracker = get_tracker()
+examples = sorted(Path('examples').glob('*.yaml'))
+
+show_all = '--all' in sys.argv or '-a' in sys.argv
+
+print('╔════════════════════════════════════════════════════════════════════╗')
+print('║  GIST MEMORY INDEX                                                 ║')
+print('╠════════════════════════════════════════════════════════════════════╣')
+
+for f in examples:
+    try:
+        mem = yaml.safe_load(f.read_text())
+        mem_id = mem.get('id', f.stem)
+        frames = mem.get('gist', {}).get('frames', [])[:3]
+        salience = tracker.calculate_salience(mem_id)
+        accesses = tracker.get(mem_id).access_count
+        immune = '🔒' if tracker.get(mem_id).decay_immune else '  '
+        
+        frame_str = ', '.join(frames)[:30]
+        print(f'║ {immune} {salience:.2f} [{accesses:2d}] {mem_id[:28]:<28} │ {frame_str}')
+    except:
+        pass
+
+print('╚════════════════════════════════════════════════════════════════════╝')
+print(f'   Total: {len(examples)} memories')
+" "$@"
+        ;;
     context|c)
         shift
         python src/context.py "$@"
@@ -61,6 +97,7 @@ case "$1" in
         echo "  encode <file>      Encode file to memory YAML"
         echo "  index              Re-index all memories"
         echo "  stats              Show memory stats"
+        echo "  list               List all memories with salience"
         echo ""
         echo "Reinforcement:"
         echo "  inspect <id>       Show full memory stats + reinforcement"
