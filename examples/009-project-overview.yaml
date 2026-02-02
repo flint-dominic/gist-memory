@@ -1,0 +1,68 @@
+id: mem-009-stellar-delve-overview
+timestamp: 2026-02-02 08:23:19.362227
+type: planning
+gist:
+  frames:
+  - collaborative_exploration
+  - architecture_design
+  - problem_solving
+  emotional_tone:
+  - curiosity
+  - excitement
+  - confidence
+  salience: 0.5
+  source: encoded
+salience: 0.9
+confidence: 0.8
+source: encoded
+verbatim:
+  stored:
+    project_overview: 'Deep dive into gblfxt''s three main projects.
+
+      '
+    scope: '5 planetary tiers (Terra Prime → The Boundary)
+
+      13+ creature types with depth-based spawning
+
+      100+ buildings across 9 tiers
+
+      Full job system (mining, hauling, crafting, construction)
+
+      Colonist needs (hunger, thirst, fatigue, sanity)
+
+      Raid system, encounters, events
+
+      '
+    vibe: This is the BIG one. Substantial scope, serious game design doc, actively
+      being developed and tested.
+  reconstructable:
+    Stellar Delve: 'Guide colonists to establish underground bases on alien worlds.
+
+      '
+    Asset Lab: 'AI-powered 3D asset pipeline for game development (feeds into Stellar
+      Delve).
+
+      '
+    Minecraft Modding: 'Heavily customized Cobblemon/NeoForge modded Minecraft server.
+
+      '
+metadata:
+  participant: gblfxt
+  session_key: unknown
+  session_type: unknown
+  duration_estimate: X hours
+  related_entries: []
+  tags:
+  - game development
+  - Stellar Delve
+  - Asset Lab
+  - Minecraft Modding
+summary: 'Overview of three main projects: Stellar Delve, Asset Lab, and Minecraft
+  Modding. Each project has its unique scope, vibe, and goals.
+
+  '
+retrieval_hints:
+- Stellar Delve game development
+- Asset Lab 3D asset pipeline
+- Minecraft Modding Cobblemon NeoForge
+- gblfxt projects overview
