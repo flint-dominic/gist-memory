@@ -1,0 +1,26 @@
+# Memory data (personal - never commit)
+examples/
+*.yaml
+.session-log.json
+.reinforcement.json
+.perspectives.json
+.links.json
+.storage_tiers.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
