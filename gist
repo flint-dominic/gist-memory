@@ -182,7 +182,11 @@ print(f'   Total: {len(examples)} memories')
         ;;
     unified|u)
         shift
-        python ~/clawd/memory/unified_recall.py "$@"
+        python src/recall.py --hybrid "$@"
+        ;;
+    corpus)
+        shift
+        python src/markdown_index.py "$@"
         ;;
     inject)
         shift
@@ -240,7 +244,11 @@ print(f'   Total: {len(examples)} memories')
         echo "                     gist auto-encode 'content' -t 'title'"
         echo "                     gist auto-encode -f session.txt"
         echo "                     cat transcript | gist auto-encode"
-        echo "  unified <query>    Search BOTH gist + markdown memories"
+        echo "  unified <query>    Search BOTH gist + markdown memories (hybrid)"
+        echo "  corpus index       Index markdown files (memory/, docs/, MEMORY.md)"
+        echo "  corpus search <q>  Search markdown corpus only"
+        echo "  corpus status      Show corpus index stats"
+        echo "  corpus reset       Clear corpus index"
         echo ""
         echo "Examples:"
         echo "  gist recall 'what is fuzzy trace theory'"
