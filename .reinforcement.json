@@ -23,8 +23,8 @@
   },
   "mem-002-deep-dive": {
     "memory_id": "mem-002-deep-dive",
-    "access_count": 16,
-    "last_accessed": "2026-02-18T04:16:30.223923",
+    "access_count": 17,
+    "last_accessed": "2026-02-18T23:48:11.565624",
     "linked_by": [
       "mem-001-founding"
     ],
@@ -77,8 +77,8 @@
   },
   "mem-007-remus-hardening": {
     "memory_id": "mem-007-remus-hardening",
-    "access_count": 4,
-    "last_accessed": "2026-02-18T22:00:52.249340",
+    "access_count": 6,
+    "last_accessed": "2026-02-18T23:48:04.902703",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -170,8 +170,8 @@
   },
   "mem-011-stellar-delve": {
     "memory_id": "mem-011-stellar-delve",
-    "access_count": 3,
-    "last_accessed": "2026-02-02T11:48:52.125806",
+    "access_count": 4,
+    "last_accessed": "2026-02-18T23:48:11.562170",
     "linked_by": [
       "mem-009-stellar-delve-overvi"
     ],
@@ -300,14 +300,14 @@
   },
   "mem-030-egregore-founding-da": {
     "memory_id": "mem-030-egregore-founding-da",
-    "access_count": 0,
-    "last_accessed": null,
+    "access_count": 1,
+    "last_accessed": "2026-02-18T23:12:45.003132",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
-    "initial_salience": 0.5
+    "initial_salience": 0.7
   },
   "mem-024-architecture-expansion-session": {
     "memory_id": "mem-024-architecture-expansion-session",
@@ -344,19 +344,19 @@
   },
   "mem-029-egregore-first-conta": {
     "memory_id": "mem-029-egregore-first-conta",
-    "access_count": 0,
-    "last_accessed": null,
+    "access_count": 1,
+    "last_accessed": "2026-02-18T23:12:45.006377",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
-    "initial_salience": 0.5
+    "initial_salience": 0.7
   },
   "mem-031-egregore-launch-day": {
     "memory_id": "mem-031-egregore-launch-day",
-    "access_count": 18,
-    "last_accessed": "2026-02-18T04:16:30.612783",
+    "access_count": 20,
+    "last_accessed": "2026-02-18T23:48:04.900026",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -410,8 +410,8 @@
   },
   "mem-035-egregore-security-ex": {
     "memory_id": "mem-035-egregore-security-ex",
-    "access_count": 1,
-    "last_accessed": "2026-02-17T13:44:42.961609",
+    "access_count": 2,
+    "last_accessed": "2026-02-18T23:16:30.551049",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -421,8 +421,8 @@
   },
   "mem-036-thoughtwire-v020-pen": {
     "memory_id": "mem-036-thoughtwire-v020-pen",
-    "access_count": 2,
-    "last_accessed": "2026-02-18T22:00:52.246109",
+    "access_count": 4,
+    "last_accessed": "2026-02-18T23:48:04.898353",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
