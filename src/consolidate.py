@@ -20,7 +20,7 @@ EXAMPLES_DIR = PROJECT_ROOT / "examples"
 CHROMA_DIR = PROJECT_ROOT / ".chroma"
 
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
-from reinforcement import get_tracker, load_memory_yaml
+from reinforcement import get_tracker
 
 
 def get_collection():

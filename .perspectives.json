@@ -755,5 +755,30 @@
     },
     "primary_frame": "creative_work",
     "generated_at": "2026-02-02T11:51:59.554059"
+  },
+  "mem-025-gist-architecture-feb02": {
+    "memory_id": "mem-025-gist-architecture-feb02",
+    "perspectives": {
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "A major gist-memory architecture session with gblfxt, building on tiered storage, bidirectional links, and multi-perspective frames. The session featu...",
+        "salience": 0.9,
+        "keywords": []
+      },
+      "research_discovery": {
+        "frame": "research_discovery",
+        "gist": "A major gist-memory architecture session with gblfxt, building on tiered storage, bidirectional links, and multi-perspective frames. The session featu...",
+        "salience": 0.8,
+        "keywords": []
+      },
+      "problem_solving": {
+        "frame": "problem_solving",
+        "gist": "A major gist-memory architecture session with gblfxt, building on tiered storage, bidirectional links, and multi-perspective frames. The session featu...",
+        "salience": 0.7,
+        "keywords": []
+      }
+    },
+    "primary_frame": "architecture_design",
+    "generated_at": "2026-02-02T12:14:36.128304"
   }
 }

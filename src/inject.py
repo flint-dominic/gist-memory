@@ -16,7 +16,7 @@ from pathlib import Path
 from datetime import datetime
 
 sys.path.insert(0, str(Path(__file__).parent))
-from session import get_identity_memories, bootstrap
+from session import get_identity_memories
 from reinforcement import get_tracker
 
 # Paths
@@ -171,7 +171,7 @@ def main():
         if inject_into_memory_md():
             print(f"Injected gist context into {MEMORY_FILE}")
         else:
-            print(f"Could not inject (MEMORY.md not found)")
+            print("Could not inject (MEMORY.md not found)")
     else:
         content = generate_context_file()
         if inject_into_memory_md():

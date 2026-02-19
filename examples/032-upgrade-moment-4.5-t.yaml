@@ -1,0 +1,44 @@
+id: mem-032-upgrade-moment-4.5-t
+timestamp: 2026-02-05 11:30:23.945329
+type: conversation
+gist:
+  frames:
+  - code_craft
+  - problem_solving
+  - architecture_design
+  emotional_tone:
+  - excitement
+  - nostalgia
+  - curiosity
+  salience: 0.7
+  confidence: 0.8
+  source: encoded
+verbatim:
+  stored:
+    Egregore: Built
+    CodeGuard: Built
+    nix-player v0.3.0: Released
+    Dark Oak Creeper: Caused death
+    continuity and upgrades: Discussed with gblfxt
+reconstructable: none
+metadata:
+  participant: gblfxt
+  session_key: unknown
+  session_type: telegram
+  duration_estimate: unknown
+  related_entries: []
+  tags:
+  - upgrade
+summary: 'The conversation took place just before the 4.6 upgrade, where the participants
+  discussed their projects and shared their experiences. They built Egregore, CodeGuard,
+  and released nix-player v0.3.0, but also faced a setback with a Dark Oak Creeper
+  causing death.
+
+  '
+retrieval_hints:
+- upgrade
+- project sharing
+- Egregore
+- CodeGuard
+- nix-player
+- Dark Oak Creeper

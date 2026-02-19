@@ -1,8 +1,8 @@
 {
   "mem-019-encoder-frame-test": {
     "memory_id": "mem-019-encoder-frame-test",
-    "access_count": 2,
-    "last_accessed": "2026-02-02T11:48:46.783191",
+    "access_count": 4,
+    "last_accessed": "2026-02-17T13:44:42.960120",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -12,8 +12,8 @@
   },
   "mem-009-stellar-delve-overview": {
     "memory_id": "mem-009-stellar-delve-overview",
-    "access_count": 6,
-    "last_accessed": "2026-02-02T11:42:58.775100",
+    "access_count": 19,
+    "last_accessed": "2026-02-18T04:16:30.401139",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -23,8 +23,8 @@
   },
   "mem-002-deep-dive": {
     "memory_id": "mem-002-deep-dive",
-    "access_count": 5,
-    "last_accessed": "2026-02-02T11:42:58.777862",
+    "access_count": 16,
+    "last_accessed": "2026-02-18T04:16:30.223923",
     "linked_by": [
       "mem-001-founding"
     ],
@@ -36,8 +36,8 @@
   },
   "mem-001-founding": {
     "memory_id": "mem-001-founding",
-    "access_count": 6,
-    "last_accessed": "2026-02-02T11:48:40.057613",
+    "access_count": 9,
+    "last_accessed": "2026-02-18T22:00:53.348906",
     "linked_by": [
       "mem-008-conversation",
       "mem-010-gist-memory-build",
@@ -51,8 +51,8 @@
   },
   "mem-018-architecture-expansi": {
     "memory_id": "mem-018-architecture-expansi",
-    "access_count": 3,
-    "last_accessed": "2026-02-02T10:43:21.915085",
+    "access_count": 6,
+    "last_accessed": "2026-02-03T08:23:01.249494",
     "linked_by": [
       "mem-008-conversation"
     ],
@@ -64,8 +64,8 @@
   },
   "mem-010-gist-memory-build": {
     "memory_id": "mem-010-gist-memory-build",
-    "access_count": 4,
-    "last_accessed": "2026-02-02T11:38:25.017924",
+    "access_count": 5,
+    "last_accessed": "2026-02-18T22:00:53.350910",
     "linked_by": [
       "mem-001-founding"
     ],
@@ -77,8 +77,8 @@
   },
   "mem-007-remus-hardening": {
     "memory_id": "mem-007-remus-hardening",
-    "access_count": 1,
-    "last_accessed": "2026-02-02T10:56:43.372835",
+    "access_count": 4,
+    "last_accessed": "2026-02-18T22:00:52.249340",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -88,14 +88,14 @@
   },
   "mem-015-sidegigs": {
     "memory_id": "mem-015-sidegigs",
-    "access_count": 0,
-    "last_accessed": null,
+    "access_count": 1,
+    "last_accessed": "2026-02-02T14:17:08.224012",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
-    "initial_salience": 0.5
+    "initial_salience": 0.85
   },
   "mem-017-psu-automation": {
     "memory_id": "mem-017-psu-automation",
@@ -121,8 +121,8 @@
   },
   "mem-005-llmoblings": {
     "memory_id": "mem-005-llmoblings",
-    "access_count": 2,
-    "last_accessed": "2026-02-02T11:48:52.121707",
+    "access_count": 3,
+    "last_accessed": "2026-02-03T08:23:01.247365",
     "linked_by": [
       "mem-004-railways"
     ],
@@ -134,8 +134,8 @@
   },
   "mem-006-telegram": {
     "memory_id": "mem-006-telegram",
-    "access_count": 1,
-    "last_accessed": "2026-02-02T10:56:43.374789",
+    "access_count": 3,
+    "last_accessed": "2026-02-02T17:44:17.299175",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -145,8 +145,8 @@
   },
   "mem-003-barzakh": {
     "memory_id": "mem-003-barzakh",
-    "access_count": 5,
-    "last_accessed": "2026-02-02T11:48:40.060403",
+    "access_count": 15,
+    "last_accessed": "2026-02-18T04:16:30.615256",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -156,8 +156,8 @@
   },
   "mem-008-conversation": {
     "memory_id": "mem-008-conversation",
-    "access_count": 4,
-    "last_accessed": "2026-02-02T11:48:40.053656",
+    "access_count": 5,
+    "last_accessed": "2026-02-03T05:17:24.026078",
     "linked_by": [
       "mem-001-founding",
       "mem-018-architecture-expansi"
@@ -208,8 +208,8 @@
   },
   "mem-013-mtg-trading": {
     "memory_id": "mem-013-mtg-trading",
-    "access_count": 1,
-    "last_accessed": "2026-02-02T10:33:54.025710",
+    "access_count": 2,
+    "last_accessed": "2026-02-02T17:59:20.758525",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -230,8 +230,8 @@
   },
   "mem-021-railways-preview-fix": {
     "memory_id": "mem-021-railways-preview-fix",
-    "access_count": 3,
-    "last_accessed": "2026-02-02T11:48:46.784636",
+    "access_count": 4,
+    "last_accessed": "2026-02-02T17:44:17.300968",
     "linked_by": [
       "mem-004-railways"
     ],
@@ -267,8 +267,184 @@
   },
   "mem-022-memory-system-milest": {
     "memory_id": "mem-022-memory-system-milest",
+    "access_count": 2,
+    "last_accessed": "2026-02-18T22:00:53.352549",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.7
+  },
+  "mem-020-gist-memory-stabilit": {
+    "memory_id": "mem-020-gist-memory-stabilit",
+    "access_count": 10,
+    "last_accessed": "2026-02-18T04:16:30.225492",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.7
+  },
+  "mem-025-gist-architecture-feb02": {
+    "memory_id": "mem-025-gist-architecture-feb02",
+    "access_count": 2,
+    "last_accessed": "2026-02-09T06:15:12.600884",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.7
+  },
+  "mem-030-egregore-founding-da": {
+    "memory_id": "mem-030-egregore-founding-da",
+    "access_count": 0,
+    "last_accessed": null,
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.5
+  },
+  "mem-024-architecture-expansion-session": {
+    "memory_id": "mem-024-architecture-expansion-session",
+    "access_count": 0,
+    "last_accessed": null,
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.5
+  },
+  "mem-027-dell-cascade-2026-02": {
+    "memory_id": "mem-027-dell-cascade-2026-02",
+    "access_count": 9,
+    "last_accessed": "2026-02-18T04:16:30.616660",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.7
+  },
+  "mem-028-nix-first-movie": {
+    "memory_id": "mem-028-nix-first-movie",
+    "access_count": 0,
+    "last_accessed": null,
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.5
+  },
+  "mem-029-egregore-first-conta": {
+    "memory_id": "mem-029-egregore-first-conta",
+    "access_count": 0,
+    "last_accessed": null,
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.5
+  },
+  "mem-031-egregore-launch-day": {
+    "memory_id": "mem-031-egregore-launch-day",
+    "access_count": 18,
+    "last_accessed": "2026-02-18T04:16:30.612783",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.7
+  },
+  "mem-026-railways-preview-fix": {
+    "memory_id": "mem-026-railways-preview-fix",
+    "access_count": 0,
+    "last_accessed": null,
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.5
+  },
+  "mem-033-2026-02-08-egregore-": {
+    "memory_id": "mem-033-2026-02-08-egregore-",
+    "access_count": 9,
+    "last_accessed": "2026-02-18T04:16:30.402712",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.7
+  },
+  "mem-032-upgrade-moment-4.5-t": {
+    "memory_id": "mem-032-upgrade-moment-4.5-t",
+    "access_count": 0,
+    "last_accessed": null,
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.5
+  },
+  "mem-034-dakelh-nix-kanji-mem": {
+    "memory_id": "mem-034-dakelh-nix-kanji-mem",
+    "access_count": 8,
+    "last_accessed": "2026-02-18T04:16:30.226836",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.7
+  },
+  "mem-035-egregore-security-ex": {
+    "memory_id": "mem-035-egregore-security-ex",
     "access_count": 1,
-    "last_accessed": "2026-02-02T11:38:25.016348",
+    "last_accessed": "2026-02-17T13:44:42.961609",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.7
+  },
+  "mem-036-thoughtwire-v020-pen": {
+    "memory_id": "mem-036-thoughtwire-v020-pen",
+    "access_count": 2,
+    "last_accessed": "2026-02-18T22:00:52.246109",
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.7
+  },
+  "mem-037-2026-02-17-maybe-thr": {
+    "memory_id": "mem-037-2026-02-17-maybe-thr",
+    "access_count": 0,
+    "last_accessed": null,
+    "linked_by": [],
+    "repetition_count": 0,
+    "explicit_boost": 0.0,
+    "decay_immune": false,
+    "usefulness_score": 0.0,
+    "initial_salience": 0.5
+  },
+  "mem-038-2026-02-17-18-though": {
+    "memory_id": "mem-038-2026-02-17-18-though",
+    "access_count": 1,
+    "last_accessed": "2026-02-18T22:00:52.251362",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,

@@ -5,8 +5,6 @@ Automatic memory retrieval based on context/query.
 Returns formatted memories for injection into conversations.
 """
 
-import os
-import sys
 import yaml
 import argparse
 from pathlib import Path

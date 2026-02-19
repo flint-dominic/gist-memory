@@ -16,7 +16,7 @@ import yaml
 import sys
 from pathlib import Path
 from datetime import datetime
-from typing import Optional, Dict, List, Tuple
+from typing import Optional, Dict, List
 from dataclasses import dataclass, asdict, field
 
 # Project paths
@@ -26,7 +26,6 @@ PERSPECTIVES_FILE = PROJECT_ROOT / ".perspectives.json"
 
 # Import frames for validation
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
-from frames import FRAMES, list_frames
 
 
 @dataclass
@@ -363,13 +362,13 @@ if __name__ == '__main__':
             # Show specific memory
             persp = manager.get(args.memory_id)
             
-            print(f"╔══════════════════════════════════════════════════════════════╗")
+            print("╔══════════════════════════════════════════════════════════════╗")
             print(f"║  PERSPECTIVES: {args.memory_id[:45]}")
-            print(f"╠══════════════════════════════════════════════════════════════╣")
+            print("╠══════════════════════════════════════════════════════════════╣")
             
             if persp.perspectives:
                 print(f"║  Primary frame: {persp.primary_frame}")
-                print(f"║")
+                print("║")
                 
                 for frame, p in persp.perspectives.items():
                     gist = p.get('gist', '')[:50]
@@ -381,7 +380,7 @@ if __name__ == '__main__':
                     print(f"║    {gist}...")
                     if kw:
                         print(f"║    Keywords: {', '.join(kw[:5])}")
-                    print(f"║")
+                    print("║")
             else:
                 print("║  (no perspectives yet)")
                 print("║  Run: gist perspectives generate <id>")

@@ -20,7 +20,7 @@ import sys
 import json
 from pathlib import Path
 from dataclasses import dataclass, field
-from typing import List, Optional, Dict, Set
+from typing import List, Dict, Set
 from datetime import datetime
 
 import chromadb

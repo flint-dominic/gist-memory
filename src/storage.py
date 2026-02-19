@@ -9,13 +9,13 @@ Inspired by HippocampAI's tiered storage architecture.
 import json
 import yaml
 from pathlib import Path
-from datetime import datetime, timedelta
+from datetime import datetime
 from typing import Optional, Dict, List, Tuple
 from dataclasses import dataclass, asdict
 from enum import Enum
 
 # Import existing reinforcement tracking
-from reinforcement import get_tracker, ReinforcementTracker
+from reinforcement import get_tracker
 
 # Project paths
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -364,7 +364,7 @@ if __name__ == '__main__':
         
         for tier_name, emoji in [('hot', '🔥'), ('warm', '☀️'), ('cold', '❄️')]:
             memories = report[tier_name]
-            print(f"║                                                              ║")
+            print("║                                                              ║")
             print(f"║  {emoji} {tier_name.upper()} ({len(memories)})")
             if memories:
                 for m in memories[:5]:
@@ -373,7 +373,7 @@ if __name__ == '__main__':
                 if len(memories) > 5:
                     print(f"║     ... and {len(memories) - 5} more")
             else:
-                print(f"║     (none)")
+                print("║     (none)")
         
         print("╚══════════════════════════════════════════════════════════════╝")
     
@@ -416,7 +416,7 @@ if __name__ == '__main__':
         if manager.archive_verbatim(mem_id):
             print(f"❄️ Archived verbatim for {mem_id}")
         else:
-            print(f"Could not archive (not cold or no verbatim)")
+            print("Could not archive (not cold or no verbatim)")
     
     else:
         print("Unknown command")

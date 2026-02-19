@@ -1,0 +1,43 @@
+id: mem-026-railways-preview-fix
+timestamp: 2026-02-02 13:09:27.454621
+type: conversation
+gist:
+  frames:
+  - problem_solving
+  - architecture_design
+  - debugging
+  emotional_tone:
+  - satisfaction
+  - relief
+  - accomplishment
+  salience: 0.7
+  confidence: 0.8
+  source: encoded
+verbatim:
+  stored:
+    root_cause: Flywheel PartialModel doesn't inherit textures through parent chain
+      with OBJ loader
+    fix: Add textures directly at the same model level as the OBJ loader definition
+    important_file_path: src/main/resources takes priority over src/resources in Gradle
+  reconstructable: none
+metadata:
+  participant: gblfxt
+  session_key: unknown
+  session_type: telegram
+  duration_estimate: unknown
+  related_entries: []
+  tags:
+  - debugging
+summary: 'A phantom narrow/wide track preview black box issue was fixed by identifying
+  the root cause as a Flywheel PartialModel texture inheritance problem. The solution
+  involved adding textures directly at the same model level as the OBJ loader definition,
+  with priority given to src/main/resources over src/resources in Gradle.
+
+  '
+retrieval_hints:
+- phantom narrow/wide track preview black box issue
+- Flywheel PartialModel texture inheritance problem
+- OBJ loader definition
+- src/main/resources takes priority over src/resources in Gradle
+- debugging
+- texture inheritance

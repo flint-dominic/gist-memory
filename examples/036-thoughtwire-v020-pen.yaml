@@ -1,0 +1,45 @@
+id: mem-036-thoughtwire-v020-pen
+timestamp: 2026-02-16 12:26:27.762048
+type: conversation
+gist:
+  frames:
+  - problem_solving
+  - architecture_design
+  - debugging
+  emotional_tone:
+  - excitement
+  - relief
+  - accomplishment
+  salience: 0.7
+  confidence: 0.8
+  source: encoded
+verbatim:
+  stored:
+    detail_one: MQTT auth + ACLs
+    detail_two: Ed25519 frame signing (v2 protocol, 16-byte header)
+    detail_three: Pentest from gertrude found MQTT wide open, all fixed
+    detail_four: Egregore server hardened (partial token, channel validation, JSON
+      errors)
+    detail_five: Bridge now signs all frames
+  reconstructable: none
+metadata:
+  participant: gblfxt
+  session_key: unknown
+  session_type: telegram
+  duration_estimate: unknown
+  related_entries: []
+  tags:
+  - Thoughtwire
+summary: 'The Thoughtwire v0.2.0 major release included MQTT auth and ACLs, Ed25519
+  frame signing, and proper Python package with tests. A pentest from gertrude found
+  MQTT vulnerabilities, which were all fixed. The Egregore server was hardened, and
+  the Bridge now signs all frames.
+
+  '
+retrieval_hints:
+- Thoughtwire v0.2.0
+- MQTT auth
+- Ed25519 frame signing
+- Pentest from gertrude
+- Egregore server hardened
+- Bridge signing

@@ -4,12 +4,10 @@ Gist Memory - Remember Command
 Quick encoding of current context into a memory entry.
 """
 
-import os
 import sys
 import yaml
 import argparse
 from pathlib import Path
-from datetime import datetime
 
 # Add parent to path for imports
 sys.path.insert(0, str(Path(__file__).parent))

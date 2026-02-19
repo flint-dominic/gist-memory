@@ -7,7 +7,6 @@ Inspired by A-MEM's Zettelkasten linking approach.
 """
 
 import json
-import yaml
 from pathlib import Path
 from datetime import datetime
 from typing import Optional, Dict, List, Set
@@ -412,10 +411,10 @@ if __name__ == '__main__':
     
     if cmd == 'graph':
         graph = manager.get_link_graph()
-        print(f"╔══════════════════════════════════════════════════════════════╗")
-        print(f"║  MEMORY LINK GRAPH                                           ║")
+        print("╔══════════════════════════════════════════════════════════════╗")
+        print("║  MEMORY LINK GRAPH                                           ║")
         print(f"║  Nodes: {graph['node_count']}  |  Edges: {graph['edge_count']}                              ║")
-        print(f"╠══════════════════════════════════════════════════════════════╣")
+        print("╠══════════════════════════════════════════════════════════════╣")
         
         if graph['edges']:
             print("║  LINKS:")
@@ -435,9 +434,9 @@ if __name__ == '__main__':
         mem_id = sys.argv[2]
         links = manager.get(mem_id)
         
-        print(f"╔══════════════════════════════════════════════════════════════╗")
+        print("╔══════════════════════════════════════════════════════════════╗")
         print(f"║  LINKS: {mem_id[:50]}")
-        print(f"╠══════════════════════════════════════════════════════════════╣")
+        print("╠══════════════════════════════════════════════════════════════╣")
         
         if links.outbound:
             print("║  OUTBOUND:")
@@ -481,7 +480,7 @@ if __name__ == '__main__':
         if manager.remove_link(src, tgt, link_type):
             print(f"✓ Unlinked: {src} -- {tgt}")
         else:
-            print(f"No link found")
+            print("No link found")
     
     elif cmd == 'path' and len(sys.argv) >= 4:
         from_id = sys.argv[2]

@@ -4,7 +4,6 @@ Gist Memory Retrieval
 Semantic search over encoded memories using ChromaDB
 """
 
-import os
 import sys
 import yaml
 import argparse
@@ -221,7 +220,7 @@ def main():
             print()
     
     elif args.command == 'stats':
-        print(f"Collection: gist_memories")
+        print("Collection: gist_memories")
         print(f"Total entries: {collection.count()}")
         
         # List all entries

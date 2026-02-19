@@ -6,9 +6,7 @@ Converts conversations/text into memory entries using LLM analysis.
 Uses the formal frame taxonomy from frames.py for consistent encoding.
 """
 
-import os
 import sys
-import json
 import yaml
 import argparse
 import hashlib
@@ -29,7 +27,7 @@ EXAMPLES_DIR = PROJECT_ROOT / "examples"
 
 # Import frame taxonomy
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
-from frames import FRAMES, frame_prompt, get_frame
+from frames import FRAMES, frame_prompt
 
 # Default model
 DEFAULT_MODEL = "llama3:8b"

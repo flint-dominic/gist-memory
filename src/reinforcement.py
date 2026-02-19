@@ -7,9 +7,8 @@ Tracks access patterns and calculates dynamic salience.
 import json
 from pathlib import Path
 from datetime import datetime
-from typing import Optional, Dict, List, Any
+from typing import Optional, Dict, List
 from dataclasses import dataclass, asdict
-import math
 
 # Tracking file location
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -295,39 +294,39 @@ if __name__ == '__main__':
         reinforce = full['reinforcement']
         memory = full['memory']
         
-        print(f"╔══════════════════════════════════════════════════════════════╗")
+        print("╔══════════════════════════════════════════════════════════════╗")
         print(f"║  {mem_id}")
-        print(f"╠══════════════════════════════════════════════════════════════╣")
+        print("╠══════════════════════════════════════════════════════════════╣")
         
         if memory:
             print(f"║  FRAMES: {', '.join(memory['frames'][:5])}")
             print(f"║  TONE: {', '.join(memory['emotional_tone'][:4])}")
             print(f"║  TAGS: {', '.join(memory['tags'][:5])}")
-            print(f"╟──────────────────────────────────────────────────────────────╢")
+            print("╟──────────────────────────────────────────────────────────────╢")
             
             # Summary (wrapped)
             summary = memory['summary'].strip()[:200]
             if len(memory['summary']) > 200:
                 summary += "..."
-            print(f"║  SUMMARY:")
+            print("║  SUMMARY:")
             for line in summary.split('\n')[:3]:
                 print(f"║    {line[:58]}")
             
-            print(f"╟──────────────────────────────────────────────────────────────╢")
+            print("╟──────────────────────────────────────────────────────────────╢")
             
             # Verbatim highlights
-            print(f"║  VERBATIM:")
+            print("║  VERBATIM:")
             for k, v in list(memory['verbatim'].items())[:4]:
                 v_str = str(v)[:45]
                 print(f"║    {k}: {v_str}")
         
-        print(f"╟──────────────────────────────────────────────────────────────╢")
-        print(f"║  REINFORCEMENT:")
+        print("╟──────────────────────────────────────────────────────────────╢")
+        print("║  REINFORCEMENT:")
         print(f"║    Salience: {reinforce['initial_salience']:.2f} → {reinforce['current_salience']:.2f} (dynamic)")
         print(f"║    Accesses: {reinforce['access_count']}  |  Last: {reinforce['last_accessed'] or 'never'}")
         print(f"║    Boost: +{reinforce['explicit_boost']:.2f}  |  Decay immune: {reinforce['decay_immune']}")
         print(f"║    Links: {len(reinforce['linked_by'])}  |  Usefulness: {reinforce['usefulness_score']:.2f}")
-        print(f"╚══════════════════════════════════════════════════════════════╝")
+        print("╚══════════════════════════════════════════════════════════════╝")
     
     elif cmd == 'decay':
         threshold = float(sys.argv[2]) if len(sys.argv) > 2 else 0.3
@@ -347,7 +346,7 @@ if __name__ == '__main__':
         print(f"Boosted {mem_id}")
         print(f"  New salience: {info['current_salience']:.3f}")
         if lock:
-            print(f"  Decay immune: True")
+            print("  Decay immune: True")
     
     else:
         print("Unknown command")

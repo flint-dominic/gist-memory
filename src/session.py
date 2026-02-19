@@ -17,7 +17,6 @@ from recall import recall, format_for_context
 from encode import encode_text
 from retrieval import get_client, get_collection, index_memories
 from perspectives import get_manager as get_perspective_manager
-from frames import detect_frames_from_text
 
 PROJECT_ROOT = Path(__file__).parent.parent
 EXAMPLES_DIR = PROJECT_ROOT / "examples"
@@ -287,7 +286,7 @@ def auto_encode(
         client = get_client()
         collection = get_collection(client)
         index_memories(collection, force=False)
-        print(f"  ✓ Indexed", file=sys.stderr)
+        print("  ✓ Indexed", file=sys.stderr)
     except Exception as e:
         print(f"  ⚠ Index warning: {e}", file=sys.stderr)
     

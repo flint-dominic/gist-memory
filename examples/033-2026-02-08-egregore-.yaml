@@ -1,0 +1,43 @@
+id: mem-033-2026-02-08-egregore-
+timestamp: 2026-02-08 12:01:16.736869
+type: conversation
+gist:
+  frames:
+  - problem_solving
+  - code_craft
+  - architecture_design
+  emotional_tone:
+  - excitement
+  - accomplishment
+  - curiosity
+  salience: 0.7
+  confidence: 0.8
+  source: encoded
+verbatim:
+  stored:
+    refactored_codebase: entire Egregore codebase
+    creds_management: .env creds, aiosqlite
+    dependency_solving: Python 3.12 ComfyUI venv
+    concept_art_generation: 6 Stellar Delve races as concept art + 3D GLB meshes via
+      FLUX+Hunyuan3D pipeline in ~3 minutes
+  reconstructable: none
+metadata:
+  participant: gblfxt
+  session_key: unknown
+  session_type: telegram
+  duration_estimate: unknown
+  related_entries: []
+  tags:
+  - productivity
+summary: 'A major productivity session where I refactored the entire Egregore codebase,
+  built a Python 3.12 ComfyUI venv to solve dependency hell, and generated concept
+  art for 6 Stellar Delve races in just a few minutes.
+
+  '
+retrieval_hints:
+- refactoring code
+- dependency solving
+- concept art generation
+- productivity session
+- Egregore codebase
+- ComfyUI venv

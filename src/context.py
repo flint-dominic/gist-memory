@@ -4,7 +4,6 @@ Gist Memory Context Injection
 Automatically extract themes from input and inject relevant memories.
 """
 
-import os
 import sys
 import re
 import json
