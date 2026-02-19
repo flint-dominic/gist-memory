@@ -33,14 +33,19 @@ from frames import FRAMES, frame_prompt
 DEFAULT_MODEL = "llama3:8b"
 
 
-def load_frames() -> str:
-    """Load the formal frame taxonomy for the encoding prompt."""
-    return frame_prompt()
-
+# ── Frame Validation ──────────────────────────────────────────────
 
 def get_valid_frame_ids() -> List[str]:
     """Get list of valid frame IDs."""
     return list(FRAMES.keys())
+
+
+def _fuzzy_match_frame(candidate: str, valid_frames: List[str]) -> Optional[str]:
+    """Try to fuzzy-match a frame ID against the valid list."""
+    for v in valid_frames:
+        if candidate in v or v in candidate:
+            return v
+    return None
 
 
 def validate_frames(frame_list: List[str]) -> List[str]:
@@ -52,12 +57,21 @@ def validate_frames(frame_list: List[str]) -> List[str]:
         if f_clean in valid:
             validated.append(f_clean)
         else:
-            # Try fuzzy match
-            for v in valid:
-                if f_clean in v or v in f_clean:
-                    validated.append(v)
-                    break
-    return list(set(validated)) or ['collaborative_exploration']  # Default fallback
+            match = _fuzzy_match_frame(f_clean, valid)
+            if match:
+                validated.append(match)
+    return list(set(validated)) or ['collaborative_exploration']
+
+
+# ── ID Generation ─────────────────────────────────────────────────
+
+def generate_id(content: str, prefix: str = "auto") -> str:
+    """Generate a unique ID based on content hash."""
+    hash_short = hashlib.md5(content.encode()).hexdigest()[:8]
+    return f"mem-{prefix}-{hash_short}"
+
+
+# ── Prompt Building ───────────────────────────────────────────────
 
 ENCODE_PROMPT = """You are encoding a conversation into a gist memory entry.
 
@@ -120,11 +134,25 @@ retrieval_hints:
 """
 
 
-def generate_id(content: str, prefix: str = "auto") -> str:
-    """Generate a unique ID based on content hash."""
-    hash_short = hashlib.md5(content.encode()).hexdigest()[:8]
-    return f"mem-{prefix}-{hash_short}"
+def _build_prompt(content: str, entry_type: str, session_type: str,
+                  number: str) -> str:
+    """Build the encoding prompt with all substitutions."""
+    frames = frame_prompt()
+    frame_ids = ", ".join(get_valid_frame_ids())
+    timestamp = datetime.now().isoformat()
 
+    prompt = ENCODE_PROMPT
+    prompt = prompt.replace('{frames}', frames)
+    prompt = prompt.replace('{frame_ids}', frame_ids)
+    prompt = prompt.replace('{content}', content[:8000])
+    prompt = prompt.replace('{timestamp}', timestamp)
+    prompt = prompt.replace('{type}', entry_type)
+    prompt = prompt.replace('{session_type}', session_type)
+    prompt = prompt.replace('{number}', number)
+    return prompt
+
+
+# ── LLM Interaction ───────────────────────────────────────────────
 
 def encode_with_ollama(
     content: str,
@@ -133,29 +161,22 @@ def encode_with_ollama(
     session_type: str = "unknown",
     number: str = "XXX"
 ) -> Optional[str]:
-    """Use Ollama to encode content into a memory entry."""
+    """Use Ollama to encode content into a memory entry.
+    
+    Returns raw LLM output string, or None on failure.
+    """
     if not HAS_OLLAMA:
         print("Error: ollama package not installed", file=sys.stderr)
         return None
-    
-    frames = load_frames()
-    frame_ids = ", ".join(get_valid_frame_ids())
-    timestamp = datetime.now().isoformat()
-    
-    prompt = ENCODE_PROMPT.replace('{frames}', frames)
-    prompt = prompt.replace('{frame_ids}', frame_ids)
-    prompt = prompt.replace('{content}', content[:8000])
-    prompt = prompt.replace('{timestamp}', timestamp)
-    prompt = prompt.replace('{type}', entry_type)
-    prompt = prompt.replace('{session_type}', session_type)
-    prompt = prompt.replace('{number}', number)
-    
+
+    prompt = _build_prompt(content, entry_type, session_type, number)
+
     try:
         response = ollama.generate(
             model=model,
             prompt=prompt,
             options={
-                "temperature": 0.3,  # Lower for more consistent output
+                "temperature": 0.3,
                 "num_predict": 2000,
             }
         )
@@ -165,63 +186,99 @@ def encode_with_ollama(
         return None
 
 
-def clean_yaml_output(raw: str) -> str:
-    """Clean up LLM output to valid YAML."""
-    # Remove markdown code blocks if present
+# ── Output Cleaning ───────────────────────────────────────────────
+
+def _strip_code_fences(raw: str) -> str:
+    """Remove markdown code blocks from LLM output."""
     if "```yaml" in raw:
-        raw = raw.split("```yaml")[1].split("```")[0]
-    elif "```" in raw:
-        raw = raw.split("```")[1].split("```")[0]
-    
-    # Find where YAML starts (id: line)
-    lines = raw.split('\n')
-    start_idx = 0
+        return raw.split("```yaml")[1].split("```")[0]
+    if "```" in raw:
+        return raw.split("```")[1].split("```")[0]
+    return raw
+
+
+def _find_yaml_start(text: str) -> str:
+    """Find where YAML content starts (first 'id:' line)."""
+    lines = text.split('\n')
     for i, line in enumerate(lines):
         if line.strip().startswith('id:'):
-            start_idx = i
-            break
-    
-    return '\n'.join(lines[start_idx:]).strip()
+            return '\n'.join(lines[i:]).strip()
+    return text.strip()
 
 
-def validate_and_fix(yaml_str: str, content: str) -> dict:
+def clean_yaml_output(raw: str) -> str:
+    """Clean up LLM output to valid YAML."""
+    cleaned = _strip_code_fences(raw)
+    return _find_yaml_start(cleaned)
+
+
+# ── Validation ────────────────────────────────────────────────────
+
+def _ensure_required_fields(entry: dict, content: str) -> dict:
+    """Ensure all required fields exist with sensible defaults."""
+    if 'id' not in entry:
+        entry['id'] = generate_id(content)
+
+    if 'gist' not in entry:
+        entry['gist'] = {}
+
+    if 'salience' not in entry.get('gist', {}):
+        entry['gist']['salience'] = 0.5
+
+    if 'source' not in entry.get('gist', {}):
+        entry['gist']['source'] = 'encoded'
+
+    if 'summary' not in entry:
+        entry['summary'] = "Auto-encoded memory entry."
+
+    if 'retrieval_hints' not in entry:
+        entry['retrieval_hints'] = []
+
+    return entry
+
+
+def _validate_entry_frames(entry: dict) -> dict:
+    """Validate and fix frames in a parsed entry."""
+    raw_frames = entry.get('gist', {}).get('frames', [])
+    if raw_frames:
+        validated_frames = validate_frames(raw_frames)
+        entry['gist']['frames'] = validated_frames
+        if set(raw_frames) != set(validated_frames):
+            print(f"  Frames validated: {raw_frames} → {validated_frames}",
+                  file=sys.stderr)
+    else:
+        entry['gist']['frames'] = ['collaborative_exploration']
+    return entry
+
+
+def validate_and_fix(yaml_str: str, content: str) -> Optional[dict]:
     """Validate YAML and fix common issues, including frame validation."""
     try:
         entry = yaml.safe_load(yaml_str)
     except yaml.YAMLError as e:
         print(f"YAML parse error: {e}", file=sys.stderr)
         return None
-    
-    # Ensure required fields
-    if 'id' not in entry:
-        entry['id'] = generate_id(content)
-    
-    if 'gist' not in entry:
-        entry['gist'] = {}
-    
-    # Validate frames against taxonomy
-    raw_frames = entry.get('gist', {}).get('frames', [])
-    if raw_frames:
-        validated_frames = validate_frames(raw_frames)
-        entry['gist']['frames'] = validated_frames
-        if set(raw_frames) != set(validated_frames):
-            print(f"  Frames validated: {raw_frames} → {validated_frames}", file=sys.stderr)
-    else:
-        entry['gist']['frames'] = ['collaborative_exploration']
-    
-    if 'salience' not in entry.get('gist', {}):
-        entry['gist']['salience'] = 0.5
-    
-    if 'source' not in entry.get('gist', {}):
-        entry['gist']['source'] = 'encoded'
-    
-    if 'summary' not in entry:
-        entry['summary'] = "Auto-encoded memory entry."
-    
-    if 'retrieval_hints' not in entry:
-        entry['retrieval_hints'] = []
-    
+
+    entry = _ensure_required_fields(entry, content)
+    entry = _validate_entry_frames(entry)
     return entry
+
+
+# ── Main Encode Pipeline ──────────────────────────────────────────
+
+def encode_text(content: str, model: str = DEFAULT_MODEL, **kwargs) -> Optional[dict]:
+    """Encode text content into a memory entry.
+    
+    Pipeline: content → LLM → clean YAML → validate → dict
+    """
+    print(f"Encoding with {model}...", file=sys.stderr)
+
+    raw_output = encode_with_ollama(content, model=model, **kwargs)
+    if not raw_output:
+        return None
+
+    cleaned = clean_yaml_output(raw_output)
+    return validate_and_fix(cleaned, content)
 
 
 def encode_file(filepath: Path, **kwargs) -> Optional[dict]:
@@ -230,19 +287,7 @@ def encode_file(filepath: Path, **kwargs) -> Optional[dict]:
     return encode_text(content, **kwargs)
 
 
-def encode_text(content: str, model: str = DEFAULT_MODEL, **kwargs) -> Optional[dict]:
-    """Encode text content into a memory entry."""
-    print(f"Encoding with {model}...", file=sys.stderr)
-    
-    raw_output = encode_with_ollama(content, model=model, **kwargs)
-    if not raw_output:
-        return None
-    
-    cleaned = clean_yaml_output(raw_output)
-    entry = validate_and_fix(cleaned, content)
-    
-    return entry
-
+# ── CLI ────────────────────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(description='Gist Memory Auto-Encoder')
@@ -256,13 +301,13 @@ def main():
                        help='Entry number for ID (e.g., 008)')
     parser.add_argument('--session-type', default='unknown',
                        help='Session type (webchat, telegram, etc.)')
-    
+
     args = parser.parse_args()
-    
+
     if not HAS_OLLAMA:
         print("Error: Please install ollama: pip install ollama", file=sys.stderr)
         sys.exit(1)
-    
+
     # Read input
     if args.input == '-' or args.input is None:
         content = sys.stdin.read()
@@ -272,11 +317,11 @@ def main():
             print(f"Error: File not found: {filepath}", file=sys.stderr)
             sys.exit(1)
         content = filepath.read_text()
-    
+
     if not content.strip():
         print("Error: No content to encode", file=sys.stderr)
         sys.exit(1)
-    
+
     # Encode
     entry = encode_text(
         content,
@@ -285,14 +330,15 @@ def main():
         session_type=args.session_type,
         number=args.number
     )
-    
+
     if not entry:
         print("Error: Encoding failed", file=sys.stderr)
         sys.exit(1)
-    
+
     # Output
-    yaml_output = yaml.dump(entry, default_flow_style=False, sort_keys=False, allow_unicode=True)
-    
+    yaml_output = yaml.dump(entry, default_flow_style=False,
+                            sort_keys=False, allow_unicode=True)
+
     if args.output:
         Path(args.output).write_text(yaml_output)
         print(f"Written to {args.output}", file=sys.stderr)

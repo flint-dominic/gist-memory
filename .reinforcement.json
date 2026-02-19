@@ -77,8 +77,8 @@
   },
   "mem-007-remus-hardening": {
     "memory_id": "mem-007-remus-hardening",
-    "access_count": 6,
-    "last_accessed": "2026-02-18T23:48:04.902703",
+    "access_count": 7,
+    "last_accessed": "2026-02-18T23:55:57.813118",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -421,8 +421,8 @@
   },
   "mem-036-thoughtwire-v020-pen": {
     "memory_id": "mem-036-thoughtwire-v020-pen",
-    "access_count": 4,
-    "last_accessed": "2026-02-18T23:48:04.898353",
+    "access_count": 5,
+    "last_accessed": "2026-02-18T23:55:57.809196",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -443,8 +443,8 @@
   },
   "mem-038-2026-02-17-18-though": {
     "memory_id": "mem-038-2026-02-17-18-though",
-    "access_count": 1,
-    "last_accessed": "2026-02-18T22:00:52.251362",
+    "access_count": 2,
+    "last_accessed": "2026-02-18T23:55:57.810836",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
