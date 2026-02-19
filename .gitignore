@@ -22,3 +22,8 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Roam index (local only)
+.roam/index.db
+.roam/index.db-shm
+.roam/index.db-wal
