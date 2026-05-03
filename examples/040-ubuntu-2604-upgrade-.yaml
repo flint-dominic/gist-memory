@@ -1,0 +1,43 @@
+id: mem-040-ubuntu-2604-upgrade-
+timestamp: 2026-03-01 07:21:22.539054
+type: conversation
+gist:
+  frames:
+  - architecture_design
+  - problem_solving
+  - system_administration
+  emotional_tone:
+  - excitement
+  - anticipation
+  - curiosity
+  salience: 0.7
+  confidence: 0.8
+  source: encoded
+verbatim:
+  stored:
+    release_date: April 23, 2026
+    migration_prep_start: March 23
+    tasks: test ydotool, grim, wayvnc, verify AT-SPI works on Wayland
+    NVIDIA_improvements: out-of-box CUDA, Mutter patches for reduced frame blocking,
+      local AI optimizations
+    desktop_control_skill_update: support both X11 and Wayland before upgrading
+  reconstructable: none
+metadata:
+  participant: gblfxt
+  session_key: unknown
+  session_type: telegram
+  duration_estimate: unknown
+  related_entries: []
+  tags: null
+summary: 'Ubuntu 26.04 LTS ''Resolute Raccoon'' is scheduled to release on April 23,
+  2026. The plan is to start preparing for the Wayland migration around March 23 by
+  testing various tools and verifying that AT-SPI works on Wayland.
+
+  '
+retrieval_hints:
+- Ubuntu 26.04
+- Wayland migration
+- NVIDIA improvements
+- desktop-control skill update
+- release date
+- migration prep start

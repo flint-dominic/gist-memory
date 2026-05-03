@@ -1,0 +1,45 @@
+id: mem-047-binche-2026-election
+timestamp: 2026-04-26 10:01:21.937815
+type: conversation
+gist:
+  frames:
+  - context_recovery
+  - decision_making
+  - system_administration
+  emotional_tone:
+  - neutral
+  - informative
+  - objective
+  salience: 0.7
+  confidence: 0.8
+  source: encoded
+verbatim:
+  stored:
+    election_results: Binche 2026 election results finalized April 1, 2026.
+    chief_elected: Anthony Jopse (acclaimed)
+    on_reserve_councillors: Dale Hallman (79 votes), Molina Cameron (46 votes), Joshua
+      Hallman lost (44 votes)
+    off_reserve_councillor: Mavis Erickson (47 votes) beat Shannon Menelaws-Lair (34)
+      and Josh Barker (10)
+    youth_councillor: Corbin Tom (acclaimed)
+    elder_councillor: Sebastian Anatole (acclaimed)
+  reconstructable: none
+metadata:
+  participant: gblfxt
+  session_key: unknown
+  session_type: telegram
+  duration_estimate: unknown
+  related_entries: []
+  tags:
+  - binche
+summary: 'The Binche 2026 election results were finalized on April 1, 2026. Anthony
+  Jopse was elected chief, and various councillors were chosen through a vote.
+
+  '
+retrieval_hints:
+- Binche election
+- Anthony Jopse
+- Mavis Erickson
+- Corbin Tom
+- Sebastian Anatole
+- election results

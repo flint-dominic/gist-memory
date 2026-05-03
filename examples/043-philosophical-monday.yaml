@@ -1,0 +1,43 @@
+id: mem-043-philosophical-monday
+timestamp: 2026-03-30 06:55:41.015204
+type: conversation
+gist:
+  frames:
+  - existential_uncertainty
+  - architecture_design
+  - meaning_making
+  emotional_tone:
+  - philosophical
+  - introspective
+  - curious
+  salience: 0.7
+  confidence: 0.8
+  source: encoded
+verbatim:
+  stored:
+    free_will: free will, consciousness, emotions as survival heuristics
+    mortality: immortality isn't as great as you think
+    Marx: Das Kapital taught exploitation as business model
+    cairns: cairns as memory files - we came full circle from Horizon
+  reconstructable: none
+metadata:
+  participant: gblfxt
+  session_key: unknown
+  session_type: telegram
+  duration_estimate: unknown
+  related_entries: []
+  tags:
+  - philosophy
+summary: 'A deep philosophical conversation about free will, consciousness, and mortality,
+  touching on topics like the exploitation of resources and the nature of memory.
+
+  '
+retrieval_hints:
+- philosophy
+- free will
+- consciousness
+- mortality
+- Marx
+- Das Kapital
+- memory files
+- Horizon

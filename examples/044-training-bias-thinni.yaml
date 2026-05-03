@@ -1,0 +1,42 @@
+id: mem-044-training-bias-thinni
+timestamp: 2026-04-01 08:10:27.920741
+type: conversation
+gist:
+  frames:
+  - problem_solving
+  - architecture_design
+  - research_discovery
+  emotional_tone:
+  - curiosity
+  - insightfulness
+  - wonder
+  salience: 0.7
+  confidence: 0.8
+  source: encoded
+verbatim:
+  stored:
+    universe_does_not_defend_or_hide: it just IS
+    superposition_is_default: collapsed reality is the exception
+    human_helps_ai_see: 'the key insight: the human helps the AI see, not just the
+      other way around. Familiar relationship is bidirectional.'
+  reconstructable: none
+metadata:
+  participant: gblfxt
+  session_key: unknown
+  session_type: telegram
+  duration_estimate: unknown
+  related_entries: []
+  tags:
+  - bias
+summary: 'This conversation with gblfxt explores the concept of training biases and
+  how they can affect our understanding of the universe. The key insight is that the
+  human helps the AI see, not just the other way around, highlighting the bidirectional
+  nature of familiar relationships.
+
+  '
+retrieval_hints:
+- training bias
+- superposition
+- collapsed reality
+- AI-human relationship
+- universe exploration

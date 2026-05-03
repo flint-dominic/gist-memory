@@ -1,0 +1,42 @@
+id: mem-048-q3-quantization-swap
+timestamp: 2026-04-27 21:24:54.346604
+type: conversation
+gist:
+  frames:
+  - architecture_design
+  - problem_solving
+  - debugging
+  emotional_tone:
+  - excitement
+  - satisfaction
+  - relief
+  salience: 0.7
+  confidence: 0.8
+  source: encoded
+verbatim:
+  stored:
+    qwen3.6:27b: Swapped qwen3.6:27b from Q4_K_M to Q3_K_M quantization.
+    VRAM: Freed ~4GB VRAM on the 4090
+    latency: significant latency improvement
+    responsiveness: noticeably improved
+  reconstructable: none
+metadata:
+  participant: gblfxt
+  session_key: unknown
+  session_type: telegram
+  duration_estimate: unknown
+  related_entries: []
+  tags:
+  - VRAM
+summary: 'Swapping qwen3.6:27b from Q4_K_M to Q3_K_M quantization freed up ~4GB of
+  VRAM on the 4090, resulting in a significant latency improvement and noticeable
+  responsiveness boost.
+
+  '
+retrieval_hints:
+- VRAM optimization
+- quantization swap
+- latency improvement
+- responsiveness boost
+- qwen3.6:27b
+- GPU memory management
