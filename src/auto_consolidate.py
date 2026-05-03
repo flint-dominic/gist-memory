@@ -118,22 +118,22 @@ def merge_pair(base_id: str, secondary_id: str, execute: bool = False, model: st
     # Update base memory YAML
     base_content['summary'] = merged_summary
 
-    # Merge tags
-    base_tags = set(base_content.get('metadata', {}).get('tags', []))
-    sec_tags = set(sec_content.get('metadata', {}).get('tags', []))
-    if 'metadata' not in base_content:
+    # Merge tags (handle YAML `null` → None by coercing to [])
+    base_tags = set((base_content.get('metadata') or {}).get('tags') or [])
+    sec_tags = set((sec_content.get('metadata') or {}).get('tags') or [])
+    if 'metadata' not in base_content or base_content['metadata'] is None:
         base_content['metadata'] = {}
     base_content['metadata']['tags'] = sorted(base_tags | sec_tags)
 
     # Merge retrieval hints
-    base_hints = set(base_content.get('retrieval_hints', []))
-    sec_hints = set(sec_content.get('retrieval_hints', []))
+    base_hints = set(base_content.get('retrieval_hints') or [])
+    sec_hints = set(sec_content.get('retrieval_hints') or [])
     base_content['retrieval_hints'] = sorted(base_hints | sec_hints)
 
     # Merge frames
-    base_frames = set(base_content.get('gist', {}).get('frames', []))
-    sec_frames = set(sec_content.get('gist', {}).get('frames', []))
-    if 'gist' not in base_content:
+    base_frames = set((base_content.get('gist') or {}).get('frames') or [])
+    sec_frames = set((sec_content.get('gist') or {}).get('frames') or [])
+    if 'gist' not in base_content or base_content['gist'] is None:
         base_content['gist'] = {}
     base_content['gist']['frames'] = sorted(base_frames | sec_frames)
 

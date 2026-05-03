@@ -3,6 +3,7 @@ timestamp: 2026-02-02 10:33:41.880571
 type: conversation
 gist:
   frames:
+  - architecture_design
   - code_craft
   - debugging
   - problem_solving
@@ -27,15 +28,23 @@ metadata:
   session_type: telegram
   duration_estimate: unknown
   related_entries: []
-  tags: null
-summary: 'Debugging session for railways mod, fixed narrow/wide gauge track preview
-  rendering issue. Identified root cause and implemented fix by specifying OBJ loader
-  in each model JSON file.
-
-  '
+  tags:
+  - debugging
+summary: During a debugging session for the railways mod, I fixed an issue with narrow/wide
+  gauge track preview rendering by identifying and implementing a fix that involved
+  specifying OBJ loader in each model JSON file. The root cause was a Flywheel PartialModel
+  texture inheritance problem, which was resolved by adding textures directly at the
+  same model level as the OBJ loader definition, prioritizing src/main/resources over
+  src/resources in Gradle.
 retrieval_hints:
-- railways mod debugging
-- narrow/wide gauge track preview
+- Flywheel PartialModel texture inheritance problem
+- OBJ loader definition
 - OBJ loader inheritance
+- debugging
 - model JSON files
+- narrow/wide gauge track preview
+- phantom narrow/wide track preview black box issue
+- railways mod debugging
+- src/main/resources takes priority over src/resources in Gradle
 - test server yogsothoth
+- texture inheritance
