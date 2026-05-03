@@ -192,6 +192,25 @@ print(f'   Total: {len(examples)} memories')
         shift
         python src/inject.py "$@"
         ;;
+    # === New Features ===
+    boost-conversation|bc)
+        shift
+        python src/conversation_boost.py "$@"
+        ;;
+    auto-consolidate|ac)
+        shift
+        python src/auto_consolidate.py "$@"
+        ;;
+    categorize|cat)
+        shift
+        if [ "$1" = "--auto" ] || [ "$1" = "-a" ]; then
+            python src/reinforcement.py auto-categorize
+        elif [ -n "$1" ]; then
+            python src/reinforcement.py categorize "$@"
+        else
+            python src/reinforcement.py auto-categorize
+        fi
+        ;;
     help|--help|-h)
         echo "Gist Memory CLI"
         echo ""
@@ -249,6 +268,12 @@ print(f'   Total: {len(examples)} memories')
         echo "  corpus search <q>  Search markdown corpus only"
         echo "  corpus status      Show corpus index stats"
         echo "  corpus reset       Clear corpus index"
+        echo ""
+        echo "Conversation & Consolidation:"
+        echo "  boost-conversation <text>  Boost memories related to conversation topics"
+        echo "  auto-consolidate [--execute]  Find and merge similar memories (dry run default)"
+        echo "  categorize <id> <cat>      Set memory category (identity|project|event|ephemeral)"
+        echo "  categorize --auto          Auto-categorize all memories based on frames"
         echo ""
         echo "Examples:"
         echo "  gist recall 'what is fuzzy trace theory'"

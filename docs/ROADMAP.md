@@ -60,6 +60,13 @@
 
 ## Medium-term (Q2-Q3 2026)
 
+### Architectural Refinement
+
+**Embedded Vector Store** (inspired by `pgvector` trend)
+- [ ] **Goal:** Simplify architecture, reduce dependencies.
+- [ ] **Plan:** Migrate from ChromaDB client/server to a self-contained, embedded vector database like `sqlite-vss`.
+- [ ] **Motivation:** Aligns with industry trends, simplifies backups, and removes the need for a separate server process. This is a long-term simplification, not an urgent fix, as the current implementation is secure and functional.
+
 ### Integrated Features (from Research)
 *See docs/RESEARCH.md for competitive analysis*
 

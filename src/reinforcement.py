@@ -15,6 +15,17 @@ PROJECT_ROOT = Path(__file__).parent.parent
 TRACKING_FILE = PROJECT_ROOT / ".reinforcement.json"
 
 
+# Category decay multipliers
+CATEGORY_DECAY = {
+    'identity': 0.0,    # No decay (same as decay_immune)
+    'project': 0.03,    # Very slow decay
+    'event': 0.1,       # Default decay rate
+    'ephemeral': 0.2,   # Fast decay
+}
+
+VALID_CATEGORIES = list(CATEGORY_DECAY.keys())
+
+
 @dataclass
 class ReinforcementData:
     """Reinforcement data for a single memory."""
@@ -27,6 +38,8 @@ class ReinforcementData:
     decay_immune: bool = False  # Protected from time decay
     usefulness_score: float = 0.0  # Feedback accumulator
     initial_salience: float = 0.5  # Original salience at encoding
+    conversation_boost_score: float = 0.0  # Conversation-aware boost (caps at 0.3)
+    category: str = "event"  # identity | project | event | ephemeral
     
     def __post_init__(self):
         if self.linked_by is None:
@@ -72,6 +85,13 @@ class ReinforcementTracker:
         entry.last_accessed = datetime.now().isoformat()
         if entry.initial_salience == 0.5 and initial_salience != 0.5:
             entry.initial_salience = initial_salience
+        self._save()
+    
+    def conversation_boost(self, memory_id: str, amount: float = 0.1):
+        """Boost a memory because its topic came up in conversation.
+        Separate from explicit boost — caps at 0.3."""
+        entry = self.get(memory_id)
+        entry.conversation_boost_score = min(0.3, entry.conversation_boost_score + amount)
         self._save()
     
     def boost(self, memory_id: str, amount: float = 0.2, lock: bool = False):
@@ -120,11 +140,12 @@ class ReinforcementTracker:
         # Access reinforcement (diminishing returns, caps at +0.15)
         access_boost = min(0.15, entry.access_count * 0.01)
         
-        # Recency factor (decay curve)
+        # Recency factor (category-based decay curve)
+        decay_rate = CATEGORY_DECAY.get(entry.category, 0.1)
         if entry.last_accessed:
             last = datetime.fromisoformat(entry.last_accessed)
             days_since = (datetime.now() - last).days
-            recency_factor = 1.0 / (1 + days_since * 0.1)
+            recency_factor = 1.0 / (1 + days_since * decay_rate) if decay_rate > 0 else 1.0
         else:
             recency_factor = 1.0  # No decay if never accessed
         
@@ -140,11 +161,14 @@ class ReinforcementTracker:
         # Usefulness (caps at +0.15)
         usefulness_boost = min(0.15, entry.usefulness_score)
         
-        # Combine
-        dynamic = base + access_boost + link_boost + repetition_boost + explicit + usefulness_boost
+        # Conversation boost (caps at 0.3)
+        conv_boost = min(0.3, entry.conversation_boost_score)
         
-        # Apply recency decay (except decay-immune memories)
-        if not entry.decay_immune:
+        # Combine
+        dynamic = base + access_boost + link_boost + repetition_boost + explicit + usefulness_boost + conv_boost
+        
+        # Apply recency decay (except decay-immune or identity-category memories)
+        if not entry.decay_immune and entry.category != 'identity':
             dynamic *= recency_factor
         
         return min(1.0, max(0.0, dynamic))
@@ -164,6 +188,50 @@ class ReinforcementTracker:
                 })
         return sorted(fading, key=lambda x: x['current_salience'])
     
+    def categorize(self, memory_id: str, category: str):
+        """Set the category for a memory."""
+        if category not in VALID_CATEGORIES:
+            raise ValueError(f"Invalid category '{category}'. Must be one of: {VALID_CATEGORIES}")
+        entry = self.get(memory_id)
+        entry.category = category
+        self._save()
+    
+    def auto_categorize(self) -> List[Dict]:
+        """Auto-categorize all memories based on frames/content."""
+        import yaml
+        changes = []
+        examples_dir = PROJECT_ROOT / "examples"
+        
+        for f in examples_dir.glob("*.yaml"):
+            try:
+                mem = yaml.safe_load(f.read_text())
+                if not mem:
+                    continue
+                mem_id = mem.get('id', f.stem)
+                entry = self.get(mem_id)
+                old_cat = entry.category
+                frames = set(mem.get('gist', {}).get('frames', []))
+                
+                # Determine category
+                if entry.decay_immune:
+                    new_cat = 'identity'
+                elif frames & {'architecture_design', 'game_development', 'code_craft', 'creative_work'}:
+                    new_cat = 'project'
+                elif frames & {'system_administration'}:
+                    new_cat = 'ephemeral'
+                else:
+                    new_cat = 'event'
+                
+                if new_cat != old_cat:
+                    entry.category = new_cat
+                    changes.append({'id': mem_id, 'old': old_cat, 'new': new_cat})
+            except:
+                continue
+        
+        if changes:
+            self._save()
+        return changes
+    
     def inspect(self, memory_id: str) -> Dict:
         """Get full reinforcement details for a memory."""
         entry = self.get(memory_id)
@@ -174,7 +242,9 @@ class ReinforcementTracker:
             'linked_by': entry.linked_by,
             'repetition_count': entry.repetition_count,
             'explicit_boost': entry.explicit_boost,
+            'conversation_boost': entry.conversation_boost_score,
             'decay_immune': entry.decay_immune,
+            'category': entry.category,
             'usefulness_score': entry.usefulness_score,
             'initial_salience': entry.initial_salience,
             'current_salience': self.calculate_salience(memory_id)
@@ -274,7 +344,7 @@ if __name__ == '__main__':
     tracker = get_tracker()
     
     if len(sys.argv) < 2:
-        print("Usage: reinforcement.py [stats|inspect <id>|decay|boost <id>]")
+        print("Usage: reinforcement.py [stats|inspect <id>|decay|boost <id>|categorize <id> <cat>|auto-categorize]")
         sys.exit(1)
     
     cmd = sys.argv[1]
@@ -337,6 +407,29 @@ if __name__ == '__main__':
             print(f"=== Fading Memories (below {threshold}) ===")
             for m in fading:
                 print(f"  {m['id']}: {m['current_salience']:.3f} (was {m['initial_salience']:.3f})")
+    
+    elif cmd == 'categorize' and len(sys.argv) > 2:
+        mem_id = sys.argv[2]
+        if len(sys.argv) > 3:
+            category = sys.argv[3]
+            try:
+                tracker.categorize(mem_id, category)
+                print(f"Categorized {mem_id} as '{category}'")
+            except ValueError as e:
+                print(str(e))
+                sys.exit(1)
+        else:
+            entry = tracker.get(mem_id)
+            print(f"{mem_id}: category={entry.category}")
+    
+    elif cmd == 'auto-categorize':
+        changes = tracker.auto_categorize()
+        if changes:
+            print(f"Auto-categorized {len(changes)} memories:")
+            for c in changes:
+                print(f"  {c['id']}: {c['old']} → {c['new']}")
+        else:
+            print("No category changes needed.")
     
     elif cmd == 'boost' and len(sys.argv) > 2:
         mem_id = sys.argv[2]
