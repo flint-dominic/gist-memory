@@ -16,13 +16,6 @@ from chromadb.config import Settings
 # Import reinforcement tracking
 from reinforcement import record_access, calculate_salience
 
-# Import markdown corpus search
-try:
-    from markdown_index import search_markdown, hybrid_rerank
-    MARKDOWN_SEARCH_AVAILABLE = True
-except ImportError:
-    MARKDOWN_SEARCH_AVAILABLE = False
-
 # Import perspectives
 try:
     from perspectives import get_manager as get_perspective_manager
@@ -232,101 +225,6 @@ def recall(
     return memories
 
 
-def _build_corpus_results(query: str, max_results: int, min_similarity: float,
-                          include_low_confidence: bool,
-                          corpus_weight: float) -> List[Dict]:
-    """Search markdown corpus and build result dicts."""
-    if not MARKDOWN_SEARCH_AVAILABLE:
-        return []
-
-    raw_corpus = search_markdown(query, top_k=max_results)
-    raw_corpus = hybrid_rerank(raw_corpus, query)
-
-    results = []
-    for r in raw_corpus:
-        if r['similarity'] < min_similarity and not include_low_confidence:
-            continue
-        results.append({
-            'id': f"md:{Path(r['source']).stem}#L{r['start_line']}",
-            'similarity': round(r['similarity'] * corpus_weight, 3),
-            'frames': [],
-            'salience': r['similarity'],
-            'initial_salience': r['similarity'],
-            'summary': r['content'][:500],
-            'key_details': {},
-            'perspective': None,
-            'result_type': 'markdown_chunk',
-            'source': r['source'],
-            'heading': r['heading'],
-            'start_line': r['start_line'],
-            'end_line': r['end_line'],
-            'keyword_hits': r.get('keyword_hits', 0),
-        })
-    return results
-
-
-def _deduplicate_results(merged: List[Dict], max_results: int) -> List[Dict]:
-    """Deduplicate merged results, preferring gist memories over corpus chunks."""
-    seen_content = set()
-    deduped = []
-    for r in merged:
-        content_key = r.get('summary', '')[:100].lower().strip()
-        if content_key and content_key in seen_content:
-            continue
-        seen_content.add(content_key)
-        deduped.append(r)
-        if len(deduped) >= max_results:
-            break
-    return deduped
-
-
-def recall_hybrid(
-    query: str,
-    min_similarity: float = DEFAULT_MIN_SIMILARITY,
-    max_results: int = DEFAULT_MAX_RESULTS,
-    include_low_confidence: bool = False,
-    query_frames: List[str] = None,
-    corpus_weight: float = 0.8,
-) -> List[Dict]:
-    """
-    Hybrid recall: gist memories + markdown corpus, keyword-boosted.
-
-    Searches both the gist_memories collection (cognitive memories with
-    frames/salience) and the markdown_chunks collection (raw corpus from
-    memory/*.md, docs/*.md, MEMORY.md), merges results, and applies
-    keyword boosting for exact-term matching.
-
-    Parameters
-    ----------
-    corpus_weight:
-        Scaling factor for corpus results vs gist memories (0-1).
-        Corpus results are multiplied by this before merging, since
-        gist memories have richer context (frames, salience, perspectives).
-    """
-    # 1. Get gist memories
-    gist_results = recall(
-        query,
-        min_similarity=min_similarity,
-        max_results=max_results,
-        include_low_confidence=include_low_confidence,
-        query_frames=query_frames,
-    )
-    for r in gist_results:
-        r['result_type'] = 'gist_memory'
-
-    # 2. Get markdown corpus results
-    corpus_results = _build_corpus_results(
-        query, max_results, min_similarity, include_low_confidence, corpus_weight
-    )
-
-    # 3. Merge and sort by similarity
-    merged = gist_results + corpus_results
-    merged.sort(key=lambda x: -x['similarity'])
-
-    # 4. Deduplicate
-    return _deduplicate_results(merged, max_results)
-
-
 # ── Formatting ─────────────────────────────────────────────────────
 
 def _format_gist_memory(mem: Dict, verbose: bool) -> List[str]:
@@ -357,26 +255,10 @@ def _format_gist_memory(mem: Dict, verbose: bool) -> List[str]:
     return lines
 
 
-def _format_corpus_chunk(mem: Dict) -> List[str]:
-    """Format a single markdown corpus chunk for context injection."""
-    lines = []
-    confidence = "high" if mem['similarity'] > 0.5 else "moderate" if mem['similarity'] > 0.4 else "low"
-    source_name = Path(mem.get('source', '')).name if mem.get('source') else 'unknown'
-    heading = mem.get('heading', '')
-    kw_tag = f" +{mem.get('keyword_hits', 0)}kw" if mem.get('keyword_hits') else ""
-    lines.append(f"### 📄 {source_name}{'#' + heading if heading else ''} ({confidence}{kw_tag})")
-    lines.append(f"*Source: {source_name} L{mem.get('start_line', '?')}-{mem.get('end_line', '?')}*")
-    summary = mem.get('summary', '')
-    if summary:
-        summary = summary[:400] + "..." if len(summary) > 400 else summary
-        lines.append(f"\n{summary}")
-    return lines
-
-
 def format_for_context(memories: List[Dict], verbose: bool = False) -> str:
     """
     Format memories for injection into conversation context.
-    
+
     Returns a concise string suitable for system prompt or context injection.
     """
     if not memories:
@@ -385,11 +267,7 @@ def format_for_context(memories: List[Dict], verbose: bool = False) -> str:
     lines = ["## Relevant Memories\n"]
 
     for mem in memories:
-        result_type = mem.get('result_type', 'gist_memory')
-        if result_type == 'markdown_chunk':
-            lines.extend(_format_corpus_chunk(mem))
-        else:
-            lines.extend(_format_gist_memory(mem, verbose))
+        lines.extend(_format_gist_memory(mem, verbose))
         lines.append("")
 
     return "\n".join(lines)
@@ -416,27 +294,17 @@ def main():
                        help='Output as JSON')
     parser.add_argument('--all', action='store_true',
                        help='Include low-confidence matches')
-    parser.add_argument('--hybrid', action='store_true',
-                       help='Search gist memories + markdown corpus (hybrid recall)')
 
     args = parser.parse_args()
 
     query = ' '.join(args.query)
 
-    if args.hybrid:
-        memories = recall_hybrid(
-            query,
-            min_similarity=args.threshold,
-            max_results=args.num,
-            include_low_confidence=args.all,
-        )
-    else:
-        memories = recall(
-            query,
-            min_similarity=args.threshold,
-            max_results=args.num,
-            include_low_confidence=args.all
-        )
+    memories = recall(
+        query,
+        min_similarity=args.threshold,
+        max_results=args.num,
+        include_low_confidence=args.all
+    )
 
     if args.json:
         print(format_for_json(memories))
