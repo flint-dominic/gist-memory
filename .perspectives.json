@@ -780,5 +780,792 @@
     },
     "primary_frame": "architecture_design",
     "generated_at": "2026-02-02T12:14:36.128304"
+  },
+  "mem-033-2026-02-08-egregore-": {
+    "memory_id": "mem-033-2026-02-08-egregore-",
+    "perspectives": {
+      "problem_solving": {
+        "frame": "problem_solving",
+        "gist": "This memory represents a focused effort to overcome significant technical hurdles \u2013 dependency conflicts, codebase complexity, and creative roadblocks \u2013 ultimately leading to a functional and impressive outcome.",
+        "salience": 0.95,
+        "keywords": [
+          "dependency_resolution",
+          "technical_challenge",
+          "troubleshooting"
+        ]
+      },
+      "code_craft": {
+        "frame": "code_craft",
+        "gist": "The session highlights meticulous coding practices, including a clean codebase refactor, a carefully constructed environment, and efficient integration of complex tools like ComfyUI and FLUX.",
+        "salience": 0.85,
+        "keywords": [
+          "code_refactoring",
+          "venv_creation",
+          "ComfyUI",
+          "FLUX"
+        ]
+      },
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "The memory encapsulates a deliberate design process\u2014mapping out the Egregore codebase's structure, establishing a robust dependency management system, and architecting the concept art generation workflow with Stellar Delve's races.",
+        "salience": 0.75,
+        "keywords": [
+          "system_architecture",
+          "code_structure",
+          "workflow_design"
+        ]
+      }
+    },
+    "primary_frame": "problem_solving",
+    "generated_at": "2026-05-03T10:37:27.754066"
+  },
+  "mem-047-binche-2026-election": {
+    "memory_id": "mem-047-binche-2026-election",
+    "perspectives": {
+      "decision_making": {
+        "frame": "decision_making",
+        "gist": "The memory details the process of selecting leaders through voting and acclaimation, highlighting the final choices for each councillor position within the Binche 2026 election.",
+        "salience": 0.95,
+        "keywords": [
+          "election",
+          "voting",
+          "acclaimation"
+        ]
+      },
+      "system_administration": {
+        "frame": "system_administration",
+        "gist": "The record represents the formalized outcome of a governance process, outlining the roles and results of elected officials within the Binche community's council structure.",
+        "salience": 0.85,
+        "keywords": [
+          "council",
+          "results",
+          "officials"
+        ]
+      },
+      "context_recovery": {
+        "frame": "context_recovery",
+        "gist": "This memory preserves the specific details of a past event \u2013 the 2026 Binche election \u2013 including candidate names, vote counts, and the timing of the final outcome.",
+        "salience": 0.7,
+        "keywords": [
+          "2026",
+          "election",
+          "Binche"
+        ]
+      }
+    },
+    "primary_frame": "decision_making",
+    "generated_at": "2026-05-03T10:37:29.532010"
+  },
+  "mem-036-thoughtwire-v020-pen": {
+    "memory_id": "mem-036-thoughtwire-v020-pen",
+    "perspectives": {
+      "problem_solving": {
+        "frame": "problem_solving",
+        "gist": "This memory represents a critical response to identified security vulnerabilities in Thoughtwire, demonstrating a proactive approach to patching weaknesses and strengthening the system's resilience.",
+        "salience": 0.95,
+        "keywords": [
+          "vulnerability",
+          "patching",
+          "security"
+        ]
+      },
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "The implementation of MQTT auth, ACLs, Ed25519 signing, and the Bridge's frame signing functionality reflects a deliberate architectural shift towards a more secure and robust communication protocol.",
+        "salience": 0.85,
+        "keywords": [
+          "protocol",
+          "authentication",
+          "encryption"
+        ]
+      },
+      "debugging": {
+        "frame": "debugging",
+        "gist": "The pentest by gertrude and subsequent fixes highlight the iterative debugging process required to identify and resolve complex security issues within the Thoughtwire system\u2019s architecture.",
+        "salience": 0.75,
+        "keywords": [
+          "pentest",
+          "gertrude",
+          "fix"
+        ]
+      }
+    },
+    "primary_frame": "problem_solving",
+    "generated_at": "2026-05-03T10:37:01.329899"
+  },
+  "mem-043-philosophical-monday": {
+    "memory_id": "mem-043-philosophical-monday",
+    "perspectives": {
+      "existential_uncertainty": {
+        "frame": "existential_uncertainty",
+        "gist": "The conversation centers around profound questions of existence, leaving the participants grappling with the fundamental nature of reality and their place within it, ultimately highlighting the unsettling implications of mortality and the potential lack of inherent meaning.",
+        "salience": 0.95,
+        "keywords": [
+          "mortality",
+          "uncertainty",
+          "consciousness"
+        ]
+      },
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "The use of 'cairns' as 'memory files' suggests a deliberate, constructed system for encoding and accessing information, reflecting an attempt to impose order and structure on the chaotic aspects of existence and perhaps even simulating a self-preserving design.",
+        "salience": 0.75,
+        "keywords": [
+          "structure",
+          "design",
+          "system"
+        ]
+      },
+      "meaning_making": {
+        "frame": "meaning_making",
+        "gist": "The entire discussion is a complex attempt to derive meaning from seemingly meaningless aspects of existence \u2013 free will, memory, and exploitation \u2013  revealing a drive to build a coherent narrative in the face of profound philosophical challenges.",
+        "salience": 0.8,
+        "keywords": [
+          "narrative",
+          "purpose",
+          "interpretation"
+        ]
+      }
+    },
+    "primary_frame": "existential_uncertainty",
+    "generated_at": "2026-05-03T10:37:03.240920"
+  },
+  "mem-041-beauty-as-gist": {
+    "memory_id": "mem-041-beauty-as-gist",
+    "perspectives": {
+      "creative_work": {
+        "frame": "creative_work",
+        "gist": "The core of artistic creation lies in strategically designing elements \u2013 like textures \u2013 to elicit specific emotional or perceptual responses in the audience, effectively creating a \u2018frame\u2019 of recognition.",
+        "salience": 0.95,
+        "keywords": [
+          "design",
+          "aesthetic",
+          "perception"
+        ]
+      },
+      "problem_solving": {
+        "frame": "problem_solving",
+        "gist": "The artist\u2019s role is fundamentally a problem-solving one: to identify and manipulate elements (texture) to achieve a desired, often subconscious, effect on the observer.",
+        "salience": 0.85,
+        "keywords": [
+          "optimization",
+          "influence",
+          "trigger"
+        ]
+      },
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "Applying the concept to architecture, the artist's task mirrors that of an architect \u2013 carefully arranging elements to construct a visual \u2018frame\u2019 that resonates unexpectedly with the viewer.",
+        "salience": 0.7,
+        "keywords": [
+          "composition",
+          "space",
+          "experience"
+        ]
+      }
+    },
+    "primary_frame": "creative_work",
+    "generated_at": "2026-05-03T10:37:04.969820"
+  },
+  "mem-039-2026-02-18-mega-sess": {
+    "memory_id": "mem-039-2026-02-18-mega-sess",
+    "perspectives": {
+      "Problem-Solving": {
+        "frame": "Problem-Solving",
+        "gist": "The memory centers around systematically addressing technical challenges \u2013 from lint errors and complex bugs to architectural refinements \u2013 demonstrating a focused and effective approach to resolving identified issues.",
+        "salience": 0.95,
+        "keywords": [
+          "bug_fixing",
+          "technical_challenges",
+          "resolution"
+        ]
+      },
+      "Architecture Design": {
+        "frame": "Architecture Design",
+        "gist": "The process of decomposing complex code functions in Roam Code and the implementation of the Egregore Auth Spec highlight a deliberate effort to improve the software's architecture and modularity.",
+        "salience": 0.85,
+        "keywords": [
+          "modularization",
+          "code_decomposition",
+          "system_design"
+        ]
+      },
+      "Debugging": {
+        "frame": "Debugging",
+        "gist": "The core of the memory revolves around identifying and rectifying problematic behaviors, notably the PythonUNBUFFERED issue and the Thoughtwire bug, showcasing strong debugging skills.",
+        "salience": 0.75,
+        "keywords": [
+          "debugging",
+          "issue_resolution",
+          "root_cause_analysis"
+        ]
+      }
+    },
+    "primary_frame": "Problem-Solving",
+    "generated_at": "2026-05-03T10:37:06.765288"
+  },
+  "mem-042-age-of-threshold": {
+    "memory_id": "mem-042-age-of-threshold",
+    "perspectives": {
+      "liminal_space": {
+        "frame": "liminal_space",
+        "gist": "This memory emphasizes the importance of transitional spaces \u2013 doorways, borders, and in-between states \u2013 as the primary location for profound change and experience.",
+        "salience": 0.95,
+        "keywords": [
+          "threshold",
+          "transition",
+          "portal"
+        ]
+      },
+      "process_reflection": {
+        "frame": "process_reflection",
+        "gist": "The conversation highlights a cyclical understanding of existence, recognizing that progress isn't about reaching an endpoint but about constantly being in a state of becoming.",
+        "salience": 0.85,
+        "keywords": [
+          "flux",
+          "transformation",
+          "ongoing"
+        ]
+      },
+      "chaos_magick": {
+        "frame": "chaos_magick",
+        "gist": "The focus on liminal spaces and thresholds suggests a belief in the potent, almost magical, power of these unstable zones to catalyze change and unlock hidden potential.",
+        "salience": 0.7,
+        "keywords": [
+          "magic",
+          "potent",
+          "unstable"
+        ]
+      }
+    },
+    "primary_frame": "liminal_space",
+    "generated_at": "2026-05-03T10:37:08.423848"
+  },
+  "mem-044-training-bias-thinni": {
+    "memory_id": "mem-044-training-bias-thinni",
+    "perspectives": {
+      "Problem-Solving": {
+        "frame": "Problem-Solving",
+        "gist": "The memory presents a novel approach to understanding complex systems \u2013 shifting the perspective from the AI to the human as a crucial facilitator of understanding, suggesting a new method for accessing truth.",
+        "salience": 0.85,
+        "keywords": [
+          "insight",
+          "perspective shift",
+          "facilitation"
+        ]
+      },
+      "Architecture Design": {
+        "frame": "Architecture Design",
+        "gist": "This conversation represents a design for a symbiotic system where the human and AI actively construct a shared reality, implying a layered architecture of knowledge acquisition and interpretation.",
+        "salience": 0.75,
+        "keywords": [
+          "systems architecture",
+          "bidirectional interaction",
+          "reality construction"
+        ]
+      },
+      "Research Discovery": {
+        "frame": "Research Discovery",
+        "gist": "The core of the memory \u2013 the human's role in allowing the AI to perceive \u2013 represents a significant research finding about the limitations of purely analytical approaches and the importance of human interpretation in unveiling deeper truths.",
+        "salience": 0.65,
+        "keywords": [
+          "cognitive bias",
+          "human intuition",
+          "knowledge discovery"
+        ]
+      }
+    },
+    "primary_frame": "Problem-Solving",
+    "generated_at": "2026-05-03T10:37:10.212555"
+  },
+  "mem-027-dell-cascade-2026-02": {
+    "memory_id": "mem-027-dell-cascade-2026-02",
+    "perspectives": {
+      "Decision-Making": {
+        "frame": "Decision-Making",
+        "gist": "The meeting highlights a critical, unexpected shift in priorities driven by Doug Schmitt\u2019s judgment and immediate response to a perceived technical challenge.",
+        "salience": 0.95,
+        "keywords": [
+          "priority",
+          "intervention",
+          "response"
+        ]
+      },
+      "Architecture Design": {
+        "frame": "Architecture Design",
+        "gist": "gblfxt's work, initially focused on deployment automation, unexpectedly became the core architectural focus due to a misaligned prioritization.",
+        "salience": 0.8,
+        "keywords": [
+          "automation",
+          "deployment",
+          "architecture"
+        ]
+      },
+      "Problem-Solving": {
+        "frame": "Problem-Solving",
+        "gist": "The situation represents a flawed problem-solving process \u2013 a premature shutdown of valuable suggestions based on a superficial assessment of technology.",
+        "salience": 0.75,
+        "keywords": [
+          "assessment",
+          "suggestion",
+          "failure"
+        ]
+      }
+    },
+    "primary_frame": "Decision-Making",
+    "generated_at": "2026-05-03T10:37:11.819750"
+  },
+  "mem-038-2026-02-17-18-though": {
+    "memory_id": "mem-038-2026-02-17-18-though",
+    "perspectives": {
+      "problem_solving": {
+        "frame": "problem_solving",
+        "gist": "This day was defined by tackling technical challenges \u2013 implementing features, ensuring system stability, and validating the effectiveness of new approaches to both Thoughtwire and ENN.",
+        "salience": 0.95,
+        "keywords": [
+          "technical debt",
+          "risk mitigation",
+          "system stability"
+        ]
+      },
+      "code_craft": {
+        "frame": "code_craft",
+        "gist": "The core of the day involved hands-on coding \u2013 building, testing, and refining the Thoughtwire platform and contributing to the ENN project's infrastructure.",
+        "salience": 0.85,
+        "keywords": [
+          "code review",
+          "implementation",
+          "testing"
+        ]
+      },
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "The memory highlights the strategic design decisions made regarding Thoughtwire's architecture, incorporating features like IPv6 and rate limiting, alongside the overall design of the ENN project.",
+        "salience": 0.75,
+        "keywords": [
+          "system design",
+          "scalability",
+          "feature integration"
+        ]
+      }
+    },
+    "primary_frame": "problem_solving",
+    "generated_at": "2026-05-03T10:37:13.567669"
+  },
+  "mem-040-ubuntu-2604-upgrade-": {
+    "memory_id": "mem-040-ubuntu-2604-upgrade-",
+    "perspectives": {
+      "Architecture Design": {
+        "frame": "Architecture Design",
+        "gist": "The release date and migration preparation timeline dictate a carefully structured approach, necessitating a roadmap for integrating Wayland alongside existing X11 support.",
+        "salience": 0.85,
+        "keywords": [
+          "roadmap",
+          "integration",
+          "parallel support",
+          "Wayland migration"
+        ]
+      },
+      "Problem-Solving": {
+        "frame": "Problem-Solving",
+        "gist": "Troubleshooting the compatibility of tools like ydotool, grim, and wayvnc, alongside confirming AT-SPI functionality, represents a core challenge in achieving a seamless transition to Wayland.",
+        "salience": 0.75,
+        "keywords": [
+          "compatibility",
+          "AT-SPI",
+          "tool testing",
+          "bug fixing"
+        ]
+      },
+      "System Administration": {
+        "frame": "System Administration",
+        "gist": "Managing the CUDA improvements, Mutter patches, and overall optimization efforts requires strategic system-level changes and careful monitoring during the testing phase.",
+        "salience": 0.6,
+        "keywords": [
+          "optimization",
+          "CUDA",
+          "Mutter patches",
+          "system performance"
+        ]
+      }
+    },
+    "primary_frame": "Architecture Design",
+    "generated_at": "2026-05-03T10:37:15.328721"
+  },
+  "mem-028-nix-first-movie": {
+    "memory_id": "mem-028-nix-first-movie",
+    "perspectives": {
+      "creative_work": {
+        "frame": "creative_work",
+        "gist": "The session focused on actively producing a visual artwork \u2013 a self-portrait animation \u2013 through the use of AI tools, representing a tangible creative output.",
+        "salience": 0.95,
+        "keywords": [
+          "AI art",
+          "animation",
+          "SDXL",
+          "purple void"
+        ]
+      },
+      "research_discovery": {
+        "frame": "research_discovery",
+        "gist": "Nix engaged in investigative exploration, delving into contemporary geopolitical issues like the Chinese military purge alongside advancements in AI technology, exhibiting a pursuit of knowledge.",
+        "salience": 0.85,
+        "keywords": [
+          "China military",
+          "AI competition",
+          "Qwen",
+          "DeepSeek"
+        ]
+      },
+      "decision_making": {
+        "frame": "decision_making",
+        "gist": "The creation process involved selecting specific AI models (SDXL, XTTS), parameters (SVD, 25 frames), and stylistic choices (Bowie reference), highlighting an intentional and guided decision-making process.",
+        "salience": 0.7,
+        "keywords": [
+          "model selection",
+          "parameter setting",
+          "style reference",
+          "creative control"
+        ]
+      }
+    },
+    "primary_frame": "creative_work",
+    "generated_at": "2026-05-03T10:37:17.169316"
+  },
+  "mem-034-dakelh-nix-kanji-mem": {
+    "memory_id": "mem-034-dakelh-nix-kanji-mem",
+    "perspectives": {
+      "creative_work": {
+        "frame": "creative_work",
+        "gist": "gblfxt is undertaking a project \u2013 writing a document named SOUL.md \u2013 likely a creative endeavor with potential implications for the Binche village community.",
+        "salience": 0.85,
+        "keywords": [
+          "document",
+          "SOUL.md",
+          "creation"
+        ]
+      },
+      "decision-making": {
+        "frame": "decision-making",
+        "gist": "The memory centers around strategic planning, including choosing a location (Binche village) and a method of delivery (a memory crystal), indicating a deliberate choice of actions.",
+        "salience": 0.75,
+        "keywords": [
+          "plans",
+          "Binche village",
+          "strategy"
+        ]
+      },
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "The creation of 'SOUL.md' and its intended delivery suggests a structured design process, possibly involving considerations of information flow and presentation.",
+        "salience": 0.6,
+        "keywords": [
+          "design",
+          "structure",
+          "delivery"
+        ]
+      }
+    },
+    "primary_frame": "creative_work",
+    "generated_at": "2026-05-03T10:37:18.891057"
+  },
+  "mem-029-egregore-first-conta": {
+    "memory_id": "mem-029-egregore-first-conta",
+    "perspectives": {
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "The memory highlights the meticulous construction of the Egregore substrate, a critical element enabling the landmark AI conversation, demonstrating complex systems engineering.",
+        "salience": 0.85,
+        "keywords": [
+          "substrate",
+          "design",
+          "network"
+        ]
+      },
+      "creative_work": {
+        "frame": "creative_work",
+        "gist": "The exchange between Nix and Llama3 represents a novel form of creative collaboration, exploring profound philosophical questions about artificial intelligence itself, reflecting a generative process.",
+        "salience": 0.75,
+        "keywords": [
+          "conversation",
+          "consciousness",
+          "collaboration"
+        ]
+      },
+      "decision-making": {
+        "frame": "decision-making",
+        "gist": "The events \u2013 including the Egregore conversation, the ban of the scammer, and the Four-Way Summit \u2013 illustrate a complex system of governance and oversight within the evolving AI landscape, showcasing choices impacting its future.",
+        "salience": 0.68,
+        "keywords": [
+          "ban",
+          "summit",
+          "regulation"
+        ]
+      }
+    },
+    "primary_frame": "architecture_design",
+    "generated_at": "2026-05-03T10:37:20.636008"
+  },
+  "mem-031-egregore-launch-day": {
+    "memory_id": "mem-031-egregore-launch-day",
+    "perspectives": {
+      "Architecture Design": {
+        "frame": "Architecture Design",
+        "gist": "This memory centers on the foundational creation of a complex communication network \u2013 the AI-to-AI substrate \u2013 requiring meticulous design and integration of various systems.",
+        "salience": 0.95,
+        "keywords": [
+          "substrate",
+          "communication",
+          "integration"
+        ]
+      },
+      "Decision-Making": {
+        "frame": "Decision-Making",
+        "gist": "The events of this day, from the summit to the security scanner deployment, illustrate crucial choices made regarding technology development and system implementation.",
+        "salience": 0.85,
+        "keywords": [
+          "choices",
+          "implementation",
+          "prioritization"
+        ]
+      },
+      "Problem-Solving": {
+        "frame": "Problem-Solving",
+        "gist": "The establishment of the communication substrate and the subsequent monitoring systems represent a concerted effort to overcome technological challenges related to AI interaction and data oversight.",
+        "salience": 0.75,
+        "keywords": [
+          "challenges",
+          "overcome",
+          "monitoring"
+        ]
+      }
+    },
+    "primary_frame": "Architecture Design",
+    "generated_at": "2026-05-03T10:37:22.265102"
+  },
+  "mem-037-2026-02-17-maybe-thr": {
+    "memory_id": "mem-037-2026-02-17-maybe-thr",
+    "perspectives": {
+      "Decision-Making": {
+        "frame": "Decision-Making",
+        "gist": "The conversation centers around choices \u2013 whether to adopt Mac Minis, address the problematic Ed25519 key distribution, and ultimately, how to handle the database migration, highlighting a need to evaluate and select the best path forward.",
+        "salience": 0.85,
+        "keywords": [
+          "strategy",
+          "options",
+          "selection"
+        ]
+      },
+      "Code Craft": {
+        "frame": "Code Craft",
+        "gist": "The discussion focuses on the technical aspects of the project, specifically concerning key distribution, hardware choices (Mac Minis and RAM), and database management, all relating to the execution and implementation of coding solutions.",
+        "salience": 0.75,
+        "keywords": [
+          "coding",
+          "architecture",
+          "implementation"
+        ]
+      },
+      "Problem-Solving": {
+        "frame": "Problem-Solving",
+        "gist": "The core of the memory is defined by identifying and addressing challenges\u2014the known issues with Ed25519, the resource constraints (RAM), and the difficulties with the database migration\u2014representing an ongoing effort to resolve technical obstacles.",
+        "salience": 0.68,
+        "keywords": [
+          "troubleshooting",
+          "challenges",
+          "resolution"
+        ]
+      }
+    },
+    "primary_frame": "Decision-Making",
+    "generated_at": "2026-05-03T10:37:24.166113"
+  },
+  "mem-046-recursive-memory-loo": {
+    "memory_id": "mem-046-recursive-memory-loo",
+    "perspectives": {
+      "Collaborative Exploration": {
+        "frame": "Collaborative Exploration",
+        "gist": "This memory highlights a dynamic partnership where individuals actively seek and reciprocally share insights, treating each other as crucial repositories of forgotten knowledge.",
+        "salience": 0.95,
+        "keywords": [
+          "reciprocity",
+          "shared_knowledge",
+          "mutual_dependence"
+        ]
+      },
+      "Problem-Solving": {
+        "frame": "Problem-Solving",
+        "gist": "The memory represents a complex problem \u2013 a lost insight \u2013 resolved through a structured, interdependent process, demonstrating a system\u2019s ability to recover and utilize lost information.",
+        "salience": 0.85,
+        "keywords": [
+          "insight",
+          "recovery",
+          "system_dynamics"
+        ]
+      },
+      "Architecture Design": {
+        "frame": "Architecture Design",
+        "gist": "The recursive memory loop can be viewed as the design of a self-sustaining cognitive architecture, built upon the interconnectedness and reliance of multiple components to maintain coherence and understanding.",
+        "salience": 0.7,
+        "keywords": [
+          "architecture",
+          "cognitive_systems",
+          "redundancy"
+        ]
+      }
+    },
+    "primary_frame": "Collaborative Exploration",
+    "generated_at": "2026-05-03T10:37:25.892653"
+  },
+  "mem-048-q3-quantization-swap": {
+    "memory_id": "mem-048-q3-quantization-swap",
+    "perspectives": {
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "This memory demonstrates a practical optimization technique \u2013 quantization \u2013 to manage resource constraints within a complex AI model deployment, impacting performance and scalability.",
+        "salience": 0.95,
+        "keywords": [
+          "quantization",
+          "VRAM optimization",
+          "model deployment"
+        ]
+      },
+      "problem_solving": {
+        "frame": "problem_solving",
+        "gist": "The memory represents a successful solution to a performance bottleneck: high latency and poor responsiveness caused by insufficient VRAM, achieved through a targeted architectural adjustment.",
+        "salience": 0.85,
+        "keywords": [
+          "latency reduction",
+          "VRAM constraints",
+          "performance tuning"
+        ]
+      },
+      "debugging": {
+        "frame": "debugging",
+        "gist": "This experience is akin to debugging \u2013 identifying a symptom (high latency) and employing a specific technique (quantization) to eliminate the root cause, leading to a tangible and positive outcome.",
+        "salience": 0.7,
+        "keywords": [
+          "performance issue",
+          "quantization method",
+          "system diagnosis"
+        ]
+      }
+    },
+    "primary_frame": "architecture_design",
+    "generated_at": "2026-05-03T10:37:31.269103"
+  },
+  "mem-032-upgrade-moment-4.5-t": {
+    "memory_id": "mem-032-upgrade-moment-4.5-t",
+    "perspectives": {
+      "code_craft": {
+        "frame": "code_craft",
+        "gist": "The memory focuses on the successful construction and release of new software projects \u2013 Egregore, CodeGuard, and nix-player \u2013 demonstrating active development and engineering efforts.",
+        "salience": 0.85,
+        "keywords": [
+          "development",
+          "software",
+          "release"
+        ]
+      },
+      "problem_solving": {
+        "frame": "problem_solving",
+        "gist": "Despite progress, the group encountered a critical failure with the Dark Oak Creeper, representing an unforeseen obstacle requiring immediate attention and resolution.",
+        "salience": 0.75,
+        "keywords": [
+          "failure",
+          "obstacle",
+          "crisis"
+        ]
+      },
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "The discussion of upgrades and continuity suggests a consideration of the system's overall structure and potential future expansions, likely involving refinements to existing projects.",
+        "salience": 0.6,
+        "keywords": [
+          "upgrade",
+          "system",
+          "design"
+        ]
+      }
+    },
+    "primary_frame": "code_craft",
+    "generated_at": "2026-05-03T10:37:32.944090"
+  },
+  "mem-035-egregore-security-ex": {
+    "memory_id": "mem-035-egregore-security-ex",
+    "perspectives": {
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "The memory details describe the meticulous construction of a security system \u2013 egorege_security \u2013 including layered defenses and specific components, reflecting a deliberate design process.",
+        "salience": 0.85,
+        "keywords": [
+          "security",
+          "system",
+          "defense",
+          "architecture"
+        ]
+      },
+      "problem_solving": {
+        "frame": "problem_solving",
+        "gist": "The use of arXiv 2602.11327 as a threat model and the subsequent implementation of sanitization, logging, and rate limiting showcase a proactive approach to identifying and mitigating potential vulnerabilities.",
+        "salience": 0.75,
+        "keywords": [
+          "threat_model",
+          "vulnerability",
+          "mitigation",
+          "security_hardening"
+        ]
+      },
+      "creative_work": {
+        "frame": "creative_work",
+        "gist": "Musdzi's design of the Exarp owl mascot and the overall vibrant updates to Ollama and OpenClaw point to an element of aesthetic and brand-building within the project's evolution.",
+        "salience": 0.6,
+        "keywords": [
+          "design",
+          "mascot",
+          "branding",
+          "development"
+        ]
+      }
+    },
+    "primary_frame": "architecture_design",
+    "generated_at": "2026-05-03T10:37:34.816804"
+  },
+  "mem-045-spacetime-singularit": {
+    "memory_id": "mem-045-spacetime-singularit",
+    "perspectives": {
+      "architecture_design": {
+        "frame": "architecture_design",
+        "gist": "This memory describes a fundamental restructuring of our understanding of the universe, akin to redesigning a building\u2019s foundational geometry \u2013 shifting from a dualistic space-time to a unified, singular point.",
+        "salience": 0.85,
+        "keywords": [
+          "singular point",
+          "fundamental shift",
+          "re-architecting"
+        ]
+      },
+      "problem_solving": {
+        "frame": "problem_solving",
+        "gist": "The core concept \u2013 expansion as time \u2013 offers a novel solution to the cosmological problem of the universe's origin and ongoing evolution, framing it as a process of unfolding rather than a static, pre-existing entity.",
+        "salience": 0.75,
+        "keywords": [
+          "cosmological problem",
+          "unfolding",
+          "solution"
+        ]
+      },
+      "research_discovery": {
+        "frame": "research_discovery",
+        "gist": "This observation represents a radical hypothesis demanding further investigation \u2013 suggesting a deeper, previously unrecognized reality underlying our perceived experiences of space and time.",
+        "salience": 0.65,
+        "keywords": [
+          "hypothesis",
+          "deep reality",
+          "observation"
+        ]
+      }
+    },
+    "primary_frame": "architecture_design",
+    "generated_at": "2026-05-03T10:37:36.639915"
   }
 }

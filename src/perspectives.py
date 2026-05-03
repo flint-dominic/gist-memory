@@ -219,22 +219,32 @@ Output as JSON array:
 Only output the JSON array, no other text."""
 
         try:
+            # --nowordwrap prevents ANSI cursor-back redraw artifacts in subprocess output
+            # --hidethinking suppresses <think> blocks from models like qwen3
             result = subprocess.run(
-                ["ollama", "run", model, prompt],
+                ["ollama", "run", "--nowordwrap", "--hidethinking", model, prompt],
                 capture_output=True,
                 text=True,
                 timeout=60
             )
             
             output = result.stdout.strip()
-            
+
+            # Strip thinking blocks from models like qwen3 that output them,
+            # plus ANSI escape sequences that Ollama leaks via subprocess
+            import re
+            output = re.sub(r'<think>.*?</think>', '', output, flags=re.DOTALL).strip()
+            output = re.sub(r'\x1b\[[\d;]*[A-Za-z]', '', output)
+
             # Try to parse JSON from output
             # Find JSON array in output
             start = output.find('[')
             end = output.rfind(']') + 1
             if start >= 0 and end > start:
                 json_str = output[start:end]
-                perspectives = json.loads(json_str)
+                # strict=False allows control chars (newlines/tabs) inside string values,
+                # which Ollama models often emit
+                perspectives = json.loads(json_str, strict=False)
                 
                 # Add each perspective
                 for p in perspectives:

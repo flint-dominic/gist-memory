@@ -11,13 +11,6 @@
       },
       {
         "source_id": "mem-001-founding",
-        "target_id": "mem-010-gist-memory-build",
-        "link_type": "leads_to",
-        "note": "Founding -> first build session",
-        "created": "2026-02-02T11:27:18.491441"
-      },
-      {
-        "source_id": "mem-001-founding",
         "target_id": "mem-002-deep-dive",
         "link_type": "relates_to",
         "note": "[inverse] Deep dive elaborates on the founding",
@@ -30,12 +23,6 @@
         "link_type": "relates_to",
         "note": "[inverse] Founding conversation -> deeper philosophical exploration",
         "created": "2026-02-02T11:27:18.383570"
-      },
-      {
-        "source_id": "mem-010-gist-memory-build",
-        "link_type": "caused_by",
-        "note": "[inverse] Founding -> first build session",
-        "created": "2026-02-02T11:27:18.491699"
       },
       {
         "source_id": "mem-002-deep-dive",
@@ -98,65 +85,10 @@
       }
     ]
   },
-  "mem-010-gist-memory-build": {
-    "memory_id": "mem-010-gist-memory-build",
-    "outbound": [
-      {
-        "source_id": "mem-010-gist-memory-build",
-        "target_id": "mem-001-founding",
-        "link_type": "caused_by",
-        "note": "[inverse] Founding -> first build session",
-        "created": "2026-02-02T11:27:18.491699"
-      }
-    ],
-    "inbound": [
-      {
-        "source_id": "mem-001-founding",
-        "link_type": "leads_to",
-        "note": "Founding -> first build session",
-        "created": "2026-02-02T11:27:18.491441"
-      }
-    ]
-  },
   "mem-011-stellar-delve": {
     "memory_id": "mem-011-stellar-delve",
-    "outbound": [
-      {
-        "source_id": "mem-011-stellar-delve",
-        "target_id": "mem-009-stellar-delve-overvi",
-        "link_type": "relates_to",
-        "note": "Both about Stellar Delve project",
-        "created": "2026-02-02T11:27:18.532626"
-      }
-    ],
-    "inbound": [
-      {
-        "source_id": "mem-009-stellar-delve-overvi",
-        "link_type": "relates_to",
-        "note": "[inverse] Both about Stellar Delve project",
-        "created": "2026-02-02T11:27:18.532891"
-      }
-    ]
-  },
-  "mem-009-stellar-delve-overvi": {
-    "memory_id": "mem-009-stellar-delve-overvi",
-    "outbound": [
-      {
-        "source_id": "mem-009-stellar-delve-overvi",
-        "target_id": "mem-011-stellar-delve",
-        "link_type": "relates_to",
-        "note": "[inverse] Both about Stellar Delve project",
-        "created": "2026-02-02T11:27:18.532891"
-      }
-    ],
-    "inbound": [
-      {
-        "source_id": "mem-011-stellar-delve",
-        "link_type": "relates_to",
-        "note": "Both about Stellar Delve project",
-        "created": "2026-02-02T11:27:18.532626"
-      }
-    ]
+    "outbound": [],
+    "inbound": []
   },
   "mem-004-railways": {
     "memory_id": "mem-004-railways",

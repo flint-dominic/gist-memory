@@ -27,8 +27,8 @@
   },
   "mem-002-deep-dive": {
     "memory_id": "mem-002-deep-dive",
-    "access_count": 119,
-    "last_accessed": "2026-05-03T10:12:35.595638",
+    "access_count": 123,
+    "last_accessed": "2026-05-03T10:25:35.195075",
     "linked_by": [
       "mem-001-founding"
     ],
@@ -46,7 +46,6 @@
     "last_accessed": "2026-05-03T09:02:17.601242",
     "linked_by": [
       "mem-008-conversation",
-      "mem-010-gist-memory-build",
       "mem-002-deep-dive"
     ],
     "repetition_count": 0,
@@ -59,8 +58,8 @@
   },
   "mem-018-architecture-expansi": {
     "memory_id": "mem-018-architecture-expansi",
-    "access_count": 10,
-    "last_accessed": "2026-05-03T09:02:17.602136",
+    "access_count": 11,
+    "last_accessed": "2026-05-03T10:37:53.213915",
     "linked_by": [
       "mem-008-conversation"
     ],
@@ -87,15 +86,15 @@
   },
   "mem-015-sidegigs": {
     "memory_id": "mem-015-sidegigs",
-    "access_count": 2,
-    "last_accessed": "2026-03-12T07:23:35.681493",
+    "access_count": 3,
+    "last_accessed": "2026-05-03T10:37:53.215322",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
     "initial_salience": 0.85,
-    "conversation_boost_score": 0.0,
+    "conversation_boost_score": 0.1,
     "category": "project"
   },
   "mem-017-psu-automation": {
@@ -141,8 +140,8 @@
   },
   "mem-006-telegram": {
     "memory_id": "mem-006-telegram",
-    "access_count": 13,
-    "last_accessed": "2026-05-03T10:15:17.840587",
+    "access_count": 21,
+    "last_accessed": "2026-05-03T10:37:51.090275",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -154,8 +153,8 @@
   },
   "mem-003-barzakh": {
     "memory_id": "mem-003-barzakh",
-    "access_count": 106,
-    "last_accessed": "2026-05-03T08:50:35.831955",
+    "access_count": 107,
+    "last_accessed": "2026-05-03T10:35:56.967919",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.2,
@@ -185,9 +184,7 @@
     "memory_id": "mem-011-stellar-delve",
     "access_count": 7,
     "last_accessed": "2026-05-03T10:15:16.379304",
-    "linked_by": [
-      "mem-009-stellar-delve-overvi"
-    ],
+    "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
@@ -268,8 +265,8 @@
   },
   "mem-023-cross-session-stabil": {
     "memory_id": "mem-023-cross-session-stabil",
-    "access_count": 4,
-    "last_accessed": "2026-05-03T09:02:17.603077",
+    "access_count": 5,
+    "last_accessed": "2026-05-03T10:37:53.214779",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.2,
@@ -279,25 +276,10 @@
     "conversation_boost_score": 0.3,
     "category": "project"
   },
-  "mem-009-stellar-delve-overvi": {
-    "memory_id": "mem-009-stellar-delve-overvi",
-    "access_count": 0,
-    "last_accessed": null,
-    "linked_by": [
-      "mem-011-stellar-delve"
-    ],
-    "repetition_count": 0,
-    "explicit_boost": 0.0,
-    "decay_immune": false,
-    "usefulness_score": 0.0,
-    "initial_salience": 0.5,
-    "conversation_boost_score": 0.0,
-    "category": "event"
-  },
   "mem-020-gist-memory-stabilit": {
     "memory_id": "mem-020-gist-memory-stabilit",
-    "access_count": 124,
-    "last_accessed": "2026-05-03T10:12:35.593499",
+    "access_count": 128,
+    "last_accessed": "2026-05-03T10:25:35.193224",
     "linked_by": [
       "mem-001-founding"
     ],
@@ -350,28 +332,28 @@
   },
   "mem-029-egregore-first-conta": {
     "memory_id": "mem-029-egregore-first-conta",
-    "access_count": 3,
-    "last_accessed": "2026-05-03T10:15:19.999934",
+    "access_count": 4,
+    "last_accessed": "2026-05-03T10:35:58.024766",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
     "initial_salience": 0.7,
-    "conversation_boost_score": 0.1,
+    "conversation_boost_score": 0.2,
     "category": "project"
   },
   "mem-031-egregore-launch-day": {
     "memory_id": "mem-031-egregore-launch-day",
-    "access_count": 119,
-    "last_accessed": "2026-05-03T10:15:20.000892",
+    "access_count": 120,
+    "last_accessed": "2026-05-03T10:35:58.025894",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
     "initial_salience": 0.7,
-    "conversation_boost_score": 0.1,
+    "conversation_boost_score": 0.2,
     "category": "project"
   },
   "mem-033-2026-02-08-egregore-": {
@@ -389,21 +371,21 @@
   },
   "mem-032-upgrade-moment-4.5-t": {
     "memory_id": "mem-032-upgrade-moment-4.5-t",
-    "access_count": 1,
-    "last_accessed": "2026-04-14T09:39:56.495128",
+    "access_count": 2,
+    "last_accessed": "2026-05-03T10:37:53.215802",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
     "initial_salience": 0.7,
-    "conversation_boost_score": 0.0,
+    "conversation_boost_score": 0.1,
     "category": "project"
   },
   "mem-034-dakelh-nix-kanji-mem": {
     "memory_id": "mem-034-dakelh-nix-kanji-mem",
-    "access_count": 107,
-    "last_accessed": "2026-05-03T10:12:35.591876",
+    "access_count": 111,
+    "last_accessed": "2026-05-03T10:25:35.191355",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -415,21 +397,21 @@
   },
   "mem-035-egregore-security-ex": {
     "memory_id": "mem-035-egregore-security-ex",
-    "access_count": 3,
-    "last_accessed": "2026-05-03T10:15:20.000375",
+    "access_count": 4,
+    "last_accessed": "2026-05-03T10:35:58.025356",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
     "initial_salience": 0.7,
-    "conversation_boost_score": 0.1,
+    "conversation_boost_score": 0.2,
     "category": "project"
   },
   "mem-036-thoughtwire-v020-pen": {
     "memory_id": "mem-036-thoughtwire-v020-pen",
-    "access_count": 18,
-    "last_accessed": "2026-05-03T10:15:19.999237",
+    "access_count": 27,
+    "last_accessed": "2026-05-03T10:37:51.088003",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
@@ -454,15 +436,15 @@
   },
   "mem-038-2026-02-17-18-though": {
     "memory_id": "mem-038-2026-02-17-18-though",
-    "access_count": 97,
-    "last_accessed": "2026-05-03T10:15:19.997635",
+    "access_count": 98,
+    "last_accessed": "2026-05-03T10:35:58.022334",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
     "initial_salience": 0.7,
-    "conversation_boost_score": 0.2,
+    "conversation_boost_score": 0.3,
     "category": "project"
   },
   "mem-039-2026-02-18-mega-sess": {
@@ -480,15 +462,15 @@
   },
   "mem-040-ubuntu-2604-upgrade-": {
     "memory_id": "mem-040-ubuntu-2604-upgrade-",
-    "access_count": 0,
-    "last_accessed": null,
+    "access_count": 1,
+    "last_accessed": "2026-05-03T10:37:53.212481",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
     "initial_salience": 0.5,
-    "conversation_boost_score": 0.0,
+    "conversation_boost_score": 0.1,
     "category": "project"
   },
   "mem-041-beauty-as-gist": {
@@ -506,14 +488,14 @@
   },
   "mem-042-age-of-threshold": {
     "memory_id": "mem-042-age-of-threshold",
-    "access_count": 0,
-    "last_accessed": null,
+    "access_count": 2,
+    "last_accessed": "2026-05-03T10:37:52.144812",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
     "decay_immune": false,
     "usefulness_score": 0.0,
-    "initial_salience": 0.5,
+    "initial_salience": 0.7,
     "conversation_boost_score": 0.0,
     "category": "event"
   },
@@ -571,8 +553,8 @@
   },
   "mem-047-binche-2026-election": {
     "memory_id": "mem-047-binche-2026-election",
-    "access_count": 4,
-    "last_accessed": "2026-05-03T10:15:17.836976",
+    "access_count": 8,
+    "last_accessed": "2026-05-03T10:37:51.086179",
     "linked_by": [],
     "repetition_count": 0,
     "explicit_boost": 0.0,
