@@ -38,6 +38,55 @@ def save_session_log(log: Dict):
     SESSION_LOG.write_text(json.dumps(log, indent=2, default=str))
 
 
+DAILY_MEMORY_DIR = PROJECT_ROOT.parent / "memory"
+
+
+def _todays_themes(max_themes: int = 8) -> List[str]:
+    """Extract themes from today's daily memory file (if any)."""
+    if not DAILY_MEMORY_DIR.exists():
+        return []
+    today = datetime.now().strftime("%Y-%m-%d")
+    candidates = sorted(DAILY_MEMORY_DIR.glob(f"{today}*.md"))
+    if not candidates:
+        # Fall back to most recent daily file within last 3 days
+        candidates = sorted(DAILY_MEMORY_DIR.glob("2*.md"))[-1:]
+    if not candidates:
+        return []
+    try:
+        text = candidates[-1].read_text()[:2000]
+    except Exception:
+        return []
+    # Reuse context.py's theme extraction
+    from context import extract_themes
+    return extract_themes(text, max_themes=max_themes)
+
+
+def _recent_memories_by_mtime(limit: int = 3) -> List[Dict]:
+    """Return most-recently-modified memory YAMLs as recall-shaped dicts."""
+    files = sorted(EXAMPLES_DIR.glob("*.yaml"), key=lambda p: p.stat().st_mtime, reverse=True)
+    out = []
+    tracker = get_tracker()
+    for f in files[:limit]:
+        try:
+            mem = yaml.safe_load(f.read_text())
+            if not mem:
+                continue
+            mem_id = mem.get('id', f.stem)
+            out.append({
+                'id': mem_id,
+                'similarity': 1.0,  # local source, no vector distance
+                'frames': mem.get('gist', {}).get('frames', []),
+                'salience': tracker.calculate_salience(mem_id),
+                'initial_salience': mem.get('gist', {}).get('salience', 0.5),
+                'summary': mem.get('summary', ''),
+                'key_details': {},
+                'perspective': None,
+            })
+        except Exception:
+            continue
+    return out
+
+
 def session_start(
     participant: str = "gblfxt",
     channel: str = "unknown",
@@ -45,56 +94,55 @@ def session_start(
 ) -> str:
     """
     Called at session start. Returns context to inject.
-    
-    1. Logs session start
-    2. Recalls relevant memories based on participant/recent activity
-    3. Returns formatted context for injection
+
+    Strategy: avoid generic global queries (which always return the same
+    handful of memories). Instead, surface (a) the most recently created
+    memories and (b) anything matching themes from today's daily memory file.
     """
     log = load_session_log()
-    
-    # Log this session
+
     session_entry = {
         "started": datetime.now().isoformat(),
         "participant": participant,
         "channel": channel,
         "memories_loaded": []
     }
-    
+
     if not inject_context:
         log["sessions"].append(session_entry)
         save_session_log(log)
         return ""
-    
-    # Build context query from recent activity
-    queries = [
-        f"conversations with {participant}",
-        "recent work and projects",
-        "important context"
-    ]
-    
-    # Get recent memories
-    all_memories = []
+
+    all_memories: List[Dict] = []
     seen_ids = set()
-    
-    for q in queries:
-        memories = recall(q, max_results=3, min_similarity=0.3)
-        for m in memories:
+
+    # 1. Recently encoded memories — the model probably wants to know
+    #    what was just learned, not what's been seen 100 times.
+    for m in _recent_memories_by_mtime(limit=3):
+        if m['id'] not in seen_ids:
+            all_memories.append(m)
+            seen_ids.add(m['id'])
+
+    # 2. Memories matching themes from today's (or most recent) daily file.
+    themes = _todays_themes(max_themes=8)
+    if themes:
+        query = ' '.join(themes)
+        for m in recall(query, max_results=3, min_similarity=0.35):
             if m['id'] not in seen_ids:
                 all_memories.append(m)
                 seen_ids.add(m['id'])
-    
-    # Sort by salience
-    all_memories.sort(key=lambda x: -x['salience'])
+
     top_memories = all_memories[:5]
-    
+
     session_entry["memories_loaded"] = [m['id'] for m in top_memories]
+    session_entry["bootstrap_themes"] = themes
     log["sessions"].append(session_entry)
     log["last_context"] = datetime.now().isoformat()
     save_session_log(log)
-    
+
     if not top_memories:
         return "No relevant memories found for context."
-    
+
     return format_for_context(top_memories, verbose=False)
 
 
